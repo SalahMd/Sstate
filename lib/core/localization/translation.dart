@@ -15,10 +15,11 @@ class Translation extends Translations {
               "ابحث عن أي دواء و استعرض\nتركيبته العلميه أو سعره أو تاريخ صلاحيته",
           "continuebutton": "التالي",
           "chooselanguage": "إختر لغتك المفضلة",
+          "login":"تسجيل الدخول",
           "skipbutton": "تخطي",
           "english": "الإنجليزية",
           "arabic": "العربية",
-          "welcome": "مرحبا بك",
+          "signup":"إنشاء حساب","createaccount":"؟ ليس لديك حساب",
           "location":"الموقع",
           "settings":"الإعدادات",
           "profile":"الملف الشخصي",
@@ -31,7 +32,8 @@ class Translation extends Translations {
           "livingrooms":"غرف المعيشة",
           "bthrooms":"الحمامات",
           "space":"المساحة",
-          "additional":"معلومات إضافية"
+          "additional":"معلومات إضافية",
+          "welcome":"أهلا بك",
 
         },
         "en": {
@@ -39,7 +41,6 @@ class Translation extends Translations {
           "title2": "Check the appartments near to you",
           "title3": "Take an appointment to watch  the appartment",
           "title4": "Add the place you want to sale and the info",
-          //"title5": "Technical Support",
           "body1":
               "Few steps to get your dream place",
           "body2": "Add your location to find the closest places",
@@ -54,6 +55,11 @@ class Translation extends Translations {
           "skipbutton": "Skip",
           "english": "English",
           "arabic": "Arabic",
+          "welcome":"Welcome to Sstate",
+          "login":"Login",
+          "":"",
+          "signup":"Sign Up",
+          "createaccount":"Don't have an account ?",
           "search":"Search",
           "homepage":"Homepage",
           "settings":"Settings",
@@ -67,6 +73,7 @@ class Translation extends Translations {
           "bthrooms":"Bthrooms",
           "space":"Space",
           "additional":"Additional info",
+          
 
         }
       };

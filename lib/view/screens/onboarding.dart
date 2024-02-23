@@ -10,10 +10,10 @@ import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/data/statics/static.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class onbording extends GetView<onboardingcontrollerimp> {
+class onbording extends GetView<OnBoardingControllerImpl> {
   @override
   Widget build(BuildContext context) {
-    Get.put(onboardingcontrollerimp());
+    Get.put(OnBoardingControllerImpl());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -83,7 +83,7 @@ class onbording extends GetView<onboardingcontrollerimp> {
               flex: 1,
               child: Column(
                 children: [
-                  GetBuilder<onboardingcontrollerimp>(
+                  GetBuilder<OnBoardingControllerImpl>(
                     builder: (controller) => Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
