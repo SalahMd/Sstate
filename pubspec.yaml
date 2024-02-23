@@ -1,0 +1,50 @@
+name: sestate
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.4 <4.0.0'
+dependencies:
+  auto_animated: ^3.2.0
+  cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  flutter:
+    sdk: flutter
+  flutter_animate: ^4.2.0
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.9
+  get: ^4.6.6
+  google_nav_bar: ^5.0.6
+  http: ^1.1.0
+  lottie: ^2.6.0
+  path: ^1.8.3
+  shared_preferences: ^2.2.1
+  shimmer: ^3.0.0
+  show_up_animation: ^2.0.0
+
+dev_dependencies:
+
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/animations/
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo_Bold.ttf
+          weight: 700
+    - family: Trajan Pro
+      fonts:
+        - asset: fonts/PlayfairDisplay-Bold.ttf
+        - asset: fonts/PlayfairDisplay-Regular.ttf
+          weight: 700
