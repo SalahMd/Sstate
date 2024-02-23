@@ -3,14 +3,12 @@ import 'package:get/get.dart';
 import 'package:sestate/core/services/services.dart';
 import 'package:sestate/data/statics/static.dart';
 
-
-
-abstract class onboardingcontroller extends GetxController {
+abstract class OnBoardingController extends GetxController {
   next();
   onPageChanged(int index);
 }
 
-class onboardingcontrollerimp extends onboardingcontroller {
+class OnBoardingControllerImpl extends OnBoardingController {
   int currentPage = 0;
   late PageController pageController;
   Myservices multiService = Get.find();
@@ -19,9 +17,8 @@ class onboardingcontrollerimp extends onboardingcontroller {
     currentPage++;
     if (currentPage > Onbordingmodel.length - 1) {
       multiService.sharedPreferences.setString("step", "1");
-      Get.offAllNamed("HomePage");
-    }
-     else
+      Get.offAllNamed("Login");
+    } else
       pageController.animateToPage(currentPage,
           duration: Duration(milliseconds: 700), curve: Curves.easeInOut);
   }
