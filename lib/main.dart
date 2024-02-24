@@ -6,6 +6,8 @@ import 'package:sestate/core/localization/changelanguage.dart';
 import 'package:sestate/core/localization/translation.dart';
 import 'package:sestate/core/middlewere/midlleware.dart';
 import 'package:sestate/core/services/services.dart';
+import 'package:sestate/view/screens/auth/login.dart';
+import 'package:sestate/view/screens/auth/signup.dart';
 import 'package:sestate/view/screens/nav_bar.dart';
 import 'package:sestate/view/screens/onboarding.dart';
 import 'view/screens/search/search.dart';
@@ -61,9 +63,10 @@ class MyApp extends StatelessWidget {
             name: "/",
             page: () => onbording(),
             middlewares: [MiddleWare()]),
-         // GetPage(name: "/Login", page: () => Login()),
+          GetPage(name: "/Login", page: () => Login()),
+          GetPage(name: "/SignUp", page: () => SignUp()),
           GetPage(name: "/Search", page: () => Search()),
-           GetPage(name: "/HomePage", page: () => ButtomBar()),
+          GetPage(name: "/HomePage", page: () => ButtomBar()),
         ],
       ),
     );

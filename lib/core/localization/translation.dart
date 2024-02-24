@@ -23,6 +23,17 @@ class Translation extends Translations {
           "location":"الموقع",
           "settings":"الإعدادات",
           "profile":"الملف الشخصي",
+          "firstname1": "أدخل الاسم الأول",
+          "firstname2": "الاسم الأول",
+          "password2": "كلمة السر",
+          "password1": "أدخل كلمة المرور",
+          "signupbody": "أنشىء حسابك الآن للبدء",
+          "lastname1": "أدخل الكنية",
+          "laststname2": "الكنية",
+          "phone2": "رقمك",
+          "phone1": "ادخل رقمك",
+          "email2": "البريد الإلكتروني",
+          "email1": "أدخل البريد الإلكتروني",
           "homepage":"الرئيسية",
           "search":"ابحث",
           "favorite":"المفضلة",
@@ -34,7 +45,11 @@ class Translation extends Translations {
           "space":"المساحة",
           "additional":"معلومات إضافية",
           "welcome":"أهلا بك",
-          "addinfo":"أضف معلوماتك للإكمال"
+          "addinfo":"أضف معلوماتك للإكمال",
+          "alreadyhaveaccount":"لديك حساب بالفعل ؟",
+          "logintocontinue":"سجل دخولك للإكمال",
+          "confirmpassword1":"أعد إدخال كلمو المرور",
+          "confirmpassword2":"كلمة المرور",
 
         },
         "en": {
@@ -74,7 +89,21 @@ class Translation extends Translations {
           "bthrooms":"Bthrooms",
           "space":"Space",
           "additional":"Additional info",
-          "addinfo":"Add your info to continue"
+          "addinfo":"Add your info to continue",
+          "alreadyhaveaccount":"Already have an account ?",
+          "logintocontinue":"Login to continue",
+           "firstname2": "First name",
+          "firstname1": "",
+          "password2": "Password",
+          "password1": "Enter your password",
+          "lastname1": "",
+          "lastname2": "Last name",
+          "phone1": "Enter your Phone",
+          "phone2": "Phone",
+          "email1": "Enter your email",
+          "email2": "Email",
+          "confirmpassword1":"Confirm your password",
+          "confirmpassword2":"Password",
           
 
         }

@@ -1,4 +1,3 @@
-
 class onBoardingModel  {
   final String? title;
   final animation;

@@ -5,6 +5,8 @@ import 'package:sestate/core/class/statusrequest.dart';
 import 'package:sestate/core/functions/handelingdata.dart';
 import 'package:sestate/core/services/services.dart';
 import 'package:sestate/data/remote/auth/login_back.dart';
+import 'package:sestate/view/screens/home/home_page.dart';
+import 'package:sestate/view/screens/nav_bar.dart';
 
 abstract class LogiInController extends GetxController {
   logIn();
@@ -25,55 +27,57 @@ class LogInControllerImpl extends LogiInController {
   @override
   goToHomePage() {
     update();
-      Get.offAllNamed("HomePage");
+    Get.offAllNamed("HomePage");
   }
-   @override
+
+  @override
   showPassword() {
     isshown = !isshown;
     update();
   }
+
   @override
   logIn() async {
     var formdata = formState.currentState;
-    if (formdata!.validate()) {
-      statusRequest = StatusRequest.loading;
-      update();
-      var response = await loginData.postData(
-          phoneController.text, passwordController.text);
-      statusRequest = hadelingData(response);
-      if (StatusRequest.success == statusRequest) {
-        if (response['status'] == "success") {
-          if (response['user']['role_id'] == 2) {
-            myServices.sharedPreferences.setInt("id", response['user']["id"]);
-            myServices.sharedPreferences
-                .setString("first_name", response['user']['first_name']);
-            myServices.sharedPreferences
-                .setString("phone_number", response['user']['phone_number']);
-            myServices.sharedPreferences
-                .setString("last_name", response['user']['last_name']);
-            myServices.sharedPreferences
-                .setString("token", response['user']["accessToken"]);
-            myServices.sharedPreferences.setString("step", "2");
-            Get.offNamed("HomePage");
-          } else {
-          //wrongLogin();
-          update();
-        }
-        } else {
-          //wrongLogin();
-          update();
-        }
-      } else {
-        
-      }
-      update();
-    } else
-      print("Not Valid");
+    // if (formdata!.validate()) {
+    //   statusRequest = StatusRequest.loading;
+    //   update();
+    //   var response = await loginData.postData(
+    //       phoneController.text, passwordController.text);
+    //   statusRequest = hadelingData(response);
+    //   if (StatusRequest.success == statusRequest) {
+    //     if (response['status'] == "success") {
+    //       if (response['user']['role_id'] == 2) {
+    //         myServices.sharedPreferences.setInt("id", response['user']["id"]);
+    //         myServices.sharedPreferences
+    //             .setString("first_name", response['user']['first_name']);
+    //         myServices.sharedPreferences
+    //             .setString("phone_number", response['user']['phone_number']);
+    //         myServices.sharedPreferences
+    //             .setString("last_name", response['user']['last_name']);
+    //         myServices.sharedPreferences
+    //             .setString("token", response['user']["accessToken"]);
+    //         myServices.sharedPreferences.setString("step", "2");
+    //         Get.offNamed("HomePage");
+    //       } else {
+    //       //wrongLogin();
+    //       update();
+    //     }
+    //     } else {
+    //       //wrongLogin();
+    //       update();
+    //     }
+    //   } else {
+
+    //   }
+    //   update();
+    // } else
+    //   print("Not Valid");
+
+    Get.to(ButtomBar());
   }
 
-
-
- @override
+  @override
   goToSignup() {
     Get.offNamed("SignUp");
   }
@@ -87,7 +91,7 @@ class LogInControllerImpl extends LogiInController {
 
   @override
   void onInit() {
-    phoneController =  TextEditingController();
+    phoneController = TextEditingController();
     passwordController = TextEditingController();
     super.onInit();
   }
