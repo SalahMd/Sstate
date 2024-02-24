@@ -34,6 +34,7 @@ class Translation extends Translations {
           "space":"المساحة",
           "additional":"معلومات إضافية",
           "welcome":"أهلا بك",
+          "addinfo":"أضف معلوماتك للإكمال"
 
         },
         "en": {
@@ -73,6 +74,7 @@ class Translation extends Translations {
           "bthrooms":"Bthrooms",
           "space":"Space",
           "additional":"Additional info",
+          "addinfo":"Add your info to continue"
           
 
         }

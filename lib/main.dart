@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/core/localization/changelanguage.dart';
 import 'package:sestate/core/localization/translation.dart';
 import 'package:sestate/core/middlewere/midlleware.dart';
 import 'package:sestate/core/services/services.dart';
-import 'package:sestate/data/statics/static.dart';
-//import 'package:sestate/view/screens/auth/login.dart';
-import 'package:sestate/view/screens/home/home_page.dart';
 import 'package:sestate/view/screens/nav_bar.dart';
 import 'package:sestate/view/screens/onboarding.dart';
-
 import 'view/screens/search/search.dart';
 
 void main() async {
