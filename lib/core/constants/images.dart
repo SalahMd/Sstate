@@ -7,5 +7,7 @@ class AppImages {
   static const cat2 = "assets/images/clinics.png";
   static const cat3 = "assets/images/cat3.jpg";
   static const cat4 = "assets/images/cat4.jpg";
+  static String englishimage = "assets/images/english.png";
+  static String arabicimage = "assets/images/arabic.png";
 
 }

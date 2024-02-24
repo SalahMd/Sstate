@@ -52,7 +52,8 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                             .slideY(begin: 0.1, curve: Curves.easeInOut),
                         Container(
                           width: double.infinity,
-                          margin: EdgeInsets.only(left: 15),
+                          margin:
+                              EdgeInsetsDirectional.symmetric(horizontal: 15),
                           child: Text(
                             Onbordingmodel[i].title!,
                             style: Theme.of(context).textTheme.headline1,
@@ -65,7 +66,8 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                             .slideY(begin: 0.5),
                         Container(
                                 width: double.infinity,
-                                margin: EdgeInsets.only(left: 15, top: 10),
+                                margin: EdgeInsetsDirectional.symmetric(
+                                    horizontal: 15, vertical: 10),
                                 // alignment: Alignment.center,
                                 child: Text(
                                   Onbordingmodel[i].body!,

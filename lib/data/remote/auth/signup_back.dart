@@ -4,10 +4,11 @@ import 'package:sestate/core/constants/links.dart';
 class SignUpBack {
   Crud crud;
   SignUpBack(this.crud);
-  postData(String firstName, String lastName, String phone,String password,) async {
+  postData(String firstName, String lastName,String email, String phone,String password,) async {
     var response = await this.crud.postData(AppLinks.signUp, {
       "first_name":firstName,
       "last_name":lastName,
+      "email":email,
       "phone_number":phone,
       "password":password,
     },true);
