@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/images.dart';
@@ -15,23 +16,19 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 237, 237, 239),
       body: SingleChildScrollView(
         child: Column(children: [
-         const TopBar(),
+         const TopBar().animate().fade(duration: 500.ms).slideY(begin: 0.2),
           SizedBox(
             height: 15.h,
           ),
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    "categories".tr,
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                ),
-              ],
-            ),
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(
+                "categories".tr,
+                style: Theme.of(context).textTheme.headline1,
+              ),
+            ).animate().fade(duration: 500.ms).slideX(begin: 0.2),
           ),
           SizedBox(
             height: 10.h,
@@ -48,7 +45,7 @@ class HomePage extends StatelessWidget {
                 image: AppImages.cat2,
               )
             ],
-          ),
+          ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -58,7 +55,7 @@ class HomePage extends StatelessWidget {
               ),
               CategoryDesign(title: "Clincs", image: AppImages.cat4)
             ],
-          ),
+          ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
           SizedBox(
             height: 15.h,
           ),
@@ -71,7 +68,7 @@ class HomePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline1,
               ),
             ),
-          ),
+          ).animate().fade(duration: 500.ms).slideX(begin: 0.2),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
             child: Column(
@@ -83,7 +80,7 @@ class HomePage extends StatelessWidget {
                 const ItemDesign(image: AppImages.img2, bedRooms: 4, bathRooms: 2, livingRoom: 2, space: 320, price: 4000,)
               ],
             ),
-          )
+          ).animate().fade(duration: 500.ms).slideY(begin: 0.3),
         ]),
       ),
     );
