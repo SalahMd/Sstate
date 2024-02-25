@@ -1,18 +1,14 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sestate/core/constants/colors.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({super.key});
+class Favorite extends StatelessWidget {
+  const Favorite({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backGround,
-      body: Column(children: [
-        
-      ]),
+      body: Column(children: []),
     );
   }
 }

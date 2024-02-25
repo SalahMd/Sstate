@@ -3,7 +3,6 @@ import 'package:sestate/core/constants/colors.dart';
 
 import '../functions/validinput.dart';
 
-
 class Customtextformfiled extends StatelessWidget {
   final String hinttext;
   final String labelText;
@@ -13,8 +12,9 @@ class Customtextformfiled extends StatelessWidget {
   final int max;
   final bool isnumber;
   final bool ispassword;
+  final bool ?isBorder ;
   final void Function()? ontapicon;
-  const Customtextformfiled(
+   Customtextformfiled(
       {super.key,
       required this.hinttext,
       required this.labelText,
@@ -24,7 +24,9 @@ class Customtextformfiled extends StatelessWidget {
       required this.max,
       required this.isnumber,
       required this.ispassword,
-       this.ontapicon, TextStyle? style});
+      this.ontapicon,
+       this.isBorder,
+      TextStyle? style});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,6 @@ class Customtextformfiled extends StatelessWidget {
         },
         controller: controller,
         decoration: InputDecoration(
-
           enabled: true,
           hintText: hinttext,
           hintStyle: const TextStyle(fontSize: 17),
@@ -54,21 +55,21 @@ class Customtextformfiled extends StatelessWidget {
               style: const TextStyle(fontSize: 16),
             ),
           ),
-          suffixIcon: 
-              InkWell(
-                  onTap: ontapicon,
-                  child: Icon(
-                    icondata,
-                    color: AppColors.primaryColor,
-                  ),
-                )
-              ,
-          focusedBorder: OutlineInputBorder(
-            
-            borderRadius: BorderRadius.circular(15),
-            borderSide:  BorderSide(
-                color: AppColors.primaryColor), // Change the focused border color here
+          suffixIcon: InkWell(
+            onTap: ontapicon,
+            child: Icon(
+              icondata,
+              color: AppColors.primaryColor,
+            ),
           ),
+          focusedBorder: isBorder==null
+              ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(
+                      color: AppColors
+                          .primaryColor), // Change the focused border color here
+                )
+              : null,
         ),
       ),
     );

@@ -19,7 +19,6 @@ class ButtomBar extends StatelessWidget {
                 selectedIndex: 1,
                 hoverColor: AppColors.whiteColor,
                 backgroundColor: AppColors.primaryColor,
-          
                 gap: 8.w,
                 color: AppColors.whiteColor,
                 activeColor: Colors.blue,
@@ -41,14 +40,9 @@ class ButtomBar extends StatelessWidget {
                     icon: Icons.home_outlined,
                     text: 'Home',
                   ),
-                 
                   GButton(
                     icon: Icons.favorite_outline,
                     text: 'Favourite',
-                  ),
-                   GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ]),
           ),

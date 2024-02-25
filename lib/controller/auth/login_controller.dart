@@ -6,7 +6,7 @@ import 'package:sestate/core/functions/handelingdata.dart';
 import 'package:sestate/core/services/services.dart';
 import 'package:sestate/data/remote/auth/login_back.dart';
 import 'package:sestate/view/screens/home/home_page.dart';
-import 'package:sestate/view/screens/nav_bar.dart';
+import 'package:sestate/view/screens/Navigation%20bar/nav_bar.dart';
 
 abstract class LogiInController extends GetxController {
   logIn();

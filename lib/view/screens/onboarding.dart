@@ -34,7 +34,7 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                         ),
                         Container(
                                 width: Dimensions.screenwidth(context),
-                                height: 500.h,
+                                height: 480.h,
                                 margin: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20)),
