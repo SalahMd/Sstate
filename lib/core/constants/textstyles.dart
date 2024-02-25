@@ -11,6 +11,10 @@ class TextStyles {
       color: AppColors.blackColor,
       fontSize: 18.sp,
       fontWeight: FontWeight.bold);
+      static TextStyle w50022Black = TextStyle(
+      color: AppColors.blackColor,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w500);
       static TextStyle w50015Black = TextStyle(
       color: AppColors.blackColor,
       fontSize: 14.sp,
@@ -34,6 +38,10 @@ class TextStyles {
   static TextStyle w50018White = TextStyle(
       color: AppColors.whiteColor,
       fontSize: 18.sp,
+      fontWeight: FontWeight.w500);
+       static TextStyle w50016White = TextStyle(
+      color: AppColors.whiteColor,
+      fontSize: 16.sp,
       fontWeight: FontWeight.w500);
 
 }

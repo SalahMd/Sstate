@@ -29,7 +29,7 @@ class DarkMode extends StatelessWidget {
           GestureDetector(
             onTap: () {
               controller.changeMode(true);
-              print("dark");
+              print("darkmode".tr);
             },
             child: Container(
                 height: 55.h,
@@ -38,7 +38,7 @@ class DarkMode extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "dark".tr,
+                        "darkmode".tr,
                         style: TextStyles.bold22Black,
                       ),
                       Container(

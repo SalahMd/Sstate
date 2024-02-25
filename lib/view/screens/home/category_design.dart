@@ -6,7 +6,7 @@ import 'package:sestate/core/constants/textstyles.dart';
 class CategoryDesign extends StatelessWidget {
   final String title;
   final String image;
-  const CategoryDesign({super.key, required this.title, required this.image});
+  CategoryDesign({super.key, required this.title, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CategoryDesign extends StatelessWidget {
         padding: EdgeInsets.only(top: 5.h),
         child: Container(
           height: 80.h,
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
               color: AppColors.whiteColor,
               borderRadius: BorderRadius.circular(15),
@@ -23,9 +23,13 @@ class CategoryDesign extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.home,
-                size: 25,
+              Container(
+                width: 22.w,
+                height: 22.h,
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.fill,
+                ),
               ),
               SizedBox(
                 width: 5.w,
