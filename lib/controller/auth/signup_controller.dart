@@ -16,6 +16,7 @@ late TextEditingController firstName;
   late TextEditingController lastName;
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
+  late TextEditingController email;
   GlobalKey<FormState> formState =  GlobalKey<FormState>();
   SignUpBack signup_back = SignUpBack(Get.put(Crud()));
   StatusRequest? statusRequest;
@@ -41,6 +42,7 @@ late TextEditingController firstName;
       var response = await signup_back.postData(
           firstName.text,
           lastName.text,
+          email.text,
           phoneController.text,
           passwordController.text);
       statusRequest = hadelingData(response);
@@ -62,6 +64,7 @@ late TextEditingController firstName;
     phoneController = TextEditingController();
     lastName = TextEditingController();
     firstName = TextEditingController();
+    email = TextEditingController();
     passwordController = TextEditingController();
     confirmPasswordController = TextEditingController();
     super.onInit();
@@ -74,6 +77,7 @@ late TextEditingController firstName;
     firstName.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
+    email.dispose();
     super.dispose();
   }
 }

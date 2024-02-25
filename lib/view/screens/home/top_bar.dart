@@ -6,7 +6,8 @@ import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({super.key});
+  final void Function() onTapIcon;
+  TopBar({super.key, required this.onTapIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -87,17 +88,22 @@ class TopBar extends StatelessWidget {
           PositionedDirectional(
             top: 20.h,
             end: 20.w,
-            child: Container(
-                width: 40.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
-                    boxShadow: const [BoxShadow(color: Colors.black)],
-                    borderRadius: BorderRadius.circular(12)),
-                child: const Icon(
-                  Icons.add,
-                  size: 30,
-                )),
+            child: InkWell(
+              onTap: () {
+                onTapIcon();
+              },
+              child: Container(
+                  width: 40.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                      color: AppColors.whiteColor,
+                      boxShadow: const [BoxShadow(color: Colors.black)],
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Icon(
+                    Icons.add,
+                    size: 30,
+                  )),
+            ),
           )
         ],
       ),
