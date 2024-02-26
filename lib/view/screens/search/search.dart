@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
+import 'package:sestate/view/screens/search/filters.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -9,10 +10,13 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGround,
-      body:  Column(children: [
-            Container(
-                margin: EdgeInsets.symmetric(vertical: 30),
+        backgroundColor: AppColors.backGround,
+        body: Column(children: [
+          SafeArea(
+            child: Container(
+                margin: EdgeInsets.symmetric(
+                  vertical: 5,
+                ),
                 width: Dimensions.screenwidth(context),
                 height: 60,
                 child: TextFormField(
@@ -22,7 +26,7 @@ class Search extends StatelessWidget {
                     focusedBorder: UnderlineInputBorder(),
                     suffixIcon: InkWell(
                       onTap: () {
-                       // controller.displayData();
+                        // controller.displayData();
                       },
                       child: Icon(
                         Icons.search,
@@ -48,6 +52,8 @@ class Search extends StatelessWidget {
                         left: 20, right: 5, top: 15, bottom: 15),
                   ),
                 )),
-    ]));
+          ),
+          Filters()
+        ]));
   }
 }

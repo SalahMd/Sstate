@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           headline1: TextStyle(
               color: AppColors.blackColor,
               fontWeight: FontWeight.bold,
-              fontSize: 26.sp,
+              fontSize: 23.sp,
               fontFamily:
                   controller.language == "en" ? "PlayfairDisplay" : "Cairo"),
           headline2: TextStyle(

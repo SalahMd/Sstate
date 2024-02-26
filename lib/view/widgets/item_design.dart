@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
+import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/item_info/item_info.dart';

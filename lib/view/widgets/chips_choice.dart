@@ -1,0 +1,31 @@
+import 'package:chips_choice/chips_choice.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sestate/controller/search_controller.dart';
+import 'package:sestate/core/constants/colors.dart';
+
+class ChipsChoices extends StatelessWidget {
+  List<String> tags = [];
+  final List<String> options;
+
+  ChipsChoices({super.key, required this.options});
+
+  @override
+  Widget build(BuildContext context) {
+    Get.put(SearchControllerImpl());
+    return GetBuilder<SearchControllerImpl>(
+      builder: (controller) => ChipsChoice<String>.multiple(
+        value: tags,
+        
+        spinnerColor: AppColors.primaryColor,
+        onChanged: (List<String> value) {
+          tags = value;
+          controller.update();
+          print(tags);
+        },
+        choiceItems: C2Choice.listFrom(
+            source: options, value: (i, v) => v, label: (i, v) => v),
+      ),
+    );
+  }
+}
