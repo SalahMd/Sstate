@@ -14,7 +14,7 @@ class Search extends StatelessWidget {
         body: Column(children: [
           SafeArea(
             child: Container(
-                margin: EdgeInsets.symmetric(
+                margin: const EdgeInsets.symmetric(
                   vertical: 5,
                 ),
                 width: Dimensions.screenwidth(context),

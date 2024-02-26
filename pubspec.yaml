@@ -7,12 +7,15 @@ environment:
   sdk: '>=3.2.4 <4.0.0'
 dependencies:
   auto_animated: ^3.2.0
+  avatar_glow: ^3.0.1
   chips_choice: ^3.0.1
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
+  date_picker_plus: ^2.1.0
   flutter:
     sdk: flutter
   flutter_animate: ^4.2.0
+  flutter_glow: ^0.3.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   get: ^4.6.6

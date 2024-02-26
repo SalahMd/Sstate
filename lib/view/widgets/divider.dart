@@ -11,7 +11,7 @@ class MyDivider extends StatelessWidget {
         SizedBox(
           height: 4.h,
         ),
-        Divider(
+        const Divider(
           thickness: 1,
         ),
         SizedBox(

@@ -20,7 +20,7 @@ class HomePageControllerImpl extends HomePageController {
   void onInit() {
     statusRequest = StatusRequest.loading;
     update();
-    Future.delayed(Duration(seconds:8), () {
+    Future.delayed(Duration(seconds:3), () {
       statusRequest = StatusRequest.success;
       update();
     });

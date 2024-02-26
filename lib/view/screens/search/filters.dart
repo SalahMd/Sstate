@@ -13,7 +13,7 @@ class Filters extends StatelessWidget {
     return Container(
       width: Dimensions.screenwidth(context),
       height: 40.h,
-      margin: EdgeInsetsDirectional.only(start: 10),
+      margin:const EdgeInsetsDirectional.only(start: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,7 +25,7 @@ class Filters extends StatelessWidget {
               onPressed: () {
                 popUp(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.filter_alt_outlined,
                 size: 30,
               ))

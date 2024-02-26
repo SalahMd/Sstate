@@ -1,16 +1,29 @@
+import 'package:avatar_glow/avatar_glow.dart';
+import 'package:date_picker_plus/date_picker_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/item_info_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/functions/date_time.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/item_info/additional_info.dart';
 import 'package:sestate/view/screens/item_info/image_view.dart';
 import 'package:sestate/view/screens/item_info/main_info.dart';
 
 class ItemInfo extends StatelessWidget {
+  ShowDialog(BuildContext context) async {
+    final date = await showDatePickerDialog(
+      context: context,
+      minDate: DateTime(2021, 1, 1),
+      maxDate: DateTime(2023, 12, 31),
+    );
+  }
+
+  var date;
   ItemInfo({super.key});
   @override
   Widget build(BuildContext context) {
@@ -43,6 +56,18 @@ class ItemInfo extends StatelessWidget {
                           ),
                           child: Icon(Icons.favorite_border_outlined),
                         )),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 35.h),
+                      child: Center(
+                        child: Text(
+                          "Apartment".tr,
+                          style: TextStyles.bold22Black,
+                        ),
+                      ),
+                    ),
                     PositionedDirectional(
                         top: 35.h,
                         start: 15.w,
@@ -105,12 +130,10 @@ class ItemInfo extends StatelessWidget {
                                 Icons.location_on,
                                 size: 25,
                               ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
+                              SizedBox(height: 10.h),
                               Text(
                                 "Muhajjrin",
-                                style: TextStyles.bold22Black,
+                                style: TextStyles.w50022Black,
                               ),
                             ])),
                             Expanded(
@@ -165,12 +188,78 @@ class ItemInfo extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 10.h),
-                        AdditionalInfo(
+                        const AdditionalInfo(
                           info: "Simple home with modern architecture and up to-date" +
                               " interior located in the ciy center makes it easy for you to access whole city.",
                         )
                       ]),
-                )
+                ),
+                date != null
+                    ? Column(
+                        children: [
+                          SizedBox(height: 30.h),
+                          Center(
+                            child: Container(
+                              width: 150.w,
+                              height: 40.h,
+                              decoration: BoxDecoration(
+                                  color: AppColors.whiteColor,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(
+                                      Icons.calendar_month_outlined,
+                                      color: AppColors.primaryColor,
+                                    ),
+                                    Text(
+                                      date.toString(),
+                                    )
+                                  ]),
+                            ),
+                          )
+                        ],
+                      )
+                    : SizedBox(height: 10.h),
+                date == null
+                    ? GestureDetector(
+                        onTap: () async {
+                          date = await selectDate(context);
+                          controller.update();
+                        },
+                        child: Center(
+                            child: Container(
+                                width: Dimensions.screenwidth(context),
+                                height: 45.h,
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 40, vertical: 20),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: AppColors.primaryColor,
+                                ),
+                                child: Text(
+                                  "Make an appointment",
+                                  style: TextStyles.w50016White,
+                                ))),
+                      )
+                    : Center(
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 150.w,
+                          height: 40.h,
+                          margin: EdgeInsets.symmetric(vertical: 30.h),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: AppColors.greenColor,
+                          ),
+                          child: Text(
+                            'Confirm',
+                            style: TextStyles.w50016White,
+                          ),
+                        ),
+                      ),
               ]),
         ),
       ),

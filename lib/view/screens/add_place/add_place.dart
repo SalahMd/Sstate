@@ -6,7 +6,7 @@ import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
-import 'package:sestate/view/screens/add%20place/additional_info.dart';
+import 'package:sestate/view/screens/add_place/additional_info.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class AddPlace extends StatelessWidget {
