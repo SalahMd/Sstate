@@ -4,9 +4,12 @@ import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
+import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
+import 'package:sestate/view/screens/add_place/add_images.dart';
 import 'package:sestate/view/screens/add_place/additional_info.dart';
+import 'package:sestate/view/screens/add_place/room_widgets.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class AddPlace extends StatelessWidget {
@@ -109,15 +112,25 @@ class AddPlace extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
+            MyDivider(),
+            RoomWidgets(
+                title: "rooms".tr,
+                numOfRooms: controller.numOfRooms,
+                icon: Icons.bed_rounded,
+                controller: controller),
+            MyDivider(),
+            RoomWidgets(
+                title: "kitchens".tr,
+                numOfRooms: controller.numOfKitchens,
+                icon: Icons.kitchen_outlined,
+                controller: controller),
+            MyDivider(),
+            RoomWidgets(
+                title: "bathrooms".tr,
+                numOfRooms: controller.numOfBathRooms,
+                icon: Icons.bathroom_outlined,
+                controller: controller),
+            MyDivider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -126,207 +139,7 @@ class AddPlace extends StatelessWidget {
                         padding:
                             EdgeInsetsDirectional.symmetric(horizontal: 10),
                         child: Text(
-                          "Rooms",
-                          style: TextStyles.w50015Black,
-                        ))),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15,
-                  ),
-                  height: 45.h,
-                  decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.room_preferences),
-                        Text(
-                          controller.numOfBedRooms.toString(),
-                        ),
-                        const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(
-                              Icons.arrow_upward_outlined,
-                              size: 20,
-                            ),
-                            Icon(Icons.arrow_downward_outlined, size: 20)
-                          ],
-                        )
-                      ]),
-                )),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                    child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.symmetric(horizontal: 10),
-                        child: Text(
-                          "Bathrooms",
-                          style: TextStyles.w50015Black,
-                        ))),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15,
-                  ),
-                  height: 45.h,
-                  decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.bathroom_outlined),
-                        Text(
-                          controller.numOfBedRooms.toString(),
-                        ),
-                        const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(
-                              Icons.arrow_upward_outlined,
-                              size: 20,
-                            ),
-                            Icon(Icons.arrow_downward_outlined, size: 20)
-                          ],
-                        )
-                      ]),
-                )),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                    child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.symmetric(horizontal: 10),
-                        child: Text(
-                          "kithchens",
-                          style: TextStyles.w50015Black,
-                        ))),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15,
-                  ),
-                  height: 45.h,
-                  decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.kitchen_outlined),
-                        Text(
-                          controller.numOfBedRooms.toString(),
-                        ),
-                        const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(
-                              Icons.arrow_upward_outlined,
-                              size: 20,
-                            ),
-                            Icon(Icons.arrow_downward_outlined, size: 20)
-                          ],
-                        )
-                      ]),
-                )),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                    child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.symmetric(horizontal: 10),
-                        child: Text(
-                          "Bathrooms",
-                          style: TextStyles.w50015Black,
-                        ))),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15,
-                  ),
-                  height: 45.h,
-                  decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(Icons.bathroom_outlined),
-                        Text(
-                          controller.numOfBedRooms.toString(),
-                        ),
-                        const Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(
-                              Icons.arrow_upward_outlined,
-                              size: 20,
-                            ),
-                            Icon(Icons.arrow_downward_outlined, size: 20)
-                          ],
-                        )
-                      ]),
-                )),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              thickness: 1,
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                    child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.symmetric(horizontal: 10),
-                        child: Text(
-                          "Price",
+                          "price".tr,
                           style: TextStyles.w50015Black,
                         ))),
                 Expanded(
@@ -353,11 +166,26 @@ class AddPlace extends StatelessWidget {
               ],
             ),
             MyDivider(),
+            Padding(
+              padding: EdgeInsetsDirectional.only(start: 10),
+              child: Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: Text(
+                  "addimages".tr,
+                  style: TextStyles.w50015Black,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            AddImages(images: [AppImages.img1, AppImages.img2, AppImages.img3],controller: controller,),
+            MyDivider(),
             AdditionalInfo(),
             SizedBox(
               height: 50.h,
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 //controller.logIn();
               },
@@ -370,7 +198,7 @@ class AddPlace extends StatelessWidget {
                     color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
-                  "Confirm".tr,
+                  "confirm".tr,
                   style: TextStyles.w50018White,
                 ),
               ),

@@ -15,7 +15,7 @@ class ShimmerItem extends StatelessWidget {
         highlightColor: Colors.grey[100]!,
         child: Container(
         decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20)),
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        margin: EdgeInsets.symmetric(horizontal: 8),
           width: width.w,
           height: height.h,
           

@@ -71,6 +71,13 @@ class Translation extends Translations {
         "more100m":"أكبر من 100",
           "less100m":"أصغر من 100م",
           "more200m":"أكثر من 200م",
+          "makeappointment":"حجز موعد",
+          "confirm":"تأكيد",
+          "confirmorder":"هل تريد تأكيد طلبك؟",
+          "rooms":"الغرف",
+          "kitchens":"مطابخ",
+          "addimages":"أضف الصور"
+
         },
         "en": {
           "title1": "Find your best and sweet dream place",
@@ -102,7 +109,7 @@ class Translation extends Translations {
           "nearby": "Nearby to you",
           "bedrooms": "Bedrooms",
           "livingrooms": "Livingrooms",
-          "bthrooms": "Bthrooms",
+          "bathrooms": "Bathrooms",
           "space": "Space",
           "additional": "Additional info",
           "addinfo": "Add your info to continue",
@@ -136,11 +143,17 @@ class Translation extends Translations {
           "rent":"Rent",
           "sale":"Sale",
           "expensive":"Expensive",
-        "medium":"Cheap",
-        "cheap":"Medium",
-        "more100m":"More than 100m",
+          "medium":"Cheap",
+          "cheap":"Medium",
+          "more100m":"More than 100m",
           "less100m":"Less than 100m",
           "more200m":"More than 200m",
+          "makeappointment":"Make an appointment",
+          "confirm":"Confirm",
+          "confirmorder":"Are you sure to confirm your order?",
+          "rooms":"Rooms",
+          "kitchens":"Kitchens",
+          "addimages":"Add Images",
           
         }
       };

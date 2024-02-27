@@ -12,9 +12,10 @@ class Customtextformfiled extends StatelessWidget {
   final int max;
   final bool isnumber;
   final bool ispassword;
-  final bool ?isBorder ;
+  final bool? isBorder;
+  final int? maxLines;
   final void Function()? ontapicon;
-   Customtextformfiled(
+  Customtextformfiled(
       {super.key,
       required this.hinttext,
       required this.labelText,
@@ -25,8 +26,10 @@ class Customtextformfiled extends StatelessWidget {
       required this.isnumber,
       required this.ispassword,
       this.ontapicon,
-       this.isBorder,
-      TextStyle? style});
+      this.isBorder,
+      TextStyle? style,
+      this.maxLines,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +43,7 @@ class Customtextformfiled extends StatelessWidget {
         validator: (val) {
           return validInput(val!, min, max);
         },
+        //maxLines: maxLines,
         controller: controller,
         decoration: InputDecoration(
           enabled: true,
@@ -47,7 +51,7 @@ class Customtextformfiled extends StatelessWidget {
           hintStyle: const TextStyle(fontSize: 17),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding:
-              const EdgeInsets.only(left: 5, right: 5, top: 15, bottom: 15),
+              const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
           label: Container(
             margin: const EdgeInsets.only(left: 5, right: 5),
             child: Text(
@@ -62,7 +66,7 @@ class Customtextformfiled extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
           ),
-          focusedBorder: isBorder==null
+          focusedBorder: isBorder == null
               ? OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide(

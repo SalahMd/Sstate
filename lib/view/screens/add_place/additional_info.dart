@@ -32,7 +32,15 @@ class AdditionalInfo extends StatelessWidget {
           decoration: BoxDecoration(
               color: AppColors.whiteColor,
               borderRadius: BorderRadius.circular(20)),
-          child: TextFormField(),
+          child: TextFormField(
+            maxLines: 3,
+            maxLength: 100,
+            decoration: const InputDecoration(
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                //filled: true,
+                enabledBorder: OutlineInputBorder(borderSide: BorderSide.none)),
+          ),
         )
       ],
     );

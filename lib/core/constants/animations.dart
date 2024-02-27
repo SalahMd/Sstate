@@ -8,4 +8,9 @@ class AppAnimations {
     fit: BoxFit.fill,
     
   );
+  static LottieBuilder question = LottieBuilder.asset(
+    "$path" "question.json",
+    fit: BoxFit.fill,
+    
+  );
 }

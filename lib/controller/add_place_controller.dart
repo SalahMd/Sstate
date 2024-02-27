@@ -5,16 +5,18 @@ import 'package:sestate/core/services/services.dart';
 
 abstract class AddPlaceController extends GetxController {
   addPlace();
+  increaseCount(String increasingElement);
+  decreaseCount(String increasingElement);
 }
 
 class AddPlaceControllerImpl extends AddPlaceController {
-  int numOfBedRooms = 0;
-  int numOfLivingRooms = 0;
+  int numOfRooms = 0;
   int numOfKitchens = 0;
   int numOfBathRooms = 0;
   double space = 0;
   bool sale = true;
   int floor = 0;
+  //String? increasingElement;
   List images = [];
 
   List<DropdownMenuItem<String>> streetsList = [
@@ -94,5 +96,29 @@ class AddPlaceControllerImpl extends AddPlaceController {
     price.dispose();
     additionalInfo.dispose();
     super.dispose();
+  }
+
+  @override
+  decreaseCount(String increasingElement) {
+    if (increasingElement == "Bathrooms" && numOfBathRooms > 0) {
+      numOfBathRooms--;
+    } else if (increasingElement == "Kitchens" && numOfKitchens > 0) {
+      numOfKitchens--;
+    } else if(increasingElement == "Rooms" && numOfRooms > 0) {
+      numOfRooms--;
+    }
+    update();
+  }
+
+  @override
+  increaseCount(String increasingElement) {
+    if (increasingElement == "Bathrooms"&& numOfBathRooms >=0) {
+      numOfBathRooms++;
+    } else if (increasingElement == "Kitchens"&& numOfKitchens >=0) {
+      numOfKitchens++;
+    } else if(increasingElement =="Rooms" &&numOfRooms >=0) {
+      numOfRooms++;
+    }
+    update();
   }
 }

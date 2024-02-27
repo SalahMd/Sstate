@@ -5,9 +5,11 @@ import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/item_info_controller.dart';
+import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/core/functions/date_time.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/item_info/additional_info.dart';
@@ -15,15 +17,6 @@ import 'package:sestate/view/screens/item_info/image_view.dart';
 import 'package:sestate/view/screens/item_info/main_info.dart';
 
 class ItemInfo extends StatelessWidget {
-  ShowDialog(BuildContext context) async {
-    final date = await showDatePickerDialog(
-      context: context,
-      minDate: DateTime(2021, 1, 1),
-      maxDate: DateTime(2023, 12, 31),
-    );
-  }
-
-  var date;
   ItemInfo({super.key});
   @override
   Widget build(BuildContext context) {
@@ -194,7 +187,7 @@ class ItemInfo extends StatelessWidget {
                         )
                       ]),
                 ),
-                date != null
+                controller.date != null
                     ? Column(
                         children: [
                           SizedBox(height: 30.h),
@@ -214,7 +207,7 @@ class ItemInfo extends StatelessWidget {
                                       color: AppColors.primaryColor,
                                     ),
                                     Text(
-                                      date.toString(),
+                                      controller.date.toString(),
                                     )
                                   ]),
                             ),
@@ -222,10 +215,10 @@ class ItemInfo extends StatelessWidget {
                         ],
                       )
                     : SizedBox(height: 10.h),
-                date == null
+                controller.date == null
                     ? GestureDetector(
                         onTap: () async {
-                          date = await selectDate(context);
+                          controller.date = await selectDate(context);
                           controller.update();
                         },
                         child: Center(
@@ -240,23 +233,28 @@ class ItemInfo extends StatelessWidget {
                                   color: AppColors.primaryColor,
                                 ),
                                 child: Text(
-                                  "Make an appointment",
+                                  "makeappointment".tr,
                                   style: TextStyles.w50016White,
                                 ))),
                       )
                     : Center(
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: 150.w,
-                          height: 40.h,
-                          margin: EdgeInsets.symmetric(vertical: 30.h),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: AppColors.greenColor,
-                          ),
-                          child: Text(
-                            'Confirm',
-                            style: TextStyles.w50016White,
+                        child: GestureDetector(
+                          onTap: () async {
+                            controller.dialogConfirming(AppAnimations.question, "confirmorder".tr);
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 150.w,
+                            height: 40.h,
+                            margin: EdgeInsets.symmetric(vertical: 30.h),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: AppColors.greenColor,
+                            ),
+                            child: Text(
+                              'confirm'.tr,
+                              style: TextStyles.w50016White,
+                            ),
                           ),
                         ),
                       ),
