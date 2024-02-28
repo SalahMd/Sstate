@@ -1,12 +1,18 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sestate/core/class/statusrequest.dart';
+import 'package:sestate/core/constants/images.dart';
+import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/core/services/services.dart';
 
 abstract class AddPlaceController extends GetxController {
   addPlace();
   increaseCount(String increasingElement);
   decreaseCount(String increasingElement);
+  pickImage();
 }
 
 class AddPlaceControllerImpl extends AddPlaceController {
@@ -16,9 +22,7 @@ class AddPlaceControllerImpl extends AddPlaceController {
   double space = 0;
   bool sale = true;
   int floor = 0;
-  //String? increasingElement;
   List images = [];
-
   List<DropdownMenuItem<String>> streetsList = [
     DropdownMenuItem<String>(
       value: '1',
@@ -63,8 +67,20 @@ class AddPlaceControllerImpl extends AddPlaceController {
       child: Text("clincs    ".tr),
     ),
   ];
+  List<DropdownMenuItem<String>> rentOrSaleList = [
+    DropdownMenuItem<String>(
+      value: '1',
+      child: Text("rent".tr),
+    ),
+    DropdownMenuItem<String>(
+      value: '2',
+      child: Text("sale".tr),
+    ),
+  ];
+  //var pickedImage;
   String dropdownValue = '1';
   String typeValue = '1';
+  String rentOrSale = '1';
   late TextEditingController location;
   String placeLocation = '';
   String placeType = '';
@@ -98,13 +114,29 @@ class AddPlaceControllerImpl extends AddPlaceController {
     super.dispose();
   }
 
+  Future<void> pickImage() async {
+    if (images.length < 10) {
+      final picker = ImagePicker();
+      XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);
+      if (pickedImage != null) {
+        print(pickedImage.path);
+        images.add(File(pickedImage.path));
+      } else {
+        print("Image picking canceled");
+      }
+    } else {
+      await alert("can'taddimages".tr);
+    }
+    update();
+  }
+
   @override
   decreaseCount(String increasingElement) {
     if (increasingElement == "Bathrooms" && numOfBathRooms > 0) {
       numOfBathRooms--;
     } else if (increasingElement == "Kitchens" && numOfKitchens > 0) {
       numOfKitchens--;
-    } else if(increasingElement == "Rooms" && numOfRooms > 0) {
+    } else if (increasingElement == "Rooms" && numOfRooms > 0) {
       numOfRooms--;
     }
     update();
@@ -112,11 +144,11 @@ class AddPlaceControllerImpl extends AddPlaceController {
 
   @override
   increaseCount(String increasingElement) {
-    if (increasingElement == "Bathrooms"&& numOfBathRooms >=0) {
+    if (increasingElement == "Bathrooms" && numOfBathRooms >= 0) {
       numOfBathRooms++;
-    } else if (increasingElement == "Kitchens"&& numOfKitchens >=0) {
+    } else if (increasingElement == "Kitchens" && numOfKitchens >= 0) {
       numOfKitchens++;
-    } else if(increasingElement =="Rooms" &&numOfRooms >=0) {
+    } else if (increasingElement == "Rooms" && numOfRooms >= 0) {
       numOfRooms++;
     }
     update();

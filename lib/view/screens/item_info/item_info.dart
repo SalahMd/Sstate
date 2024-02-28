@@ -94,7 +94,7 @@ class ItemInfo extends StatelessWidget {
                                     height: 9,
                                     margin: const EdgeInsets.all(2),
                                     decoration: BoxDecoration(
-                                        color: AppColors.whiteColor,
+                                        color: AppColors.primaryColor,
                                         borderRadius:
                                             BorderRadius.circular(20)),
                                   )),
@@ -240,7 +240,8 @@ class ItemInfo extends StatelessWidget {
                     : Center(
                         child: GestureDetector(
                           onTap: () async {
-                            controller.dialogConfirming(AppAnimations.question, "confirmorder".tr);
+                            controller.dialogConfirming(
+                                AppAnimations.question, "confirmorder".tr);
                           },
                           child: Container(
                             alignment: Alignment.center,

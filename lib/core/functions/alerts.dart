@@ -28,26 +28,41 @@ Future<bool> exitAlert() {
   return Future.value(true);
 }
 
-Future<bool> animationedAlert(var animation, String title,void Function() onYesTap) {
+Future<bool> animationedAlert(
+    var animation, String title, void Function() onYesTap) {
   Get.defaultDialog(
       title: title,
       titleStyle: TextStyles.w50020Black,
       titlePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      content:animation!=null? Container(
-          alignment: Alignment.topCenter, height: 100.h, child: animation):null,
+      content: animation != null
+          ? Container(
+              alignment: Alignment.topCenter, height: 100.h, child: animation)
+          : null,
       barrierDismissible: false,
-      actions: [ TextButton(
+      actions: [
+        TextButton(
             onPressed: () {
               onYesTap;
             },
-            child: Text("yes".tr,style: TextStyles.w50015Black,)),
+            child: Text(
+              "yes".tr,
+              style: TextStyles.w50015Black,
+            )),
         TextButton(
             onPressed: () {
               Get.back();
             },
-            child: Text("no".tr,style: TextStyles.w50015Black))]
-      );
+            child: Text("no".tr, style: TextStyles.w50015Black))
+      ]);
   return Future.value(true);
+}
+
+alert(String title) {
+  Get.defaultDialog(
+    title: title,
+    titleStyle: TextStyles.w50016Black,
+    titlePadding: EdgeInsets.symmetric(vertical: 40, horizontal: 10),
+  );
 }
 
 Future<bool> popUp(

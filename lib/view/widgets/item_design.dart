@@ -96,7 +96,7 @@ class ItemDesign extends StatelessWidget {
                 ),
                 Text(
                   "Muhajjrin",
-                  style: TextStyles.bold22Black,
+                  style: TextStyles.w50020Black,
                 ),
               ])),
               Expanded(
@@ -105,7 +105,7 @@ class ItemDesign extends StatelessWidget {
                   alignment: AlignmentDirectional.centerEnd,
                   child: Text(
                     price.toString() + "\$",
-                    style: TextStyles.bold22Black,
+                    style: TextStyles.w50020Black,
                   ),
                 ),
               )
@@ -198,7 +198,7 @@ class ItemDesign extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                     const Icon(
+                      const Icon(
                         Icons.space_bar_outlined,
                         size: 18,
                       ),

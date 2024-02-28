@@ -19,6 +19,10 @@ class TextStyles {
       color: AppColors.blackColor,
       fontSize: 14.sp,
       fontWeight: FontWeight.bold);
+       static TextStyle w50016Black = TextStyle(
+      color: AppColors.blackColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.bold);
   static TextStyle w50020Black = TextStyle(
       color: AppColors.blackColor,
       fontSize: 17.sp,

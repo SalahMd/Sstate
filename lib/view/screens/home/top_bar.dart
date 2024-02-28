@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
@@ -53,7 +54,7 @@ class TopBar extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Get.toNamed("Search");
                 },
@@ -88,7 +89,7 @@ class TopBar extends StatelessWidget {
           PositionedDirectional(
             top: 20.h,
             end: 20.w,
-            child: InkWell(
+            child: GestureDetector(
               onTap: () {
                 onTapIcon();
               },

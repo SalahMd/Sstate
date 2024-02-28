@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sestate/controller/add_place_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
@@ -60,6 +61,8 @@ class RoomWidgets extends StatelessWidget {
                       ]),
                 )),
               ],
-            );
+            ) .animate()
+              .fade(duration: (600.ms))
+              .slideY(begin: -0.5);
   }
 }
