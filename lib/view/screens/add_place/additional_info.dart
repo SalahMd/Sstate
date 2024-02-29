@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
@@ -16,7 +17,7 @@ class AdditionalInfo extends StatelessWidget {
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: Text(
-              "Additional info",
+              "additional".tr,
               style: TextStyles.w50015Black,
             ),
           ),

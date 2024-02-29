@@ -76,9 +76,11 @@ class Translation extends Translations {
           "confirmorder":"هل تريد تأكيد طلبك؟",
           "rooms":"الغرف",
           "kitchens":"مطابخ",
+          "bathrooms":"حمامات",
           "addimages":"أضف الصور",
           "can'taddimages":"لايمكن إضافة أكثر من 10 صور",
-          "placetype":"نوع العقار"
+          "placetype":"نوع العقار",
+          "price":"السعر"
 
         },
         "en": {
@@ -157,7 +159,8 @@ class Translation extends Translations {
           "kitchens":"Kitchens",
           "addimages":"Add Images",
           "can'taddimages":"You can't add more than 10 images",
-          "placetype":"Place Type"
+          "placetype":"Place Type",
+          "price":"Price",
           
         }
       };

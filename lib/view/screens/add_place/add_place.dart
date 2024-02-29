@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -45,7 +44,7 @@ class AddPlace extends StatelessWidget {
             elementValue: controller.dropdownValue,
             elementValue2: controller.placeLocation,
           ),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+          const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           DropDownWidget(
             controller: controller,
             title: "placetype".tr,
@@ -53,7 +52,7 @@ class AddPlace extends StatelessWidget {
             elementValue: controller.typeValue,
             elementValue2: controller.placeType,
           ),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+          const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           DropDownWidget(
             controller: controller,
             title: "rentorsale".tr,
@@ -62,19 +61,19 @@ class AddPlace extends StatelessWidget {
             elementValue2: controller.rentOrSale,
           ),
           
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+         const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           RoomWidgets(
               title: "rooms".tr,
               numOfRooms: controller.numOfRooms,
               icon: Icons.bed_rounded,
               controller: controller),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+         const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           RoomWidgets(
               title: "kitchens".tr,
               numOfRooms: controller.numOfKitchens,
               icon: Icons.kitchen_outlined,
               controller: controller),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+          const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           RoomWidgets(
               title: "bathrooms".tr,
               numOfRooms: controller.numOfBathRooms,
@@ -94,7 +93,7 @@ class AddPlace extends StatelessWidget {
               Expanded(
                   child: Container(
                       alignment: Alignment.center,
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 15,
                       ),
                       height: 45.h,
@@ -114,9 +113,9 @@ class AddPlace extends StatelessWidget {
                       ))),
             ],
           ).animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+         const MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           Padding(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
+            padding:const EdgeInsetsDirectional.symmetric(horizontal: 10),
             child: Align(
               alignment: AlignmentDirectional.centerStart,
               child: Row(

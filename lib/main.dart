@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
+import 'package:sestate/core/functions/geo_locator.dart';
 import 'package:sestate/core/localization/changelanguage.dart';
 import 'package:sestate/core/localization/translation.dart';
 import 'package:sestate/core/middlewere/midlleware.dart';
 import 'package:sestate/core/services/services.dart';
-import 'package:sestate/data/statics/static.dart';
 import 'package:sestate/view/screens/add_place/add_place.dart';
 import 'package:sestate/view/screens/auth/login.dart';
 import 'package:sestate/view/screens/auth/signup.dart';
@@ -19,6 +19,7 @@ import 'view/screens/search/search.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+  await determinePosition();
   //ScreenUtil.init();
 
   runApp(const MyApp());
