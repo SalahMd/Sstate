@@ -32,9 +32,6 @@ Future<Position> determinePosition() async {
       desiredAccuracy: LocationAccuracy.high);
   print(position);
 
-  List<Placemark> placemarks =
-      await placemarkFromCoordinates(position.latitude, position.longitude);
-  print("Your city is :"+"${placemarks[0].locality}");
-  print("\nYour street is :"+"${placemarks[0].street}");
-  return await Geolocator.getCurrentPosition();
+  
+  return position;
 }

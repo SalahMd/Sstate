@@ -9,7 +9,7 @@ class SignUpBack {
       "first_name":firstName,
       "last_name":lastName,
       "email":email,
-      "phone_number":phone,
+      //"phone_number":phone,
       "password":password,
     },true);
     return response.fold((l) => l, (r) => r);

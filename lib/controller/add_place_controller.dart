@@ -94,8 +94,7 @@ class AddPlaceControllerImpl extends AddPlaceController {
 
   @override
   addPlace() {
-    // TODO: implement addPlace
-    throw UnimplementedError();
+    
   }
 
   @override

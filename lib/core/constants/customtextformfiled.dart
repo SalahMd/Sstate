@@ -59,7 +59,7 @@ class Customtextformfiled extends StatelessWidget {
               style: const TextStyle(fontSize: 16),
             ),
           ),
-          suffixIcon: InkWell(
+          suffixIcon: GestureDetector(
             onTap: ontapicon,
             child: Icon(
               icondata,

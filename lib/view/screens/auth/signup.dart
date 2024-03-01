@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:sestate/controller/auth/signup_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
+import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/functions/dimenesions.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -101,8 +103,24 @@ class SignUp extends StatelessWidget {
                 ispassword: controller.isshown,
                 ontapicon: controller.showPassword(),
               ),
-              SizedBox(
-                height: 30.h,
+              GestureDetector(
+                onTap: () {
+                  //controller.logIn();
+                },
+                child: Container(
+                  width: Dimensions.screenwidth(context),
+                  height: 40.h,
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: AppColors.primaryColor,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    "confirm".tr,
+                    style: TextStyles.w50018White,
+                  ),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

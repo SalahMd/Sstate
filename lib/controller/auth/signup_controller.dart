@@ -11,7 +11,7 @@ abstract class SignUpController extends GetxController{
   showPassword();
 }
 class SignUpControllerImpl extends SignUpController{
-late TextEditingController firstName;
+  late TextEditingController firstName;
   late TextEditingController phoneController;
   late TextEditingController lastName;
   late TextEditingController passwordController;

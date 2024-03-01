@@ -10,6 +10,7 @@ import 'package:sestate/core/services/services.dart';
 import 'package:sestate/view/screens/add_place/add_place.dart';
 import 'package:sestate/view/screens/auth/login.dart';
 import 'package:sestate/view/screens/auth/signup.dart';
+import 'package:sestate/view/screens/category.dart';
 import 'package:sestate/view/screens/choose_language.dart';
 import 'package:sestate/view/screens/navigation_bar/nav_bar.dart';
 import 'package:sestate/view/screens/onboarding.dart';
@@ -19,7 +20,6 @@ import 'view/screens/search/search.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
-  await determinePosition();
   //ScreenUtil.init();
 
   runApp(const MyApp());
@@ -71,6 +71,7 @@ class MyApp extends StatelessWidget {
               page: () => ChooseLanguage(),
               middlewares: [MiddleWare()]),
           GetPage(name: "/Login", page: () => Login()),
+          GetPage(name: "/ChooseLanguage", page: () => ChooseLanguage()),
           GetPage(name: "/OnBoarding", page: () => onbording()),
           GetPage(name: "/SignUp", page: () => SignUp()),
           GetPage(name: "/Search", page: () => Search()),

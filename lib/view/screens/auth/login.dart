@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/auth/login_controller.dart';
@@ -62,8 +63,8 @@ class Login extends StatelessWidget {
                       icondata: Icons.phone,
                       controller: controller.phoneController,
                       min: 10,
-                      max: 10,
-                      isnumber: true,
+                      max: 20,
+                      isnumber: false,
                       ispassword: false),
                   SizedBox(
                     height: 5.h,
@@ -80,7 +81,7 @@ class Login extends StatelessWidget {
                     ontapicon: controller.showPassword(),
                   ),
                   SizedBox(height: 50.h),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       controller.logIn();
                     },

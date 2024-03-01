@@ -6,14 +6,10 @@ import 'package:sestate/controller/home_page_controller.dart';
 import 'package:sestate/core/class/statusrequest.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/home/category_design.dart';
 import 'package:sestate/view/screens/home/shimmer_home_page.dart';
 import 'package:sestate/view/screens/home/top_bar.dart';
 import 'package:sestate/view/widgets/item_design.dart';
-import 'package:sestate/view/widgets/shimmer_item.dart';
-import 'package:sestate/view/widgets/shimmer_item_design.dart';
-import 'package:shimmer/shimmer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,6 +27,8 @@ class HomePage extends StatelessWidget {
                     onTapIcon: () {
                       Get.toNamed("AddPlace");
                     },
+                    city: controller.placemarks[0].locality,
+                    street: controller.placemarks[0].street,
                   ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
                   SizedBox(
                     height: 15.h,
@@ -55,10 +53,16 @@ class HomePage extends StatelessWidget {
                       CategoryDesign(
                         title: "apartments".tr,
                         image: AppImages.cat1,
+                        onTap:  () {
+                          controller.goToCategorie("apartments");
+                        },
                       ),
                       CategoryDesign(
                         title: "offices".tr,
                         image: AppImages.cat3,
+                        onTap: () {
+                          controller.goToCategorie("offices");
+                        },
                       )
                     ],
                   ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
@@ -68,8 +72,14 @@ class HomePage extends StatelessWidget {
                       CategoryDesign(
                         title: "properties".tr,
                         image: AppImages.cat4,
+                        onTap: () {
+                          controller.goToCategorie("properties");
+                        },
                       ),
-                      CategoryDesign(title: "clinics".tr, image: AppImages.cat2)
+                      CategoryDesign(
+                          title: "clinics".tr, image: AppImages.cat2,onTap: () {
+                            controller.goToCategorie("clinics");
+                          },)
                     ],
                   ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
                   SizedBox(
@@ -124,7 +134,7 @@ class HomePage extends StatelessWidget {
                         ],
                       )).animate().fade(duration: 500.ms).slideY(begin: 0.3),
                 ])
-              : ShimmerHomePage(),
+              : const ShimmerHomePage(),
         ),
       ),
     );

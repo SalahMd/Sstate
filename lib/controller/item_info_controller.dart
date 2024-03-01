@@ -16,8 +16,7 @@ class ItemInfoControllerImpl extends ItemInfoController {
   late PageController imageController;
   @override
   dispData() {
-    // TODO: implement dispData
-    throw UnimplementedError();
+    
   }
 
   @override
@@ -49,7 +48,6 @@ class ItemInfoControllerImpl extends ItemInfoController {
   
   @override
   makeDate() {
-    // TODO: implement makeDate
-    throw UnimplementedError();
+    
   }
 }

@@ -80,7 +80,9 @@ class Translation extends Translations {
           "addimages":"أضف الصور",
           "can'taddimages":"لايمكن إضافة أكثر من 10 صور",
           "placetype":"نوع العقار",
-          "price":"السعر"
+          "price":"السعر",
+          "m":"م",
+          "fillyourplaceinfo":"إملئ معلومات العقار"
 
         },
         "en": {
@@ -161,6 +163,9 @@ class Translation extends Translations {
           "can'taddimages":"You can't add more than 10 images",
           "placetype":"Place Type",
           "price":"Price",
+          "m":"M",
+          "fillyourplaceinfo":"Fill your place information"
+          
           
         }
       };

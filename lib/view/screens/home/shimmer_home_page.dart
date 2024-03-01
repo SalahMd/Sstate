@@ -16,7 +16,7 @@ class ShimmerHomePage extends StatelessWidget {
         SizedBox(height: 20.h,),
         SafeArea(
             child: Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 5),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
               child: ShimmerItem(
                         height: 22,
                         width: 100,
@@ -26,7 +26,7 @@ class ShimmerHomePage extends StatelessWidget {
           height: 10.h,
         ),
        Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 5),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 22,
             width: 80,
@@ -44,7 +44,7 @@ class ShimmerHomePage extends StatelessWidget {
           height: 20.h,
         ),
        Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 5),
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 30,
             width: 120,
@@ -58,11 +58,11 @@ class ShimmerHomePage extends StatelessWidget {
           children: [
             ShimmerItem(
               height: 80,
-              width: Dimensions.screenwidth(context) / 3,
+              width: Dimensions.screenwidth(context) / 2.8,
             ),
             ShimmerItem(
               height: 80,
-              width: Dimensions.screenwidth(context) / 3,
+              width: Dimensions.screenwidth(context) / 2.8,
             ),
           ],
         ),
@@ -72,11 +72,11 @@ class ShimmerHomePage extends StatelessWidget {
           children: [
             ShimmerItem(
               height: 80,
-              width: Dimensions.screenwidth(context) / 3,
+              width: Dimensions.screenwidth(context) / 2.8,
             ),
             ShimmerItem(
               height: 80,
-              width: Dimensions.screenwidth(context) / 3,
+              width: Dimensions.screenwidth(context) / 2.8,
             ),
           ],
         ),
@@ -90,11 +90,11 @@ class ShimmerHomePage extends StatelessWidget {
         
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 30.h),
-          ShimmerItemDesign(),
+          const ShimmerItemDesign(),
           SizedBox(height: 30.h),
-          ShimmerItemDesign(),
+          const ShimmerItemDesign(),
           SizedBox(height: 30.h),
-          ShimmerItemDesign(),
+          const ShimmerItemDesign(),
         ]),
       ],
     ));

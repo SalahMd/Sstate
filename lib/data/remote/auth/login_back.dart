@@ -6,7 +6,7 @@ class LoginData {
   LoginData(this.crud);
   postData(String phone, String password) async {
     var response = await crud.postData(AppLinks.logIn, {
-      "phone_number":phone,
+      "email":phone,
       "password":password,
     },true);
     return response.fold((l) => l, (r) => r);

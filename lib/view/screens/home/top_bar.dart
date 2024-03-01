@@ -8,7 +8,9 @@ import 'package:sestate/core/functions/dimenesions.dart';
 
 class TopBar extends StatelessWidget {
   final void Function() onTapIcon;
-  TopBar({super.key, required this.onTapIcon});
+  final String? city;
+  final String? street;
+  TopBar({super.key, required this.onTapIcon, required this.city, this.street});
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +44,11 @@ class TopBar extends StatelessWidget {
                     size: 25,
                   ),
                   Text(
-                    "Damascus",
+                    city!,
                     style: TextStyles.w50020Black,
                   ),
                   Text(
-                    ",Syria",
+                    ", "+street!,
                     style: TextStyles.w40015grey,
                   )
                 ],

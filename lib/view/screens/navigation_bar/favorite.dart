@@ -31,6 +31,7 @@ class Favorite extends StatelessWidget {
           ),
           Container(
             height: 600,
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
             child: ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 2,

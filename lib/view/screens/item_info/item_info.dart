@@ -158,13 +158,13 @@ class ItemInfo extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             MainInfo(
-                                title: "bedrooms".tr,
+                                title: "rooms".tr,
                                 num: 3,
                                 icon: Icons.bed_outlined),
                             MainInfo(
-                                title: "livingrooms".tr,
-                                num: 1,
-                                icon: Icons.living_outlined)
+                                title: "space".tr,
+                                num: 222,
+                                icon: Icons.space_bar_outlined)
                           ],
                         ),
                         Row(
