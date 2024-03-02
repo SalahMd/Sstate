@@ -13,4 +13,14 @@ class AppAnimations {
     fit: BoxFit.fill,
     
   );
+   static LottieBuilder lightMode = LottieBuilder.asset(
+    "$path" "lightmode.json",
+    fit: BoxFit.fill,
+    
+  );
+   static LottieBuilder darkMode = LottieBuilder.asset(
+    "$path" "darkmode.json",
+    fit: BoxFit.fill,
+    
+  );
 }

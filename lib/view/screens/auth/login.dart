@@ -16,7 +16,6 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(LogInControllerImpl());
     return Scaffold(
-      backgroundColor: lightAppColors.backGround,
       body: GetBuilder<LogInControllerImpl>(builder: (controller) {
         return Form(
           key: controller.formState,

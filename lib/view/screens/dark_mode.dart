@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sestate/controller/dark_mode.dart';
+import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/widgets/divider.dart';
@@ -29,8 +32,7 @@ class DarkMode extends StatelessWidget {
               controller.changeMode("dark");
             },
             child: Container(
-                height: 55.h,
-                // color: Theme.of(context).colorScheme.primaryContainer,
+                height: 60.h,
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,10 +41,15 @@ class DarkMode extends StatelessWidget {
                         "darkmode".tr,
                         style: TextStyles.bold22Black,
                       ),
-                      SizedBox(
+                      Padding(
+                        padding: EdgeInsetsDirectional.only(end: 7.w),
+                        child: SizedBox(
                           width: 35.w,
                           height: 35.h,
-                          child: Image.asset(AppImages.arabicimage)),
+                          //child: Image.asset(AppImages.arabicimage),
+                          child: AppAnimations.darkMode,
+                        ),
+                      ),
                     ])),
           ),
           const MyDivider(),
@@ -61,9 +68,11 @@ class DarkMode extends StatelessWidget {
                     style: TextStyles.bold22Black,
                   ),
                   SizedBox(
-                      width: 35.w,
-                      height: 35.h,
-                      child: Image.asset(AppImages.englishimage))
+                    width: 50.w,
+                    height: 50.h,
+                    // child: Image.asset(AppImages.englishimage),
+                    child: AppAnimations.lightMode,
+                  )
                 ],
               ),
             ),

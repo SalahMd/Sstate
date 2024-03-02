@@ -36,6 +36,7 @@ class CategoryDesign extends StatelessWidget {
                   height: 22.h,
                   child: Image.asset(
                     image,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                     fit: BoxFit.fill,
                   ),
                 ),

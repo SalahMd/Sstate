@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
@@ -83,9 +84,12 @@ class ShimmerHomePage extends StatelessWidget {
          SizedBox(
           height: 20.h,
         ),
-        ShimmerItem(
-          height: 30,
-          width: 120,
+        Padding(
+          padding: EdgeInsetsDirectional.only(start: 5.w),
+          child: ShimmerItem(
+            height: 30,
+            width: 120,
+          ),
         ),
         
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/profile_controller.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/screens/dark_mode.dart';
 import 'package:sestate/view/widgets/divider.dart';
@@ -41,7 +37,6 @@ class Profile extends StatelessWidget {
                   Icon(
                     Icons.place_outlined,
                     size: 25,
-                    color: lightAppColors.primaryColor,
                   ),
                   Text(
                     "Damascus,Syria   ",

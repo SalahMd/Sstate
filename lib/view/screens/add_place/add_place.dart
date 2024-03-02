@@ -11,6 +11,7 @@ import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/add_place/add_images.dart';
 import 'package:sestate/view/screens/add_place/additional_info.dart';
 import 'package:sestate/view/screens/add_place/drop_down_widget.dart';
+import 'package:sestate/view/screens/add_place/rent_or_sale.dart';
 import 'package:sestate/view/screens/add_place/room_widgets.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
@@ -44,6 +45,8 @@ class AddPlace extends StatelessWidget {
                 child: Text("fillyourplaceinfo".tr,
                     style: TextStyles.w50022Black)),
           ).animate().fade(duration: 1000.ms).saturate(),
+          SizedBox(height: 20.h),
+          RentOrSaleChooser().animate().fade(duration: 1000.ms).saturate(),
           SizedBox(height: 20.h),
           DropDownWidget(
             controller: controller,

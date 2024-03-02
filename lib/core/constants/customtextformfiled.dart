@@ -37,6 +37,7 @@ class Customtextformfiled extends StatelessWidget {
       margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
       child: TextFormField(
         obscureText: ispassword,
+        style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
         keyboardType: isnumber
             ? const TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,
@@ -48,7 +49,11 @@ class Customtextformfiled extends StatelessWidget {
         decoration: InputDecoration(
           enabled: true,
           hintText: hinttext,
-          hintStyle: const TextStyle(fontSize: 17),
+          
+          labelStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+          hintStyle: const TextStyle(fontSize: 17, color: Colors.grey), // Set hint text color
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -56,14 +61,15 @@ class Customtextformfiled extends StatelessWidget {
             margin: const EdgeInsets.only(left: 5, right: 5),
             child: Text(
               labelText,
-              style: const TextStyle(fontSize: 16),
+              style:  TextStyle(fontSize: 16,color: Theme.of(context).colorScheme.onSurface,),
             ),
           ),
+          
           suffixIcon: GestureDetector(
             onTap: ontapicon,
             child: Icon(
               icondata,
-              color: lightAppColors.primaryColor,
+             
             ),
           ),
           focusedBorder: isBorder == null

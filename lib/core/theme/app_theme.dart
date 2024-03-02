@@ -15,15 +15,17 @@ class AppTheme {
     surface: Color.fromARGB(255, 226, 45, 45),
     onSurface: Color(0xFFF3F3F3),
     // surfaceVariant: Color.fromARGB(255, 95, 29, 196),
-    // onSurfaceVariant: Color.fromARGB(255, 125, 23, 228),
+     onSurfaceVariant: Color.fromARGB(255, 255, 255, 255),
   );
 
   static ColorScheme lightTheme = ColorScheme.light(
     primary: lightAppColors.primaryColor,
     primaryContainer: lightAppColors.whiteColor,
+    onPrimaryContainer: lightAppColors.blackColor,
     background: lightAppColors.backGround,
     //onBackground: Color.fromARGB(255, 249, 28, 28),
-    
+    onSurface: Color.fromARGB(255, 20, 20, 20),
+    onSurfaceVariant: Color.fromARGB(255, 1, 1, 1),
   );
   static final light = ThemeData(
       useMaterial3: true,

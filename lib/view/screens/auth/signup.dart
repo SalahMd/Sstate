@@ -14,7 +14,6 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignUpControllerImpl());
     return Scaffold(
-      backgroundColor: lightAppColors.backGround,
       body: GetBuilder<SignUpControllerImpl>(builder: (controller) {
         return Form(
           key: controller.formState,
