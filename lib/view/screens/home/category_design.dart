@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sestate/core/constants/colors.dart';
+import 'package:get/get.dart';
+
 import 'package:sestate/core/constants/textstyles.dart';
 
 class CategoryDesign extends StatelessWidget {
   final String title;
   final String image;
   final void Function() onTap;
-  CategoryDesign({super.key, required this.title, required this.image, required this.onTap});
+  CategoryDesign(
+      {super.key,
+      required this.title,
+      required this.image,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,7 @@ class CategoryDesign extends StatelessWidget {
             height: 80.h,
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             decoration: BoxDecoration(
-                color: AppColors.whiteColor,
+                color: Theme.of(context).colorScheme.primaryContainer,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: []),
             child: Row(

@@ -23,7 +23,7 @@ class ListTiles extends StatelessWidget {
           height: circleSize,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
-              color: AppColors.primaryColor),
+              color: lightAppColors.primaryColor),
           child: Icon(
             leadingIcon,
             color: Colors.white,
@@ -32,7 +32,8 @@ class ListTiles extends StatelessWidget {
         width: circleSize,
         height: circleSize,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100), color: Colors.grey[300]),
+          borderRadius: BorderRadius.circular(100),
+        ),
         child: Icon(trailingIcon),
       ),
       title: Padding(

@@ -40,7 +40,7 @@ class TopBar extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.location_on,
-                    color: AppColors.primaryColor,
+                    
                     size: 25,
                   ),
                   Text(
@@ -48,7 +48,7 @@ class TopBar extends StatelessWidget {
                     style: TextStyles.w50020Black,
                   ),
                   Text(
-                    ", "+street!,
+                    ", " + street!,
                     style: TextStyles.w40015grey,
                   )
                 ],
@@ -65,7 +65,7 @@ class TopBar extends StatelessWidget {
                   height: 50.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: AppColors.whiteColor,
+                      color: Theme.of(context).colorScheme.primaryContainer,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.2),
@@ -99,7 +99,7 @@ class TopBar extends StatelessWidget {
                   width: 40.w,
                   height: 40.h,
                   decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
+                      color: Theme.of(context).colorScheme.primaryContainer,
                       boxShadow: const [BoxShadow(color: Colors.black)],
                       borderRadius: BorderRadius.circular(12)),
                   child: Icon(

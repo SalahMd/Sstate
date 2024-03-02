@@ -21,7 +21,7 @@ class AddPlace extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(AddPlaceControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<AddPlaceControllerImpl>(builder: (controller) {
         return SingleChildScrollView(
             child: Column(children: [
@@ -120,7 +120,7 @@ class AddPlace extends StatelessWidget {
                       ),
                       height: 45.h,
                       decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
+                          color: Theme.of(context).colorScheme.primaryContainer,
                           borderRadius: BorderRadius.circular(20)),
                       child: Customtextformfiled(
                         hinttext: "",
@@ -154,7 +154,7 @@ class AddPlace extends StatelessWidget {
                       ),
                       height: 45.h,
                       decoration: BoxDecoration(
-                          color: AppColors.whiteColor,
+                          color: Theme.of(context).colorScheme.primaryContainer,
                           borderRadius: BorderRadius.circular(20)),
                       child: Customtextformfiled(
                         hinttext: "",
@@ -214,7 +214,7 @@ class AddPlace extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: AppColors.primaryColor,
+                  color: lightAppColors.primaryColor,
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 "confirm".tr,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/dark_mode.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/widgets/divider.dart';
@@ -14,7 +13,6 @@ class DarkMode extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(DarkModeImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
       body: GetBuilder<DarkModeImpl>(
         builder: (controller) => Column(children: [
           SizedBox(
@@ -28,11 +26,11 @@ class DarkMode extends StatelessWidget {
           SizedBox(height: 50.h),
           GestureDetector(
             onTap: () {
-              controller.changeMode(true);
-              print("darkmode".tr);
+              controller.changeMode("dark");
             },
             child: Container(
                 height: 55.h,
+                // color: Theme.of(context).colorScheme.primaryContainer,
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,26 +39,20 @@ class DarkMode extends StatelessWidget {
                         "darkmode".tr,
                         style: TextStyles.bold22Black,
                       ),
-                      Container(
+                      SizedBox(
                           width: 35.w,
                           height: 35.h,
                           child: Image.asset(AppImages.arabicimage)),
                     ])),
           ),
-          MyDivider(),
+          const MyDivider(),
           GestureDetector(
             onTap: () {
-              controller.changeMode(false);
-              // Get.back();
+              controller.changeMode("light");
             },
             child: Container(
               height: 60.h,
-              //margin: EdgeInsets.symmetric(horizontal: 15),
               padding: EdgeInsets.symmetric(horizontal: 20),
-              // decoration: BoxDecoration(
-              //   borderRadius: BorderRadius.circular(20),
-              //   color: AppColors.primaryColor,
-              // ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -68,7 +60,7 @@ class DarkMode extends StatelessWidget {
                     "lightmode".tr,
                     style: TextStyles.bold22Black,
                   ),
-                  Container(
+                  SizedBox(
                       width: 35.w,
                       height: 35.h,
                       child: Image.asset(AppImages.englishimage))

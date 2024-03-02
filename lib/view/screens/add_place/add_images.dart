@@ -44,13 +44,15 @@ class AddImages extends StatelessWidget {
                               margin: EdgeInsets.symmetric(horizontal: 10.w),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: AppColors.whiteColor,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Icon(
                                 Icons.add,
                                 size: 35,
-                                color: AppColors.greyColor,
+                                color: lightAppColors.greyColor,
                               ),
                             ),
                           )

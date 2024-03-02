@@ -10,7 +10,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.backGround,
+       
         body: Column(children: [
           SafeArea(
             child: Container(
@@ -31,7 +31,7 @@ class Search extends StatelessWidget {
                       child: Icon(
                         Icons.search,
                         size: 25,
-                        color: AppColors.primaryColor,
+                       
                       ),
                     ),
                     prefixIcon: InkWell(
@@ -41,7 +41,7 @@ class Search extends StatelessWidget {
                       child: Icon(
                         Icons.arrow_back,
                         size: 25,
-                        color: AppColors.primaryColor,
+                        
                       ),
                     ),
                     enabled: true,

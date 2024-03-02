@@ -8,7 +8,8 @@ class MainInfo extends StatelessWidget {
   final String title;
   final int num;
   final IconData icon;
-  const MainInfo({super.key, required this.title, required this.num, required this.icon});
+  const MainInfo(
+      {super.key, required this.title, required this.num, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,9 @@ class MainInfo extends StatelessWidget {
         height: 60.h,
         margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: AppColors.whiteColor),
+          borderRadius: BorderRadius.circular(10),
+          color: Theme.of(context).colorScheme.primaryContainer,
+        ),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Icon(icon),
           SizedBox(
@@ -37,7 +39,7 @@ class MainInfo extends StatelessWidget {
             width: 17.w,
             height: 20.h,
             decoration: BoxDecoration(
-                color: AppColors.primaryColor,
+                color: lightAppColors.primaryColor,
                 borderRadius: BorderRadius.circular(20)),
             child: Text(
               num.toString(),

@@ -14,7 +14,7 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
     // Get.put(HomePageControllerImp());
     return GetBuilder<HomePageControllerImpl>(
       builder: (controllerImp) => Scaffold(
-        backgroundColor: AppColors.whiteColor,
+        backgroundColor: lightAppColors.whiteColor,
         body: Column(
           children: [
             SizedBox(

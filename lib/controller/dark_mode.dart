@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/services/services.dart';
 
 abstract class DarkMode extends GetxController {
-  changeMode(bool isDark);
+  changeMode(String theme);
 }
 
 class DarkModeImpl extends DarkMode {
   Myservices myServices = Get.find();
-  @override
-  changeMode(bool isDark) {
-    if (isDark) {
-      //myServices.sharedPreferences.setBool("dark", true);
-      AppColors.backGround = Color.fromARGB(255, 37, 36, 36);
-      AppColors.whiteColor = Color.fromARGB(255, 50, 49, 49);
-      AppColors.blackColor = Colors.white;
+  late ThemeMode themeMode;
+
+  changeMode(String theme) {
+    ThemeMode mode;
+    if (theme == "dark") {
+      mode = ThemeMode.dark;
     } else {
-     // myServices.sharedPreferences.setBool("dark", false);
-      AppColors.backGround = Color.fromARGB(250, 24, 25, 38);
-      AppColors.whiteColor = Colors.white;
-       AppColors.blackColor = Colors.black;
+      mode = ThemeMode.light;
     }
+    myServices.sharedPreferences.setString("mode", theme);
+    Get.changeThemeMode(mode);
     update();
-    Get.back();
+  }
+
+  @override
+  void onInit() {
+    String? sharedpreflang = myServices.sharedPreferences.getString("mode");
+    print(sharedpreflang);
+    if (sharedpreflang == "dark") {
+      themeMode = ThemeMode.dark;
+    } else if (sharedpreflang == "light") {
+      themeMode = ThemeMode.light;
+    } else {
+      themeMode = ThemeMode.system;
+    }
+    
+    super.onInit();
   }
 }

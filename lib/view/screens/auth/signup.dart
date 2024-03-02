@@ -14,7 +14,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignUpControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      backgroundColor: lightAppColors.backGround,
       body: GetBuilder<SignUpControllerImpl>(builder: (controller) {
         return Form(
           key: controller.formState,
@@ -32,7 +32,7 @@ class SignUp extends StatelessWidget {
               Icon(
                 Icons.person,
                 size: 120,
-                color: AppColors.primaryColor,
+                color: lightAppColors.primaryColor,
               ),
               SizedBox(height: 20.h),
               Row(
@@ -114,7 +114,7 @@ class SignUp extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
+                      color: lightAppColors.primaryColor,
                       borderRadius: BorderRadius.circular(20)),
                   child: Text(
                     "confirm".tr,

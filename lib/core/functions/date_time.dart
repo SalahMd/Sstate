@@ -5,7 +5,7 @@ Future<String?> selectDate(BuildContext context) async {
   DateTime? picked = await showDatePicker(
     context: context,
     firstDate: DateTime.now(),
-    barrierColor: AppColors.primaryColor,
+    barrierColor: lightAppColors.primaryColor,
     lastDate: DateTime(2025),
     initialDate: DateTime.now(),
   );

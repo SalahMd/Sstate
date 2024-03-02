@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sestate/controller/dark_mode.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/functions/geo_locator.dart';
 import 'package:sestate/core/localization/changelanguage.dart';
 import 'package:sestate/core/localization/translation.dart';
 import 'package:sestate/core/middlewere/midlleware.dart';
 import 'package:sestate/core/services/services.dart';
+import 'package:sestate/core/theme/app_theme.dart';
 import 'package:sestate/view/screens/add_place/add_place.dart';
 import 'package:sestate/view/screens/auth/login.dart';
 import 'package:sestate/view/screens/auth/signup.dart';
@@ -31,39 +33,49 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
     ChangeLanguage controller = Get.put(ChangeLanguage());
+    DarkModeImpl themeController = Get.put(DarkModeImpl());
     return ScreenUtilInit(
       designSize: const Size(320, 790),
       child: GetMaterialApp(
         locale: controller.language,
         translations: Translation(),
-
-        //darkTheme: ThemeData(),
-        theme: ThemeData(
-            //brightness: Brightness.dark,
-            textTheme: TextTheme(
-          headline1: TextStyle(
-              color: AppColors.blackColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 23.sp,
-              fontFamily:
-                  controller.language == "en" ? "PlayfairDisplay" : "Cairo"),
-          headline2: TextStyle(
-              color: AppColors.whiteColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 21.sp,
-              fontFamily:
-                  controller.language == "en" ? "PlayfairDisplay" : "Cairo"),
-          bodyText1: TextStyle(
-              color: Colors.grey[700],
-              fontWeight: FontWeight.w400,
-              fontSize: 17.sp,
-              height: 1.5),
-          bodyText2: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 15.sp,
-          ),
-        )),
+        themeMode:themeController.themeMode,
+        theme: AppTheme.light,
+        darkTheme: AppTheme.dark,
+        // theme: ThemeData(
+        //     primaryColor: AppColors.primaryColor,
+        //     backgroundColor: AppColors.whiteColor,
+        //     cardColor: AppColors.whiteColor,
+        //     canvasColor:AppColors.whiteColor,
+        //     primaryColorLight: AppColors.primaryColor,
+        //     dialogBackgroundColor: AppColors.whiteColor,
+        //     scaffoldBackgroundColor: AppColors.backGround,
+        //     //brightness: Brightness.dark,
+        //     textTheme: TextTheme(
+        //       headline1: TextStyle(
+        //           fontWeight: FontWeight.bold,
+        //           fontSize: 23.sp,
+        //           fontFamily: controller.language == "en"
+        //               ? "PlayfairDisplay"
+        //               : "Cairo"),
+        //       headline2: TextStyle(
+        //           color: Get.theme.cardColor,
+        //           fontWeight: FontWeight.bold,
+        //           fontSize: 21.sp,
+        //           fontFamily: controller.language == "en"
+        //               ? "PlayfairDisplay"
+        //               : "Cairo"),
+        //       bodyText1: TextStyle(
+        //           color: Colors.grey[700],
+        //           fontWeight: FontWeight.w400,
+        //           fontSize: 17.sp,
+        //           height: 1.5),
+        //       bodyText2: TextStyle(
+                
+        //         fontWeight: FontWeight.bold,
+        //         fontSize: 15.sp,
+        //       ),
+        //     )),
         debugShowCheckedModeBanner: false,
         getPages: [
           GetPage(

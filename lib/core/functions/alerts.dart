@@ -73,7 +73,7 @@ Future<bool> popUp(
     height: 600.h,
     // padding: EdgeInsets.symmetric(horizontal: 10),
     decoration: BoxDecoration(
-      color: AppColors.backGround,
+      color: lightAppColors.backGround,
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(25),
         topRight: Radius.circular(25),
@@ -92,7 +92,7 @@ Future<bool> popUp(
                 height: 8.h,
                 margin: EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
-                    color: AppColors.greyColor,
+                    color: lightAppColors.greyColor,
                     borderRadius: BorderRadius.circular(50)),
               ),
             )),
@@ -167,7 +167,7 @@ Future<bool> popUp(
             margin: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: AppColors.primaryColor,
+                color: lightAppColors.primaryColor,
                 borderRadius: BorderRadius.circular(20)),
             child: Text(
               "confirm".tr,

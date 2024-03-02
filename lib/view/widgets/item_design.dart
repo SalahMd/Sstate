@@ -34,7 +34,7 @@ class ItemDesign extends StatelessWidget {
         width: Dimensions.screenwidth(context),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: AppColors.whiteColor,
+          color: Theme.of(context).colorScheme.primaryContainer,
           boxShadow: [],
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -60,7 +60,7 @@ class ItemDesign extends StatelessWidget {
                 width: 90.w,
                 height: 30.h,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: Theme.of(context).colorScheme.primaryContainer,
                     borderRadius: BorderRadius.circular(20)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ class ItemDesign extends StatelessWidget {
                       height: 10.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Colors.green),
+                          color: lightAppColors.greenColor),
                     ),
                     SizedBox(
                       width: 10.w,
@@ -129,7 +129,7 @@ class ItemDesign extends StatelessWidget {
                 width: 65.w,
                 height: 40.h,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: Theme.of(context).colorScheme.background,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 0.2)),
                 child: Row(
@@ -150,7 +150,7 @@ class ItemDesign extends StatelessWidget {
                 width: 65.w,
                 height: 40.h,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: Theme.of(context).colorScheme.background,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 0.2)),
                 child: Row(
@@ -171,7 +171,7 @@ class ItemDesign extends StatelessWidget {
                 width: 65.w,
                 height: 40.h,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: Theme.of(context).colorScheme.background,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 0.2)),
                 child: Row(
@@ -192,7 +192,7 @@ class ItemDesign extends StatelessWidget {
                 width: 65.w,
                 height: 40.h,
                 decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
+                    color: Theme.of(context).colorScheme.background,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 0.2)),
                 child: Row(

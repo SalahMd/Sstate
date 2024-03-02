@@ -16,8 +16,7 @@ class ChipsChoices extends StatelessWidget {
     return GetBuilder<SearchControllerImpl>(
       builder: (controller) => ChipsChoice<String>.multiple(
         value: tags,
-        
-        spinnerColor: AppColors.primaryColor,
+        spinnerColor: lightAppColors.primaryColor,
         onChanged: (List<String> value) {
           tags = value;
           controller.update();

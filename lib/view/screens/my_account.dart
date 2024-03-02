@@ -9,7 +9,7 @@ class MyAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      backgroundColor: lightAppColors.backGround,
       body: SafeArea(
         child: Column(children: [
           SizedBox(

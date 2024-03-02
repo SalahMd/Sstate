@@ -12,15 +12,15 @@ class ButtomBar extends StatelessWidget {
     return GetBuilder<ButtomBarControllerImp>(
       builder: (controllerImp) => Scaffold(
         bottomNavigationBar: Container(
-          color: AppColors.primaryColor,
+          color: lightAppColors.primaryColor,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
             child: GNav(
                 selectedIndex: 1,
-                hoverColor: AppColors.whiteColor,
-                backgroundColor: AppColors.primaryColor,
+                hoverColor: lightAppColors.whiteColor,
+                backgroundColor: lightAppColors.primaryColor,
                 gap: 8.w,
-                color: AppColors.whiteColor,
+                color: lightAppColors.whiteColor,
                 activeColor: Colors.blue,
                 padding: EdgeInsets.symmetric(
                     horizontal: 10, vertical: 10), // navigation bar padding

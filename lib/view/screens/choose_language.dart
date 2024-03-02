@@ -133,7 +133,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
               margin: const EdgeInsets.symmetric(horizontal: 80),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: AppColors.primaryColor,
+                  color: lightAppColors.primaryColor,
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 "continuebutton".tr,

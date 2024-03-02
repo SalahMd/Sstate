@@ -98,7 +98,7 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                                   height: 8,
                                   margin: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
-                                      color: AppColors.primaryColor,
+                                      color: lightAppColors.primaryColor,
                                       borderRadius: BorderRadius.circular(20)),
                                 )),
                       ],

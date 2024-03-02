@@ -9,10 +9,8 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGround,
-      body: Column(children: [
-        
-      ]),
+      backgroundColor: lightAppColors.backGround,
+      body: Column(children: []),
     );
   }
 }

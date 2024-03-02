@@ -15,21 +15,21 @@ class Customtextformfiled extends StatelessWidget {
   final bool? isBorder;
   final int? maxLines;
   final void Function()? ontapicon;
-  Customtextformfiled(
-      {super.key,
-      required this.hinttext,
-      required this.labelText,
-      required this.icondata,
-      required this.controller,
-      required this.min,
-      required this.max,
-      required this.isnumber,
-      required this.ispassword,
-      this.ontapicon,
-      this.isBorder,
-      TextStyle? style,
-      this.maxLines,
-      });
+  Customtextformfiled({
+    super.key,
+    required this.hinttext,
+    required this.labelText,
+    required this.icondata,
+    required this.controller,
+    required this.min,
+    required this.max,
+    required this.isnumber,
+    required this.ispassword,
+    this.ontapicon,
+    this.isBorder,
+    TextStyle? style,
+    this.maxLines,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class Customtextformfiled extends StatelessWidget {
           hintStyle: const TextStyle(fontSize: 17),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding:
-              const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+              const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           label: Container(
             margin: const EdgeInsets.only(left: 5, right: 5),
             child: Text(
@@ -63,14 +63,14 @@ class Customtextformfiled extends StatelessWidget {
             onTap: ontapicon,
             child: Icon(
               icondata,
-              color: AppColors.primaryColor,
+              color: lightAppColors.primaryColor,
             ),
           ),
           focusedBorder: isBorder == null
               ? OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide(
-                      color: AppColors
+                      color: lightAppColors
                           .primaryColor), // Change the focused border color here
                 )
               : null,

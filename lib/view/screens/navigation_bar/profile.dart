@@ -20,7 +20,6 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ProfileControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
       body: GetBuilder<ProfileControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: Column(
@@ -42,7 +41,7 @@ class Profile extends StatelessWidget {
                   Icon(
                     Icons.place_outlined,
                     size: 25,
-                    color: AppColors.primaryColor,
+                    color: lightAppColors.primaryColor,
                   ),
                   Text(
                     "Damascus,Syria   ",

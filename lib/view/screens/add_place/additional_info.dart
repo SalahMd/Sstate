@@ -31,7 +31,7 @@ class AdditionalInfo extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           margin: EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
-              color: AppColors.whiteColor,
+              color: Theme.of(context).colorScheme.primaryContainer,
               borderRadius: BorderRadius.circular(20)),
           child: TextFormField(
             maxLines: 3,

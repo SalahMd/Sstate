@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/core/services/services.dart';
 
@@ -78,9 +77,9 @@ class AddPlaceControllerImpl extends AddPlaceController {
     ),
   ];
   //var pickedImage;
-  String dropdownValue = '1';
+  String dropdownValue = '2';
   String typeValue = '1';
-  String rentOrSale = '1';
+  String rentOrSale = '2';
   late TextEditingController location;
   String placeLocation = '';
   String placeType = '';
@@ -90,12 +89,18 @@ class AddPlaceControllerImpl extends AddPlaceController {
   StatusRequest? statusRequest;
   //String location = "";
   GlobalKey<FormState> formState = GlobalKey<FormState>();
+  String elementValue = '2'; // Assuming a default value
   //AddMedicineBack addmedicineBack = AddMedicineBack(Get.put(Crud()));
 
   @override
   addPlace() {
     
   }
+  updateDropDownValue(String? newValue) {
+  print("Dropdown Value Changed: $newValue");
+  elementValue = newValue!;
+  update();
+}
 
   @override
   void onInit() {

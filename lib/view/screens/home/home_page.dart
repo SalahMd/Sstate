@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+     // backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<HomePageControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: controller.statusRequest == StatusRequest.success

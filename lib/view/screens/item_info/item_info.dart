@@ -22,7 +22,7 @@ class ItemInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ItemInfoControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      //backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<ItemInfoControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: Column(
@@ -44,7 +44,8 @@ class ItemInfo extends StatelessWidget {
                           width: 30.w,
                           height: 35.h,
                           decoration: BoxDecoration(
-                            color: AppColors.whiteColor,
+                            color:
+                                Theme.of(context).colorScheme.primaryContainer,
                             borderRadius: BorderRadius.circular(35),
                           ),
                           child: Icon(Icons.favorite_border_outlined),
@@ -72,7 +73,9 @@ class ItemInfo extends StatelessWidget {
                             width: 30.w,
                             height: 35.h,
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                               borderRadius: BorderRadius.circular(35),
                             ),
                             child: Icon(Icons.arrow_back_ios_new_outlined),
@@ -94,7 +97,9 @@ class ItemInfo extends StatelessWidget {
                                     height: 9,
                                     margin: const EdgeInsets.all(2),
                                     decoration: BoxDecoration(
-                                        color: AppColors.primaryColor,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primaryContainer,
                                         borderRadius:
                                             BorderRadius.circular(20)),
                                   )),
@@ -196,7 +201,7 @@ class ItemInfo extends StatelessWidget {
                               width: 150.w,
                               height: 40.h,
                               decoration: BoxDecoration(
-                                  color: AppColors.whiteColor,
+                                  color: lightAppColors.whiteColor,
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(
                                   mainAxisAlignment:
@@ -204,7 +209,7 @@ class ItemInfo extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.calendar_month_outlined,
-                                      color: AppColors.primaryColor,
+                                      color: lightAppColors.primaryColor,
                                     ),
                                     Text(
                                       controller.date.toString(),
@@ -230,7 +235,7 @@ class ItemInfo extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: AppColors.primaryColor,
+                                  color: lightAppColors.primaryColor,
                                 ),
                                 child: Text(
                                   "makeappointment".tr,
@@ -250,7 +255,7 @@ class ItemInfo extends StatelessWidget {
                             margin: EdgeInsets.symmetric(vertical: 30.h),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: AppColors.greenColor,
+                              color: lightAppColors.greenColor,
                             ),
                             child: Text(
                               'confirm'.tr,

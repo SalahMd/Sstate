@@ -16,7 +16,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(LogInControllerImpl());
     return Scaffold(
-      backgroundColor: AppColors.backGround,
+      backgroundColor: lightAppColors.backGround,
       body: GetBuilder<LogInControllerImpl>(builder: (controller) {
         return Form(
           key: controller.formState,
@@ -52,11 +52,10 @@ class Login extends StatelessWidget {
                       alignment: AlignmentDirectional.centerStart,
                       child: Text(
                         "logintocontinue".tr,
-                        style:Theme.of(context).textTheme.headline1,
+                        style: Theme.of(context).textTheme.headline1,
                       ),
                     ),
                   ),
-                  
                   Customtextformfiled(
                       hinttext: "phone1".tr,
                       labelText: "phone2".tr,
@@ -91,7 +90,7 @@ class Login extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(horizontal: 40),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: AppColors.primaryColor,
+                          color: lightAppColors.primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: Text(
                         "login".tr,
