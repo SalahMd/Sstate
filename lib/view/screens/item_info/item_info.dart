@@ -201,15 +201,16 @@ class ItemInfo extends StatelessWidget {
                               width: 150.w,
                               height: 40.h,
                               decoration: BoxDecoration(
-                                  color: lightAppColors.whiteColor,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .primaryContainer,
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.calendar_month_outlined,
-                                      color: lightAppColors.primaryColor,
                                     ),
                                     Text(
                                       controller.date.toString(),
@@ -239,7 +240,7 @@ class ItemInfo extends StatelessWidget {
                                 ),
                                 child: Text(
                                   "makeappointment".tr,
-                                  style: TextStyles.w50016White,
+                                  style: TextStyles.w50017White,
                                 ))),
                       )
                     : Center(
@@ -259,7 +260,7 @@ class ItemInfo extends StatelessWidget {
                             ),
                             child: Text(
                               'confirm'.tr,
-                              style: TextStyles.w50016White,
+                              style: TextStyles.w50017White,
                             ),
                           ),
                         ),

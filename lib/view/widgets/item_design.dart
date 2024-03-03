@@ -44,7 +44,7 @@ class ItemDesign extends StatelessWidget {
                 width: Dimensions.screenwidth(context),
                 height: 200.h,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10)),
                   child: Image.asset(
@@ -75,7 +75,7 @@ class ItemDesign extends StatelessWidget {
                     SizedBox(
                       width: 10.w,
                     ),
-                    Text("For sale")
+                    Text("forsale".tr, style: TextStyles.w50016White),
                   ],
                 ),
               )

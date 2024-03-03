@@ -82,7 +82,11 @@ class Translation extends Translations {
           "placetype":"نوع العقار",
           "price":"السعر",
           "m":"م",
-          "fillyourplaceinfo":"إملئ معلومات العقار"
+          "fillyourplaceinfo":"إملئ معلومات العقار",
+          "forsale":"للبيع",
+          "forrent":"للإيجار",
+          "rentalterm":"فترة الإيجار",
+          "monthlyrent":"الإيجار الشهري"
 
         },
         "en": {
@@ -164,8 +168,11 @@ class Translation extends Translations {
           "placetype":"Place Type",
           "price":"Price",
           "m":"M",
-          "fillyourplaceinfo":"Fill your place information"
-          
+          "fillyourplaceinfo":"Fill your place information",
+          "forsale":"For sale",
+          "forrent":"For rent",
+          "rentalterm":"Rental term",
+          "monthlyrent":"Monthly rent",
           
         }
       };

@@ -18,8 +18,9 @@ class AddPlaceControllerImpl extends AddPlaceController {
   int numOfRooms = 0;
   int numOfKitchens = 0;
   int numOfBathRooms = 0;
+  int rentalTerm = 0;
   double space = 0;
-  bool sale = true;
+  bool sale = false;
   int floor = 0;
   List images = [];
   List<DropdownMenuItem<String>> streetsList = [
@@ -93,14 +94,12 @@ class AddPlaceControllerImpl extends AddPlaceController {
   //AddMedicineBack addmedicineBack = AddMedicineBack(Get.put(Crud()));
 
   @override
-  addPlace() {
-    
-  }
+  addPlace() {}
   updateDropDownValue(String? newValue) {
-  print("Dropdown Value Changed: $newValue");
-  elementValue = newValue!;
-  update();
-}
+    print("Dropdown Value Changed: $newValue");
+    elementValue = newValue!;
+    update();
+  }
 
   @override
   void onInit() {
@@ -143,6 +142,9 @@ class AddPlaceControllerImpl extends AddPlaceController {
     } else if (increasingElement == "Rooms" && numOfRooms > 0) {
       numOfRooms--;
     }
+    else if (increasingElement == "Rental term" && rentalTerm > 0) {
+      rentalTerm--;
+    }
     update();
   }
 
@@ -155,6 +157,14 @@ class AddPlaceControllerImpl extends AddPlaceController {
     } else if (increasingElement == "Rooms" && numOfRooms >= 0) {
       numOfRooms++;
     }
+    else if (increasingElement == "Rental term" && rentalTerm >= 0) {
+      rentalTerm++;
+    }
+    update();
+  }
+
+  isSale(bool isSale) {
+    sale = isSale;
     update();
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/home_page_controller.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/core/localization/changelanguage.dart';
@@ -27,23 +26,12 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
             SizedBox(height: 50.h),
             GestureDetector(
               onTap: () {
-                //controllerImp.medicines.clear();
-
                 controller.changeLang("ar");
-
-                //controllerImp.getLanguages();
                 Get.back();
-                // Get.off(HomePage());
-                // controllerImp.changePage(1);
               },
               child: Container(
-                  // margin: EdgeInsets.symmetric(horizontal: 15),
-                  height: 55.h,
+                  height: 60.h,
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(20),
-                  //   color: AppColors.primaryColor,
-                  // ),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -60,19 +48,13 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
             MyDivider(),
             GestureDetector(
               onTap: () {
-                //controllerImp.medicines.clear();
                 controller.changeLang("en");
-                // controllerImp.getLanguages();
+
                 Get.back();
               },
               child: Container(
                 height: 60.h,
-                //margin: EdgeInsets.symmetric(horizontal: 15),
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(20),
-                //   color: AppColors.primaryColor,
-                // ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

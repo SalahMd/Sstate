@@ -1,10 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sestate/controller/add_place_controller.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 
 class RoomWidgets extends StatelessWidget {
@@ -33,7 +30,7 @@ class RoomWidgets extends StatelessWidget {
                 ))),
         Expanded(
             child: Container(
-          margin: EdgeInsets.symmetric(
+          margin: const EdgeInsets.symmetric(
             horizontal: 15,
           ),
           height: 45.h,
@@ -53,7 +50,7 @@ class RoomWidgets extends StatelessWidget {
                   onTap: () {
                     controller.increaseCount(title);
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_upward_outlined,
                     size: 20,
                   ),
@@ -62,7 +59,7 @@ class RoomWidgets extends StatelessWidget {
                     onTap: () {
                       controller.decreaseCount(title);
                     },
-                    child: Icon(Icons.arrow_downward_outlined, size: 20))
+                    child: const Icon(Icons.arrow_downward_outlined, size: 20))
               ],
             )
           ]),

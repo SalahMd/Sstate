@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -46,10 +48,11 @@ class AddPlace extends StatelessWidget {
                     style: TextStyles.w50022Black)),
           ).animate().fade(duration: 1000.ms).saturate(),
           SizedBox(height: 20.h),
-          RentOrSaleChooser().animate().fade(duration: 1000.ms).saturate(),
+          RentOrSaleChooser(
+            controller: controller,
+          ).animate().fade(duration: 1000.ms).saturate(),
           SizedBox(height: 20.h),
           DropDownWidget(
-            controller: controller,
             title: "location".tr,
             choices: controller.streetsList,
             elementValue: controller.dropdownValue,
@@ -60,22 +63,10 @@ class AddPlace extends StatelessWidget {
               .fade(duration: (600.ms))
               .slideY(begin: -0.5),
           DropDownWidget(
-            controller: controller,
             title: "placetype".tr,
             choices: controller.placeTypesList,
             elementValue: controller.typeValue,
             elementValue2: controller.placeType,
-          ),
-          const MyDivider()
-              .animate()
-              .fade(duration: (600.ms))
-              .slideY(begin: -0.5),
-          DropDownWidget(
-            controller: controller,
-            title: "rentorsale".tr,
-            choices: controller.rentOrSaleList,
-            elementValue: controller.rentOrSale,
-            elementValue2: controller.rentOrSale,
           ),
           const MyDivider()
               .animate()
@@ -105,6 +96,20 @@ class AddPlace extends StatelessWidget {
               icon: Icons.bathroom_outlined,
               controller: controller),
           MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+          Visibility(
+            visible: !controller.sale,
+            child: RoomWidgets(
+                title: "rentalterm".tr,
+                numOfRooms: controller.rentalTerm,
+                icon: Icons.calendar_month_outlined,
+                controller: controller),
+          ),
+          Visibility(
+              visible: !controller.sale,
+              child: MyDivider()
+                  .animate()
+                  .fade(duration: (600.ms))
+                  .slideY(begin: -0.5)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -145,10 +150,15 @@ class AddPlace extends StatelessWidget {
               Expanded(
                   child: Padding(
                       padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
-                      child: Text(
-                        "price".tr,
-                        style: TextStyles.w50015Black,
-                      ))),
+                      child: controller.sale
+                          ? Text(
+                              "price".tr,
+                              style: TextStyles.w50015Black,
+                            )
+                          : Text(
+                              "monthlyrent".tr,
+                              style: TextStyles.w50015Black,
+                            ))),
               Expanded(
                   child: Container(
                       alignment: Alignment.center,
