@@ -11,8 +11,6 @@ class ImageView extends StatelessWidget {
   final ItemInfoControllerImpl pageController;
   int currentPage;
   final PageController controller;
-  
-
   ImageView(
       {super.key,
       required this.images,

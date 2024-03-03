@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyDivider extends StatelessWidget {
-  const MyDivider({super.key});
+   double? height = 5.h;
+   MyDivider({super.key, this.height});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
-          height: 4.h,
+          height: height,
         ),
         const Divider(
           thickness: 1,
         ),
         SizedBox(
-          height: 4.h,
+          height: height,
         ),
       ],
     );

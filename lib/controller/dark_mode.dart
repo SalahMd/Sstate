@@ -10,6 +10,7 @@ class DarkModeImpl extends DarkMode {
   Myservices myServices = Get.find();
   late ThemeMode themeMode;
 
+  @override
   changeMode(String theme) {
     ThemeMode mode;
     if (theme == "dark") {
@@ -25,7 +26,6 @@ class DarkModeImpl extends DarkMode {
   @override
   void onInit() {
     String? sharedpreflang = myServices.sharedPreferences.getString("mode");
-    print(sharedpreflang);
     if (sharedpreflang == "dark") {
       themeMode = ThemeMode.dark;
     } else if (sharedpreflang == "light") {
@@ -33,7 +33,6 @@ class DarkModeImpl extends DarkMode {
     } else {
       themeMode = ThemeMode.system;
     }
-    
     super.onInit();
   }
 }

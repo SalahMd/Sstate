@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/class/crud.dart';
 import 'package:sestate/core/class/statusrequest.dart';
@@ -15,13 +16,23 @@ abstract class LogiInController extends GetxController {
 }
 
 class LogInControllerImpl extends LogiInController {
-  GlobalKey<FormState> formState =  GlobalKey<FormState>();
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController phoneController;
   late TextEditingController passwordController;
-  LoginData loginData =  LoginData(Get.put(Crud())); //(Get.find)
+  LoginData loginData = LoginData(Get.put(Crud())); //(Get.find)
   StatusRequest? statusRequest;
   Myservices myServices = Get.find();
   bool isshown = true;
+  double containerWidth = 300.w;
+  hideButton() {
+    containerWidth = 0;
+    update();
+    Future.delayed(Duration(seconds: 2), () {
+      logIn();
+    });
+
+    update();
+  }
 
   @override
   goToHomePage() {
@@ -37,7 +48,7 @@ class LogInControllerImpl extends LogiInController {
 
   @override
   logIn() async {
-   var formdata = formState.currentState;
+    var formdata = formState.currentState;
     if (formdata!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
@@ -64,9 +75,7 @@ class LogInControllerImpl extends LogiInController {
         }
       } else {}
       update();
-    } 
-
-    
+    }
   }
 
   @override

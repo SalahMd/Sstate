@@ -14,6 +14,7 @@ class Customtextformfiled extends StatelessWidget {
   final bool ispassword;
   final bool? isBorder;
   final int? maxLines;
+  final int? letters;
   final void Function()? ontapicon;
   Customtextformfiled({
     super.key,
@@ -29,6 +30,7 @@ class Customtextformfiled extends StatelessWidget {
     this.isBorder,
     TextStyle? style,
     this.maxLines,
+    this.letters,
   });
 
   @override
@@ -45,39 +47,41 @@ class Customtextformfiled extends StatelessWidget {
           return validInput(val!, min, max);
         },
         //maxLines: maxLines,
+        maxLength: letters,
         controller: controller,
         decoration: InputDecoration(
           enabled: true,
           hintText: hinttext,
-          
           labelStyle: TextStyle(
             color: Theme.of(context).colorScheme.onSurface,
           ),
-          hintStyle: const TextStyle(fontSize: 17, color: Colors.grey), // Set hint text color
+          hintStyle: const TextStyle(
+              fontSize: 17, color: Colors.grey), // Set hint text color
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           label: Container(
             margin: const EdgeInsets.only(left: 5, right: 5),
             child: Text(
               labelText,
-              style:  TextStyle(fontSize: 16,color: Theme.of(context).colorScheme.onSurface,),
+              style: TextStyle(
+                fontSize: 16,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
           ),
-          
+
           suffixIcon: GestureDetector(
             onTap: ontapicon,
             child: Icon(
               icondata,
-             
             ),
           ),
           focusedBorder: isBorder == null
               ? OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide(
-                      color: lightAppColors
-                          .primaryColor), // Change the focused border color here
+                      color: Theme.of(context).colorScheme.onPrimaryContainer),
                 )
               : null,
         ),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
@@ -68,115 +69,113 @@ alert(String title) {
 Future<bool> popUp(
   BuildContext context,
 ) {
-  Get.bottomSheet(Container(
-    width: Dimensions.screenwidth(context),
-    height: 600.h,
-    // padding: EdgeInsets.symmetric(horizontal: 10),
-    decoration: BoxDecoration(
-      color: lightAppColors.backGround,
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(25),
-        topRight: Radius.circular(25),
-      ),
-    ),
-    child: SingleChildScrollView(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        InkWell(
-            onTap: () {
-              Get.back();
-            },
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: 60.w,
-                height: 8.h,
-                margin: EdgeInsets.symmetric(vertical: 20),
-                decoration: BoxDecoration(
-                    color: lightAppColors.greyColor,
-                    borderRadius: BorderRadius.circular(50)),
+  Get.bottomSheet(
+      Container(
+        width: Dimensions.screenwidth(context),
+        height: 600.h,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+        ),
+        child: SingleChildScrollView(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            GestureDetector(
+                onTap: () {
+                  Get.back();
+                },
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    width: 60.w,
+                    height: 8.h,
+                    margin: EdgeInsets.symmetric(vertical: 20),
+                    decoration: BoxDecoration(
+                        color: lightAppColors.greyColor,
+                        borderRadius: BorderRadius.circular(50)),
+                  ),
+                )),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
+              child: Text(
+                "filter".tr,
+                style: TextStyles.bold22Black,
               ),
-            )),
-        // SizedBox(
-        //   height: 20.h,
-        // ),
-        Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
-          child: Text(
-            "filter".tr,
-            style: TextStyles.bold22Black,
-          ),
-        ),
-        SizedBox(height: 20.h),
-        Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
-          child: Text(
-            "categories".tr,
-            style: TextStyles.w50022Black,
-          ),
-        ),
-        ChipsChoices(options: [
-          "apartments".tr,
-          "offices".tr,
-          "clinics".tr,
-          "properties".tr
-        ]),
-        //SizedBox(height:10.h),
-        Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
-          child: Text(
-            "rentorsale".tr,
-            style: TextStyles.w50022Black,
-          ),
-        ),
-        ChipsChoices(options: [
-          "rent".tr,
-          "sale".tr,
-        ]),
-        Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
-          child: Text(
-            "price".tr,
-            style: TextStyles.w50022Black,
-          ),
-        ),
-        ChipsChoices(options: [
-          "expensive".tr,
-          "medium".tr,
-          "cheap".tr,
-        ]),
-        Padding(
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
-          child: Text(
-            "space".tr,
-            style: TextStyles.w50022Black,
-          ),
-        ),
-        ChipsChoices(options: [
-          "more100m".tr,
-          "less100m".tr,
-          "more200m".tr,
-        ]),
-        InkWell(
-          onTap: () {
-            //controller.logIn();
-            Get.back();
-          },
-          child: Container(
-            width: Dimensions.screenwidth(context),
-            height: 40.h,
-            margin: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: lightAppColors.primaryColor,
-                borderRadius: BorderRadius.circular(20)),
-            child: Text(
-              "confirm".tr,
-              style: TextStyles.w50016White,
             ),
-          ),
+            SizedBox(height: 20.h),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
+              child: Text(
+                "categories".tr,
+                style: TextStyles.w50022Black,
+              ),
+            ),
+            ChipsChoices(options: [
+              "apartments".tr,
+              "offices".tr,
+              "clinics".tr,
+              "properties".tr
+            ]),
+            //SizedBox(height:10.h),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
+              child: Text(
+                "rentorsale".tr,
+                style: TextStyles.w50022Black,
+              ),
+            ),
+            ChipsChoices(options: [
+              "rent".tr,
+              "sale".tr,
+            ]),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
+              child: Text(
+                "price".tr,
+                style: TextStyles.w50022Black,
+              ),
+            ),
+            ChipsChoices(options: [
+              "expensive".tr,
+              "medium".tr,
+              "cheap".tr,
+            ]),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
+              child: Text(
+                "space".tr,
+                style: TextStyles.w50022Black,
+              ),
+            ),
+            ChipsChoices(options: [
+              "more100m".tr,
+              "less100m".tr,
+              "more200m".tr,
+            ]),
+            InkWell(
+              onTap: () {
+                //controller.logIn();
+                Get.back();
+              },
+              child: Container(
+                width: Dimensions.screenwidth(context),
+                height: 40.h,
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    color: lightAppColors.primaryColor,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text(
+                  "confirm".tr,
+                  style: TextStyles.w50016White,
+                ),
+              ),
+            ),
+          ]),
         ),
-      ]),
-    ),
-  ));
+      ));
   return Future.value(true);
 }

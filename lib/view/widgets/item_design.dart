@@ -54,10 +54,10 @@ class ItemDesign extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                alignment: Alignment.center,
+                //padding: EdgeInsets.symmetric(horizontal: 5),
+                alignment: AlignmentDirectional.centerStart,
                 margin: EdgeInsets.all(10),
-                width: 90.w,
+                width: 95.w,
                 height: 30.h,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primaryContainer,

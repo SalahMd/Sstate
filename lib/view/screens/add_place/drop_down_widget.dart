@@ -5,55 +5,51 @@ import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 
+// ignore: must_be_immutable
 class DropDownWidget extends StatelessWidget {
   final String title;
   final List<DropdownMenuItem<String>> choices;
+  final AddPlaceControllerImpl controller;
   String elementValue;
-  String elementValue2;
-  String val = "1";
 
   DropDownWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.choices,
     required this.elementValue,
-    required this.elementValue2,
-  }) : super(key: key);
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<AddPlaceControllerImpl>(
-      builder: (controller) => Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-              child: Text(title, style: TextStyles.w50015Black),
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
+            child: Text(title.tr, style: TextStyles.w50015Black),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            height: 50.h,
+            child: DropdownButton<String>(
+              borderRadius: BorderRadius.circular(15),
+              iconSize: 20,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              value: elementValue,
+              icon: const Icon(Icons.arrow_downward),
+              elevation: 16,
+              style: TextStyles.w50014Black,
+              onChanged: (String? value) {
+                controller.updateDropDownValue(value, title);
+              },
+              items: choices,
             ),
           ),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
-              height: 50.h,
-              child: DropdownButton<String>(
-                borderRadius: BorderRadius.circular(15),
-                iconSize: 20,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                value: elementValue, // Use the local variable
-                icon: const Icon(Icons.arrow_downward),
-                elevation: 16,
-                style: TextStyles.w50014Black,
-                onChanged: (String? value) {
-                  elementValue = value!;
-                  print(elementValue);
-                  controller.update();
-                },
-                items: choices,
-              ),
-            ),
-          ),
-        ],
-      ).animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-    );
+        ),
+      ],
+    ).animate().fade(duration: (600.ms)).slideY(begin: -0.5);
   }
 }

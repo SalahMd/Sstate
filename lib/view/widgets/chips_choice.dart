@@ -15,12 +15,11 @@ class ChipsChoices extends StatelessWidget {
     Get.put(SearchControllerImpl());
     return GetBuilder<SearchControllerImpl>(
       builder: (controller) => ChipsChoice<String>.multiple(
+        
         value: tags,
-        spinnerColor: lightAppColors.primaryColor,
         onChanged: (List<String> value) {
           tags = value;
           controller.update();
-          print(tags);
         },
         choiceItems: C2Choice.listFrom(
             source: options, value: (i, v) => v, label: (i, v) => v),

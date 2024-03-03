@@ -15,7 +15,6 @@ class onbording extends GetView<OnBoardingControllerImpl> {
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImpl());
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -98,7 +97,9 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                                   height: 8,
                                   margin: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
-                                      color: lightAppColors.primaryColor,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primaryContainer,
                                       borderRadius: BorderRadius.circular(20)),
                                 )),
                       ],
@@ -110,8 +111,10 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                       controller.next();
                     },
                     style: AppButtons.elevatedButtonStyle,
-                    child: Text("continuebutton".tr,
-                        style: TextStyles.textbuttonstyle),
+                    child: Text(
+                      "continuebutton".tr,
+                      style: TextStyles.w50017White,
+                    ),
                   ),
                 ],
               ))

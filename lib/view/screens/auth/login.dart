@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/auth/login_controller.dart';
@@ -7,7 +6,6 @@ import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
-import 'package:sestate/core/functions/dimenesions.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -81,19 +79,22 @@ class Login extends StatelessWidget {
                   SizedBox(height: 50.h),
                   GestureDetector(
                     onTap: () {
-                      controller.logIn();
+                      controller.hideButton();
                     },
-                    child: Container(
-                      width: Dimensions.screenwidth(context),
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 600),
+                      width: controller.containerWidth,
                       height: 40.h,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: lightAppColors.primaryColor,
                           borderRadius: BorderRadius.circular(20)),
-                      child: Text(
-                        "login".tr,
-                        style: TextStyles.w50018White,
+                      child: SingleChildScrollView(
+                        child: Text(
+                          "login".tr,
+                          style: TextStyles.w50017White,
+                        ),
                       ),
                     ),
                   ),
@@ -105,6 +106,7 @@ class Login extends StatelessWidget {
                       TextButton(
                         child: Text(
                           "signup".tr,
+                          style: TextStyle(color: Colors.blue),
                         ),
                         onPressed: () {
                           controller.goToSignup();

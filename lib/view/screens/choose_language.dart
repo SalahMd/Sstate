@@ -14,10 +14,7 @@ bool isenglish = false;
 class ChooseLanguage extends GetView<ChangeLanguage> {
   @override
   Widget build(BuildContext context) {
-    // ChangeLanguageControllerImp controllerImp =
-    //     Get.put(ChangeLanguageControllerImp());
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -39,11 +36,11 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
             height: Dimensions.screenHeight(context) / 5,
             margin: EdgeInsets.only(left: 30, right: 30),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.primaryContainer,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withOpacity(0.2),
                   spreadRadius: 3,
                   blurRadius: 3,
                   offset: Offset(0, 3),
@@ -65,7 +62,9 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                       height: Dimensions.screenHeight(context) / 13,
                       margin: EdgeInsets.only(left: 10, right: 10),
                       decoration: BoxDecoration(
-                        color: isarabic ? Colors.blue : Colors.grey[200],
+                        color: isarabic
+                            ? Colors.blue[700]
+                            : Theme.of(context).colorScheme.background,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Container(
@@ -99,7 +98,9 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                       height: Dimensions.screenHeight(context) / 13,
                       margin: EdgeInsets.only(left: 10, right: 10),
                       decoration: BoxDecoration(
-                        color: isenglish ? Colors.blue : Colors.grey[200],
+                        color: isenglish
+                            ? Colors.blue[700]
+                            : Theme.of(context).colorScheme.background,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Container(
@@ -137,7 +138,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 "continuebutton".tr,
-                style: TextStyles.w50018White,
+                style: TextStyles.w50017White,
               ),
             ),
           ),

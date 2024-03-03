@@ -229,7 +229,8 @@ class ItemInfo extends StatelessWidget {
                         },
                         child: Center(
                             child: Container(
-                                width: Dimensions.screenwidth(context),
+                                
+                                width:Dimensions.screenwidth(context),
                                 height: 45.h,
                                 margin: EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 20),
@@ -238,14 +239,19 @@ class ItemInfo extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                   color: lightAppColors.primaryColor,
                                 ),
-                                child: Text(
-                                  "makeappointment".tr,
-                                  style: TextStyles.w50017White,
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Text(
+                                    "makeappointment".tr,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyles.w50017White,
+                                  ),
                                 ))),
                       )
                     : Center(
                         child: GestureDetector(
                           onTap: () async {
+                           
                             controller.dialogConfirming(
                                 AppAnimations.question, "confirmorder".tr);
                           },

@@ -117,7 +117,7 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: Text(
                     "confirm".tr,
-                    style: TextStyles.w50018White,
+                    style: TextStyles.w50017White,
                   ),
                 ),
               ),
@@ -131,8 +131,14 @@ class SignUp extends StatelessWidget {
                       onPressed: () {
                         controller.goToLogiIn();
                       },
-                      child: Text("login".tr))
+                      child: Text(
+                        "login".tr,
+                        style: TextStyle(color: Colors.blue),
+                      ))
                 ],
+              ),
+              SizedBox(
+                height: 30.h,
               )
             ]),
           ),

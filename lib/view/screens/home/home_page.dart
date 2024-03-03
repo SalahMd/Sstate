@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImpl());
     return Scaffold(
-     // backgroundColor: Get.theme.backgroundColor,
+      // backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<HomePageControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: controller.statusRequest == StatusRequest.success
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                       CategoryDesign(
                         title: "apartments".tr,
                         image: AppImages.cat1,
-                        onTap:  () {
+                        onTap: () {
                           controller.goToCategorie("apartments");
                         },
                       ),
@@ -77,9 +77,12 @@ class HomePage extends StatelessWidget {
                         },
                       ),
                       CategoryDesign(
-                          title: "clinics".tr, image: AppImages.cat2,onTap: () {
-                            controller.goToCategorie("clinics");
-                          },)
+                        title: "clinics".tr,
+                        image: AppImages.cat2,
+                        onTap: () {
+                          controller.goToCategorie("clinics");
+                        },
+                      )
                     ],
                   ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
                   SizedBox(
@@ -119,6 +122,17 @@ class HomePage extends StatelessWidget {
                             livingRoom: 2,
                             space: 320,
                             price: 4000,
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          const ItemDesign(
+                            image: AppImages.img4,
+                            bedRooms: 1,
+                            bathRooms: 1,
+                            livingRoom: 1,
+                            space: 80,
+                            price: 2000,
                           ),
                           SizedBox(
                             height: 30.h,

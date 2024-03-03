@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sestate/controller/add_place_controller.dart';
@@ -18,84 +16,76 @@ class AddImages extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: SizedBox(
-        width:
-            Dimensions.screenwidth(context), // or any specific width you want
+        width: Dimensions.screenwidth(context),
+        height: 120.h,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                alignment: AlignmentDirectional.centerStart,
-                height: 120.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  //physics: NeverScrollableScrollPhysics(),
-                  itemCount: controller.images.length + 1,
-                  itemBuilder: (BuildContext context, int index) {
-                    return index == controller.images.length ||
-                            controller.images.isEmpty
-                        ? GestureDetector(
-                            onTap: () async {
-                              await controller.pickImage();
-                            },
-                            child: Container(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: controller.images.length + 1,
+                itemBuilder: (BuildContext context, int index) {
+                  return index == controller.images.length ||
+                          controller.images.isEmpty
+                      ? GestureDetector(
+                          onTap: () async {
+                            await controller.pickImage();
+                          },
+                          child: Container(
+                            width: 80.w,
+                            height: 60.h,
+                            margin: EdgeInsets.symmetric(horizontal: 10.w),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Icon(
+                              Icons.add,
+                              size: 35,
+                              color: lightAppColors.greyColor,
+                            ),
+                          ),
+                        )
+                      : Stack(
+                          children: [
+                            Container(
                               width: 80.w,
-                              height: 60.h,
+                              height: 120.h,
                               margin: EdgeInsets.symmetric(horizontal: 10.w),
-                              alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .primaryContainer,
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(15),
                               ),
-                              child: Icon(
-                                Icons.add,
-                                size: 35,
-                                color: lightAppColors.greyColor,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Image.file(
+                                  File(controller.images[index]
+                                      .path), // Access the path property if it exists
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ).animate().fade().scale(curve: Curves.slowMiddle),
+                            PositionedDirectional(
+                              start: 12.w,
+                              top: 3.h,
+                              child: GestureDetector(
+                                onTap: () {
+                                  controller.images.removeAt(index);
+                                  controller.update();
+                                  print(controller.images.length);
+                                },
+                                child: Icon(
+                                  Icons.cancel_outlined,
+                                  color: Colors.red[800],
+                                ),
                               ),
                             ),
-                          )
-                        : Stack(
-                            children: [
-                              Container(
-                                width: 80.w,
-                                height: 120.h,
-                                margin: EdgeInsets.symmetric(horizontal: 10.w),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.file(
-                                    File(controller.images[index]
-                                        .path), // Access the path property if it exists
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              )
-                                  .animate()
-                                  .fade()
-                                  .scale(curve: Curves.slowMiddle),
-                              PositionedDirectional(
-                                start: 12.w,
-                                top: 3.h,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    controller.images.removeAt(index);
-                                    controller.update();
-                                    print(controller.images.length);
-                                  },
-                                  child: Icon(
-                                    Icons.cancel_outlined,
-                                    color: Colors.red[800],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          );
-                  },
-                ),
+                          ],
+                        );
+                },
               ),
             )
           ],

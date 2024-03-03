@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sestate/core/class/statusrequest.dart';
@@ -78,32 +79,27 @@ class AddPlaceControllerImpl extends AddPlaceController {
     ),
   ];
   //var pickedImage;
-  String dropdownValue = '2';
+  String streetValue = '1';
   String typeValue = '1';
-  String rentOrSale = '2';
-  late TextEditingController location;
-  String placeLocation = '';
-  String placeType = '';
   late TextEditingController price;
   late TextEditingController additionalInfo;
   Myservices myServices = Get.find();
   StatusRequest? statusRequest;
-  //String location = "";
   GlobalKey<FormState> formState = GlobalKey<FormState>();
-  String elementValue = '2'; // Assuming a default value
-  //AddMedicineBack addmedicineBack = AddMedicineBack(Get.put(Crud()));
-
   @override
   addPlace() {}
-  updateDropDownValue(String? newValue) {
-    print("Dropdown Value Changed: $newValue");
-    elementValue = newValue!;
+
+  updateDropDownValue(String? newValue, String changingElement) {
+    if (changingElement == "location") {
+      streetValue = newValue!;
+    } else if (changingElement == "placetype") {
+      typeValue = newValue!;
+    }
     update();
   }
 
   @override
   void onInit() {
-    location = TextEditingController();
     price = TextEditingController();
     additionalInfo = TextEditingController();
     super.onInit();
@@ -111,7 +107,6 @@ class AddPlaceControllerImpl extends AddPlaceController {
 
   @override
   void dispose() {
-    location.dispose();
     price.dispose();
     additionalInfo.dispose();
     super.dispose();
@@ -133,16 +128,17 @@ class AddPlaceControllerImpl extends AddPlaceController {
     update();
   }
 
+ 
+
   @override
   decreaseCount(String increasingElement) {
-    if (increasingElement == "Bathrooms" && numOfBathRooms > 0) {
+    if (increasingElement == "bathrooms" && numOfBathRooms > 0) {
       numOfBathRooms--;
-    } else if (increasingElement == "Kitchens" && numOfKitchens > 0) {
+    } else if (increasingElement == "kitchens" && numOfKitchens > 0) {
       numOfKitchens--;
-    } else if (increasingElement == "Rooms" && numOfRooms > 0) {
+    } else if (increasingElement == "rooms" && numOfRooms > 0) {
       numOfRooms--;
-    }
-    else if (increasingElement == "Rental term" && rentalTerm > 0) {
+    } else if (increasingElement == "rentalterm" && rentalTerm > 0) {
       rentalTerm--;
     }
     update();
@@ -150,14 +146,13 @@ class AddPlaceControllerImpl extends AddPlaceController {
 
   @override
   increaseCount(String increasingElement) {
-    if (increasingElement == "Bathrooms" && numOfBathRooms >= 0) {
+    if (increasingElement == "bathrooms" && numOfBathRooms >= 0) {
       numOfBathRooms++;
-    } else if (increasingElement == "Kitchens" && numOfKitchens >= 0) {
+    } else if (increasingElement == "kitchens" && numOfKitchens >= 0) {
       numOfKitchens++;
-    } else if (increasingElement == "Rooms" && numOfRooms >= 0) {
+    } else if (increasingElement == "rooms" && numOfRooms >= 0) {
       numOfRooms++;
-    }
-    else if (increasingElement == "Rental term" && rentalTerm >= 0) {
+    } else if (increasingElement == "rentalterm" && rentalTerm >= 0) {
       rentalTerm++;
     }
     update();

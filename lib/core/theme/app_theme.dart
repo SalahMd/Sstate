@@ -6,6 +6,10 @@ import 'package:sestate/core/constants/colors.dart';
 class AppTheme {
   static var darkTheme = ColorScheme.dark(
     primary: darkAppColors.primaryColor,
+    onSecondary: Colors.amber,
+    //for numbers after picking in date picker
+    onPrimary: Colors.amber,
+    
     primaryContainer: darkAppColors.whiteColor,
     onPrimaryContainer: Color.fromARGB(255, 250, 248, 248),
     onErrorContainer: Color(0xFFF9DEDC),
@@ -14,8 +18,23 @@ class AppTheme {
     onBackground: Color.fromARGB(255, 2, 2, 2),
     surface: Color.fromARGB(255, 52, 50, 50),
     onSurface: Color(0xFFF3F3F3),
-    // surfaceVariant: Color.fromARGB(255, 95, 29, 196),
-    onSurfaceVariant: Color.fromARGB(255, 255, 255, 255),
+    surfaceVariant: Color.fromARGB(255, 222, 52, 30),
+    //for chips after picking
+    inversePrimary: Colors.indigo,
+    inverseSurface: Colors.white,
+    onInverseSurface: Colors.white,
+    onSecondaryContainer: Colors.amber,
+    onTertiaryContainer: Colors.amber,
+    onTertiary: Colors.amber,
+    tertiary: Colors.amber,
+    scrim: Colors.amber,
+    secondary: Colors.amber,
+    //for dividers
+    outlineVariant: Colors.blue[800],
+    secondaryContainer: Colors.amber,
+    //for textfileds
+    onSurfaceVariant: Color.fromARGB(255, 254, 254, 254),
+    
   );
 
   static ColorScheme lightTheme = ColorScheme.light(
@@ -24,14 +43,13 @@ class AppTheme {
     onPrimaryContainer: lightAppColors.blackColor,
     background: lightAppColors.backGround,
     //for date picker
-    surface: Color.fromARGB(255, 255, 255, 255),
-    onSurface: Color.fromARGB(255, 0, 0, 0),
-    //onBackground: Color.fromARGB(255, 249, 28, 28),
-    onSurfaceVariant: Color.fromARGB(255, 1, 1, 1),
+    surface: lightAppColors.whiteColor,
+    surfaceVariant: lightAppColors.blackColor,
+    onSurface: lightAppColors.blackColor,
+    onSurfaceVariant: lightAppColors.blackColor,
   );
   static final light = ThemeData(
       useMaterial3: true,
-      //fontFamily: 'Poppins',
       colorScheme: lightTheme,
       textTheme: TextTheme(
         headline1: TextStyle(
@@ -44,10 +62,7 @@ class AppTheme {
             fontSize: 21.sp,
             fontFamily: "PlayfairDisplay"),
         bodyText1: TextStyle(
-            //color: Colors.grey[700],
-            fontWeight: FontWeight.w400,
-            fontSize: 17.sp,
-            height: 1.5),
+            fontWeight: FontWeight.w400, fontSize: 17.sp, height: 1.5),
         bodyText2: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 15.sp,

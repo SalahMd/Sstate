@@ -52,7 +52,7 @@ class DarkMode extends StatelessWidget {
                       ),
                     ])),
           ),
-          const MyDivider(),
+           MyDivider(),
           GestureDetector(
             onTap: () {
               controller.changeMode("light");

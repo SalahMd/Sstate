@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class lightAppColors {
-  static Color primaryColor = Color.fromARGB(250, 24, 25, 38);
+  static Color primaryColor = Color.fromARGB(249, 28, 29, 48);
+//  static Color primaryColor = Color.fromARGB(250, 24, 25, 38);
+
   static Color blackColor = Colors.black;
   static Color whiteColor = Colors.white;
   static Color? greenColor = Colors.green[700];
@@ -10,10 +12,10 @@ class lightAppColors {
 }
 
 class darkAppColors {
-  static Color primaryColor = Color.fromARGB(250, 24, 25, 38);
+  static Color primaryColor = Color.fromARGB(249, 28, 29, 48);
   static Color blackColor = Colors.white;
-  static Color whiteColor =  Colors.grey[850]!;
+  static Color whiteColor = Colors.grey[850]!;
   static Color? greenColor = Colors.green[700];
   static Color? greyColor = Colors.grey[200];
-  static Color backGround = Colors.grey[900]!;
+  static Color backGround = Colors.black54;
 }

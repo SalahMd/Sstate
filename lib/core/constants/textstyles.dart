@@ -50,9 +50,9 @@ class TextStyles {
       fontWeight: FontWeight.w500);
   static TextStyle w50016White = TextStyle(
       //color: AppColors.whiteColor,
-      fontSize: 15.sp,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w500);
-       static TextStyle w50017White = TextStyle(
+  static TextStyle w50017White = TextStyle(
       color: lightAppColors.whiteColor,
       fontSize: 15.sp,
       fontWeight: FontWeight.w500);

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/functions/alerts.dart';
+import 'package:sestate/core/functions/dimenesions.dart';
 
 abstract class ItemInfoController extends GetxController {
   nextImage();
@@ -14,11 +17,10 @@ class ItemInfoControllerImpl extends ItemInfoController {
   int currentPage = 0;
   var date;
   late PageController imageController;
+  
   @override
-  dispData() {
-    
-  }
-
+  dispData() {}
+ 
   @override
   nextImage() {
     currentPage++;
@@ -39,15 +41,9 @@ class ItemInfoControllerImpl extends ItemInfoController {
 
   @override
   dialogConfirming(animation, String title) async {
-    await animationedAlert(
-      null,
-      title,
-      makeDate
-    );
+    await animationedAlert(null, title, makeDate);
   }
-  
+
   @override
-  makeDate() {
-    
-  }
+  makeDate() {}
 }

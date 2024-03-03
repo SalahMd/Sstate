@@ -14,10 +14,10 @@ class ButtomBar extends StatelessWidget {
         bottomNavigationBar: Container(
           color: lightAppColors.primaryColor,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 4),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4),
             child: GNav(
                 selectedIndex: 1,
-                hoverColor: lightAppColors.whiteColor,
+                //hoverColor: lightAppColors.whiteColor,
                 backgroundColor: lightAppColors.primaryColor,
                 gap: 8.w,
                 color: lightAppColors.whiteColor,

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
@@ -13,7 +15,6 @@ class RentOrSaleChooser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Get.put(dynamic());
     return Container(
       width: Dimensions.screenwidth(context),
       margin: EdgeInsets.symmetric(horizontal: 20.w),
@@ -35,10 +36,9 @@ class RentOrSaleChooser extends StatelessWidget {
                       height: 40.h,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white),
-                      ),
+                          color: Theme.of(context).colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.white)),
                       child: Text(
                         "rent".tr,
                         textAlign: TextAlign.center,
@@ -85,12 +85,11 @@ class RentOrSaleChooser extends StatelessWidget {
                       height: 40.h,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: !controller.sale
-                            ? Colors.green[800]
-                            : Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white),
-                      ),
+                          color: !controller.sale
+                              ? Colors.green[800]
+                              : Theme.of(context).colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.white)),
                       child: Text(
                         "rent".tr,
                         textAlign: TextAlign.center,
@@ -98,6 +97,20 @@ class RentOrSaleChooser extends StatelessWidget {
                     ),
                   ),
                 ),
+              // AnimatedPositionedDirectional(
+              //   start: controller.containerPosition,
+              //   top: 1,
+              //   duration: Duration(milliseconds: 600),
+              //   child: Container(
+              //     width: 60.w,
+              //     height: 10.h,
+              //     decoration: BoxDecoration(
+              //         color: Colors.green[800],
+              //         borderRadius: const BorderRadius.only(
+              //             topLeft: Radius.circular(10),
+              //             topRight: Radius.circular(10))),
+              //   ),
+              // )
             ],
           ),
         ],

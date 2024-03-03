@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 
@@ -25,7 +26,7 @@ class RoomWidgets extends StatelessWidget {
             child: Padding(
                 padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
                 child: Text(
-                  title,
+                  title.tr,
                   style: TextStyles.w50015Black,
                 ))),
         Expanded(

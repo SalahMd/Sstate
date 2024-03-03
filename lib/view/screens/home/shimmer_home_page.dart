@@ -12,22 +12,24 @@ class ShimmerHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20.h,),
+        SizedBox(
+          height: 20.h,
+        ),
         SafeArea(
             child: Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
-              child: ShimmerItem(
-                        height: 22,
-                        width: 100,
-                      ),
-            )),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
+          child: ShimmerItem(
+            height: 22,
+            width: 100,
+          ),
+        )),
         SizedBox(
           height: 10.h,
         ),
-       Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 22,
             width: 80,
@@ -38,14 +40,14 @@ class ShimmerHomePage extends StatelessWidget {
         ),
         //search bar
         ShimmerItem(
-          height: 40,
+          height: 50,
           width: Dimensions.screenwidth(context),
         ),
         SizedBox(
           height: 20.h,
         ),
-       Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 30,
             width: 120,
@@ -67,7 +69,7 @@ class ShimmerHomePage extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height:20.h),
+        SizedBox(height: 20.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -81,7 +83,7 @@ class ShimmerHomePage extends StatelessWidget {
             ),
           ],
         ),
-         SizedBox(
+        SizedBox(
           height: 20.h,
         ),
         Padding(
@@ -91,7 +93,7 @@ class ShimmerHomePage extends StatelessWidget {
             width: 120,
           ),
         ),
-        
+
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: 30.h),
           const ShimmerItemDesign(),
