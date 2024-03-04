@@ -16,6 +16,6 @@ class darkAppColors {
   static Color blackColor = Colors.white;
   static Color whiteColor = Colors.grey[850]!;
   static Color? greenColor = Colors.green[700];
-  static Color? greyColor = Colors.grey[200];
+  static Color? greyColor = Colors.grey[300];
   static Color backGround = Colors.black54;
 }

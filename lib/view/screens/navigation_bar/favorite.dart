@@ -29,10 +29,10 @@ class Favorite extends StatelessWidget {
             height: 30.h,
           ),
           Container(
-            height: 600,
             margin: EdgeInsets.symmetric(horizontal: 10.w),
             child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (BuildContext context, int index) {
                   return const ItemDesign(

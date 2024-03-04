@@ -22,6 +22,7 @@ class AddPlaceControllerImpl extends AddPlaceController {
   int rentalTerm = 0;
   double space = 0;
   bool sale = false;
+  double containerPadding = 105.w;
   int floor = 0;
   List images = [];
   List<DropdownMenuItem<String>> streetsList = [
@@ -128,8 +129,6 @@ class AddPlaceControllerImpl extends AddPlaceController {
     update();
   }
 
- 
-
   @override
   decreaseCount(String increasingElement) {
     if (increasingElement == "bathrooms" && numOfBathRooms > 0) {
@@ -160,6 +159,10 @@ class AddPlaceControllerImpl extends AddPlaceController {
 
   isSale(bool isSale) {
     sale = isSale;
+    if (sale)
+      containerPadding = 25.w;
+    else
+      containerPadding = 105.w;
     update();
   }
 }

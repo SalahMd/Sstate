@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/profile_controller.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/screens/dark_mode.dart';
+import 'package:sestate/view/screens/google_map.dart';
 import 'package:sestate/view/widgets/divider.dart';
 import 'package:sestate/view/screens/change_language.dart';
 import 'package:sestate/view/screens/my_account.dart';
@@ -33,27 +35,27 @@ class Profile extends StatelessWidget {
               SizedBox(height: 10.h),
               Text(
                 "Salah Aldeen Mdaghmesh",
-                style: TextStyles.w50020Black,
+                style: TextStyles.w50017,
               )
                   .animate()
-                  .fade(duration: 400.ms, delay: 300.ms)
+                  .fade(duration: 400.ms, delay: 350.ms)
                   .slideY(begin: -0.3),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.place_outlined,
                     size: 25,
                   )
                       .animate()
-                      .fade(duration: 400.ms, delay: 300.ms)
+                      .fade(duration: 400.ms, delay: 350.ms)
                       .slideY(begin: -0.3),
                   Text(
                     "Damascus,Syria   ",
-                    style: TextStyles.w50020Black,
+                    style: TextStyles.w50017,
                   )
                       .animate()
-                      .fade(duration: 400.ms, delay: 300.ms)
+                      .fade(duration: 400.ms, delay: 350.ms)
                       .slideY(begin: -0.3),
                 ],
               ),
@@ -72,7 +74,10 @@ class Profile extends StatelessWidget {
               ),
               MyDivider(
                 height: 2.h,
-              ),
+              )
+                  .animate()
+                  .fade(duration: 400.ms, delay: 350.ms)
+                  .slideY(begin: -0.3),
               ListTiles(
                       leadingIcon: Icons.settings,
                       trailingIcon: Icons.arrow_forward_ios_outlined,
@@ -82,17 +87,22 @@ class Profile extends StatelessWidget {
                   .slideY(begin: -0.3),
               MyDivider(
                 height: 2.h,
+              ).animate().fade(delay: 550.ms).slideY(begin: -0.3),
+              GestureDetector(
+                onTap: () {
+                  Get.to(Google_Map());
+                },
+                child: ListTiles(
+                        leadingIcon: Icons.favorite_outline,
+                        trailingIcon: Icons.arrow_forward_ios_outlined,
+                        listText: "favorite".tr)
+                    .animate()
+                    .fade(delay: 600.ms)
+                    .slideY(begin: -0.3),
               ),
-              ListTiles(
-                      leadingIcon: Icons.favorite_outline,
-                      trailingIcon: Icons.arrow_forward_ios_outlined,
-                      listText: "favorite".tr)
-                  .animate()
-                  .fade(delay: 600.ms)
-                  .slideY(begin: -0.3),
               MyDivider(
                 height: 2.h,
-              ),
+              ).animate().fade(delay: 650.ms).slideY(begin: -0.3),
               InkWell(
                 onTap: () {
                   Get.to(ChangeTheLanguage());
@@ -107,7 +117,7 @@ class Profile extends StatelessWidget {
               ),
               MyDivider(
                 height: 2.h,
-              ),
+              ).animate().fade(delay: 750.ms).slideY(begin: -0.3),
               InkWell(
                 onTap: () {
                   Get.to(DarkMode());
@@ -122,7 +132,7 @@ class Profile extends StatelessWidget {
               ),
               MyDivider(
                 height: 2.h,
-              ),
+              ).animate().fade(delay: 850.ms).slideY(begin: -0.3),
               GestureDetector(
                 onTap: () {
                   controller.logOut();

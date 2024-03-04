@@ -27,7 +27,7 @@ class RoomWidgets extends StatelessWidget {
                 padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
                 child: Text(
                   title.tr,
-                  style: TextStyles.w50015Black,
+                  style: TextStyles.bold14,
                 ))),
         Expanded(
             child: Container(

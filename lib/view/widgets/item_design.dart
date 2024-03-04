@@ -32,6 +32,7 @@ class ItemDesign extends StatelessWidget {
       child: Container(
         height: 350.h,
         width: Dimensions.screenwidth(context),
+        margin: EdgeInsets.only(bottom: 30.h, left: 10.w, right: 10.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Theme.of(context).colorScheme.primaryContainer,
@@ -87,7 +88,7 @@ class ItemDesign extends StatelessWidget {
               Expanded(
                   child: Row(children: [
                 SizedBox(width: 5.w),
-                Icon(
+                const Icon(
                   Icons.location_on,
                   size: 25,
                 ),
@@ -96,7 +97,7 @@ class ItemDesign extends StatelessWidget {
                 ),
                 Text(
                   "Muhajjrin",
-                  style: TextStyles.w50020Black,
+                  style: TextStyles.w50017,
                 ),
               ])),
               Expanded(
@@ -105,7 +106,7 @@ class ItemDesign extends StatelessWidget {
                   alignment: AlignmentDirectional.centerEnd,
                   child: Text(
                     price.toString() + "\$",
-                    style: TextStyles.w50020Black,
+                    style: TextStyles.w50017,
                   ),
                 ),
               )
@@ -125,8 +126,7 @@ class ItemDesign extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                // margin: EdgeInsets.symmetric(horizontal: 8.w),
-                width: 65.w,
+                width: 60.w,
                 height: 40.h,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.background,
@@ -146,8 +146,7 @@ class ItemDesign extends StatelessWidget {
                     ]),
               ),
               Container(
-                //   margin: EdgeInsets.symmetric(horizontal: 8.w),
-                width: 65.w,
+                width: 60.w,
                 height: 40.h,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.background,
@@ -168,7 +167,7 @@ class ItemDesign extends StatelessWidget {
               ),
               Container(
                 //margin: EdgeInsets.symmetric(horizontal: 8.w),
-                width: 65.w,
+                width: 60.w,
                 height: 40.h,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.background,
@@ -189,7 +188,7 @@ class ItemDesign extends StatelessWidget {
               ),
               Container(
                 //  margin: EdgeInsets.symmetric(horizontal: 8.w),
-                width: 65.w,
+                width: 75.w,
                 height: 40.h,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.background,

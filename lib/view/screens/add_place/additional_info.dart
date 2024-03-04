@@ -18,7 +18,7 @@ class AdditionalInfo extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               "additional".tr,
-              style: TextStyles.w50015Black,
+              style: TextStyles.bold14,
             ),
           ),
         ),

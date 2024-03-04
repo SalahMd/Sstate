@@ -13,13 +13,13 @@ class Filters extends StatelessWidget {
     return Container(
       width: Dimensions.screenwidth(context),
       height: 40.h,
-      margin:const EdgeInsetsDirectional.only(start: 10),
+      margin: const EdgeInsetsDirectional.only(start: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "filter".tr,
-            style: TextStyles.w50020Black,
+            style: TextStyles.w50017,
           ),
           IconButton(
               onPressed: () {

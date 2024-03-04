@@ -28,7 +28,7 @@ class TopBar extends StatelessWidget {
                   SizedBox(width: 5.w),
                   Text(
                     "location".tr,
-                    style: TextStyles.bold22Black,
+                    style: TextStyles.bold18,
                   ),
                 ],
               ),
@@ -40,16 +40,15 @@ class TopBar extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.location_on,
-                    
                     size: 25,
                   ),
                   Text(
                     city!,
-                    style: TextStyles.w50020Black,
+                    style: TextStyles.w50017,
                   ),
                   Text(
                     ", " + street!,
-                    style: TextStyles.w40015grey,
+                    style: TextStyles.w40016grey,
                   )
                 ],
               ),

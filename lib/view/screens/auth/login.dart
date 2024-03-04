@@ -93,7 +93,7 @@ class Login extends StatelessWidget {
                       child: SingleChildScrollView(
                         child: Text(
                           "login".tr,
-                          style: TextStyles.w50017White,
+                          style: TextStyles.w50015White,
                         ),
                       ),
                     ),

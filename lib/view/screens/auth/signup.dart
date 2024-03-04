@@ -117,7 +117,7 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: Text(
                     "confirm".tr,
-                    style: TextStyles.w50017White,
+                    style: TextStyles.w50015White,
                   ),
                 ),
               ),

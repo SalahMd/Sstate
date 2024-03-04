@@ -58,7 +58,7 @@ class ItemInfo extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "Apartment".tr,
-                          style: TextStyles.bold22Black,
+                          style: TextStyles.bold18,
                         ),
                       ),
                     ),
@@ -131,7 +131,7 @@ class ItemInfo extends StatelessWidget {
                               SizedBox(height: 10.h),
                               Text(
                                 "Muhajjrin",
-                                style: TextStyles.w50022Black,
+                                style: TextStyles.w50018,
                               ),
                             ])),
                             Expanded(
@@ -141,7 +141,7 @@ class ItemInfo extends StatelessWidget {
                                 alignment: AlignmentDirectional.centerEnd,
                                 child: Text(
                                   "4000\$",
-                                  style: TextStyles.bold22Black,
+                                  style: TextStyles.bold18,
                                 ),
                               ),
                             )
@@ -229,8 +229,7 @@ class ItemInfo extends StatelessWidget {
                         },
                         child: Center(
                             child: Container(
-                                
-                                width:Dimensions.screenwidth(context),
+                                width: Dimensions.screenwidth(context),
                                 height: 45.h,
                                 margin: EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 20),
@@ -244,14 +243,13 @@ class ItemInfo extends StatelessWidget {
                                   child: Text(
                                     "makeappointment".tr,
                                     textAlign: TextAlign.center,
-                                    style: TextStyles.w50017White,
+                                    style: TextStyles.w50015White,
                                   ),
                                 ))),
                       )
                     : Center(
                         child: GestureDetector(
                           onTap: () async {
-                           
                             controller.dialogConfirming(
                                 AppAnimations.question, "confirmorder".tr);
                           },
@@ -266,7 +264,7 @@ class ItemInfo extends StatelessWidget {
                             ),
                             child: Text(
                               'confirm'.tr,
-                              style: TextStyles.w50017White,
+                              style: TextStyles.w50015White,
                             ),
                           ),
                         ),

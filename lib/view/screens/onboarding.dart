@@ -113,7 +113,7 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                     style: AppButtons.elevatedButtonStyle,
                     child: Text(
                       "continuebutton".tr,
-                      style: TextStyles.w50017White,
+                      style: TextStyles.w50015White,
                     ),
                   ),
                 ],

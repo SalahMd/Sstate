@@ -42,8 +42,7 @@ class AddPlace extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(start: 10.w),
             child: Align(
                 alignment: AlignmentDirectional.centerStart,
-                child: Text("fillyourplaceinfo".tr,
-                    style: TextStyles.w50022Black)),
+                child: Text("fillyourplaceinfo".tr, style: TextStyles.w50018)),
           ).animate().fade(duration: 1000.ms).saturate(),
           SizedBox(height: 20.h),
           RentOrSaleChooser(
@@ -104,7 +103,7 @@ class AddPlace extends StatelessWidget {
                       padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
                       child: Text(
                         "space".tr + "  (" + "m".tr + ")".tr,
-                        style: TextStyles.w50015Black,
+                        style: TextStyles.bold14,
                       ))),
               Expanded(
                   child: Container(
@@ -140,11 +139,11 @@ class AddPlace extends StatelessWidget {
                       child: controller.sale
                           ? Text(
                               "price".tr,
-                              style: TextStyles.w50015Black,
+                              style: TextStyles.bold14,
                             )
                           : Text(
                               "monthlyrent".tr,
-                              style: TextStyles.w50015Black,
+                              style: TextStyles.bold14,
                             ))),
               Expanded(
                   child: Container(
@@ -180,7 +179,7 @@ class AddPlace extends StatelessWidget {
                 children: [
                   Text(
                     "addimages".tr,
-                    style: TextStyles.w50015Black,
+                    style: TextStyles.bold14,
                   ),
                   Text(controller.images.length.toString() + "/" + "10",
                       style: TextStyles.w40013grey)
@@ -203,9 +202,7 @@ class AddPlace extends StatelessWidget {
               .fade(duration: (600.ms))
               .slideY(begin: -0.5),
           GestureDetector(
-            onTap: () {
-              //controller.logIn();
-            },
+            onTap: () {},
             child: Container(
               width: Dimensions.screenwidth(context),
               height: 40.h,
@@ -216,7 +213,7 @@ class AddPlace extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 "confirm".tr,
-                style: TextStyles.w50018White,
+                style: TextStyles.w50015White,
               ),
             ),
           ).animate().fade(duration: (600.ms)).slideY(begin: -0.5),

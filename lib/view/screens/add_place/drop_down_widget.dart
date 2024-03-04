@@ -27,7 +27,7 @@ class DropDownWidget extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-            child: Text(title.tr, style: TextStyles.w50015Black),
+            child: Text(title.tr, style: TextStyles.bold14),
           ),
         ),
         Expanded(
@@ -41,7 +41,6 @@ class DropDownWidget extends StatelessWidget {
               value: elementValue,
               icon: const Icon(Icons.arrow_downward),
               elevation: 16,
-              style: TextStyles.w50014Black,
               onChanged: (String? value) {
                 controller.updateDropDownValue(value, title);
               },

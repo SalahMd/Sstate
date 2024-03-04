@@ -17,7 +17,7 @@ class ProfileTextFiled extends StatelessWidget {
           fontSize: 19,
         ),
         hintText: hinttext,
-        hintStyle: TextStyles.w50015Black,
+        hintStyle: TextStyles.bold14,
         //contentPadding: EdgeInsets.only(right: 100),
         prefixIcon: Icon(
           icontext,

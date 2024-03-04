@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +7,7 @@ import 'package:sestate/core/functions/dimenesions.dart';
 
 class RentOrSaleChooser extends StatelessWidget {
   final AddPlaceControllerImpl controller;
-  RentOrSaleChooser({
+  const RentOrSaleChooser({
     super.key,
     required this.controller,
   });
@@ -22,6 +21,7 @@ class RentOrSaleChooser extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Stack(
+            //index: controller.containerIndex,
             children: [
               if (controller.sale)
                 Padding(
@@ -97,20 +97,6 @@ class RentOrSaleChooser extends StatelessWidget {
                     ),
                   ),
                 ),
-              // AnimatedPositionedDirectional(
-              //   start: controller.containerPosition,
-              //   top: 1,
-              //   duration: Duration(milliseconds: 600),
-              //   child: Container(
-              //     width: 60.w,
-              //     height: 10.h,
-              //     decoration: BoxDecoration(
-              //         color: Colors.green[800],
-              //         borderRadius: const BorderRadius.only(
-              //             topLeft: Radius.circular(10),
-              //             topRight: Radius.circular(10))),
-              //   ),
-              // )
             ],
           ),
         ],

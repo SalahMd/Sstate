@@ -22,7 +22,7 @@ class AdditionalInfo extends StatelessWidget {
             SizedBox(width: 5.w),
             Text(
               "additional".tr,
-              style: TextStyles.bold22Black,
+              style: TextStyles.bold18,
             ),
           ],
         ),

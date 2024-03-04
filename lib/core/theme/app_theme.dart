@@ -9,7 +9,7 @@ class AppTheme {
     onSecondary: Colors.amber,
     //for numbers after picking in date picker
     onPrimary: Colors.amber,
-    
+
     primaryContainer: darkAppColors.whiteColor,
     onPrimaryContainer: Color.fromARGB(255, 250, 248, 248),
     onErrorContainer: Color(0xFFF9DEDC),
@@ -30,11 +30,10 @@ class AppTheme {
     scrim: Colors.amber,
     secondary: Colors.amber,
     //for dividers
-    outlineVariant: Colors.blue[800],
+    outlineVariant: Colors.grey[600],
     secondaryContainer: Colors.amber,
     //for textfileds
     onSurfaceVariant: Color.fromARGB(255, 254, 254, 254),
-    
   );
 
   static ColorScheme lightTheme = ColorScheme.light(
@@ -47,6 +46,8 @@ class AppTheme {
     surfaceVariant: lightAppColors.blackColor,
     onSurface: lightAppColors.blackColor,
     onSurfaceVariant: lightAppColors.blackColor,
+        outlineVariant: Colors.grey[600],
+
   );
   static final light = ThemeData(
       useMaterial3: true,

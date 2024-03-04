@@ -37,7 +37,7 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
                       children: [
                         Text(
                           "arabic".tr,
-                          style: TextStyles.bold22Black,
+                          style: TextStyles.bold18,
                         ),
                         Container(
                             width: 35.w,
@@ -60,7 +60,7 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
                   children: [
                     Text(
                       "english".tr,
-                      style: TextStyles.bold22Black,
+                      style: TextStyles.bold18,
                     ),
                     Container(
                         width: 35.w,

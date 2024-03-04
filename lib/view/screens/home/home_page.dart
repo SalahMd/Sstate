@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/home_page_controller.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/view/screens/home/category_design.dart';
 import 'package:sestate/view/screens/home/shimmer_home_page.dart';
@@ -18,7 +17,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImpl());
     return Scaffold(
-      // backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<HomePageControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: controller.statusRequest == StatusRequest.success
@@ -99,54 +97,24 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ).animate().fade(duration: 500.ms).slideX(begin: 0.2),
-                  Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.w, vertical: 20.h),
-                      child: Column(
-                        children: [
-                          const ItemDesign(
-                            image: AppImages.img1,
-                            bedRooms: 3,
-                            bathRooms: 1,
-                            livingRoom: 1,
-                            space: 250,
-                            price: 3000,
-                          ),
-                          SizedBox(
-                            height: 30.h,
-                          ),
-                          const ItemDesign(
-                            image: AppImages.img2,
-                            bedRooms: 4,
-                            bathRooms: 2,
-                            livingRoom: 2,
-                            space: 320,
-                            price: 4000,
-                          ),
-                          SizedBox(
-                            height: 30.h,
-                          ),
-                          const ItemDesign(
-                            image: AppImages.img4,
-                            bedRooms: 1,
-                            bathRooms: 1,
-                            livingRoom: 1,
-                            space: 80,
-                            price: 2000,
-                          ),
-                          SizedBox(
-                            height: 30.h,
-                          ),
-                          const ItemDesign(
-                            image: AppImages.img4,
-                            bedRooms: 1,
-                            bathRooms: 1,
-                            livingRoom: 1,
-                            space: 80,
-                            price: 2000,
-                          )
-                        ],
-                      )).animate().fade(duration: 500.ms).slideY(begin: 0.3),
+                  Column(
+                    children: [
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 5,
+                          itemBuilder: (BuildContext context, int index) {
+                            return const ItemDesign(
+                              image: AppImages.img2,
+                              bedRooms: 4,
+                              bathRooms: 2,
+                              livingRoom: 2,
+                              space: 320,
+                              price: 4000,
+                            );
+                          }),
+                    ],
+                  ).animate().fade(duration: 500.ms).slideY(begin: 0.3),
                 ])
               : const ShimmerHomePage(),
         ),

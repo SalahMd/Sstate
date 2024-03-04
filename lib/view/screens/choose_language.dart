@@ -74,7 +74,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                           children: [
                             Text(
                               "arabic".tr,
-                              style: TextStyles.bold22Black,
+                              style: TextStyles.bold18,
                             ),
                             Container(
                                 width: 40,
@@ -110,7 +110,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                           children: [
                             Text(
                               "english".tr,
-                              style: TextStyles.bold22Black,
+                              style: TextStyles.bold18,
                             ),
                             Container(
                                 width: 40,
@@ -138,7 +138,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 "continuebutton".tr,
-                style: TextStyles.w50017White,
+                style: TextStyles.w50015White,
               ),
             ),
           ),

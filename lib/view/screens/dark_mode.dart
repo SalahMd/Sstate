@@ -39,7 +39,7 @@ class DarkMode extends StatelessWidget {
                     children: [
                       Text(
                         "darkmode".tr,
-                        style: TextStyles.bold22Black,
+                        style: TextStyles.bold18,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.only(end: 7.w),
@@ -52,7 +52,7 @@ class DarkMode extends StatelessWidget {
                       ),
                     ])),
           ),
-           MyDivider(),
+          MyDivider(),
           GestureDetector(
             onTap: () {
               controller.changeMode("light");
@@ -65,7 +65,7 @@ class DarkMode extends StatelessWidget {
                 children: [
                   Text(
                     "lightmode".tr,
-                    style: TextStyles.bold22Black,
+                    style: TextStyles.bold18,
                   ),
                   SizedBox(
                     width: 50.w,

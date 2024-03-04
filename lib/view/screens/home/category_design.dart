@@ -45,7 +45,7 @@ class CategoryDesign extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: TextStyles.w50014Black,
+                  style: TextStyles.w50012,
                 )
               ],
             ),
