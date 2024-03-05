@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/auth/signup_controller.dart';
+import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
 import 'package:sestate/core/constants/textstyles.dart';
@@ -112,9 +113,7 @@ class SignUp extends StatelessWidget {
                   margin:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                   alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: lightAppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(20)),
+                 decoration: AppButtons.decorationButton,
                   child: Text(
                     "confirm".tr,
                     style: TextStyles.w50015White,

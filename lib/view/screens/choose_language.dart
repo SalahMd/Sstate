@@ -12,6 +12,8 @@ bool isarabic = false;
 bool isenglish = false;
 
 class ChooseLanguage extends GetView<ChangeLanguage> {
+  const ChooseLanguage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,16 +27,16 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
             "chooselanguage".tr,
             style: Theme.of(context).textTheme.headline1,
           ),
-          Padding(padding: EdgeInsets.only(top: 20)),
-          Container(
+          const Padding(padding: EdgeInsets.only(top: 20)),
+          SizedBox(
             height: Dimensions.screenHeight(context) / 3.5,
             child: AppAnimations.language,
           ),
-          Padding(padding: EdgeInsets.only(top: 40)),
+          const Padding(padding: EdgeInsets.only(top: 40)),
           Container(
             width: double.infinity,
             height: Dimensions.screenHeight(context) / 5,
-            margin: EdgeInsets.only(left: 30, right: 30),
+            margin: const EdgeInsets.only(left: 30, right: 30),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primaryContainer,
               borderRadius: BorderRadius.circular(20),
@@ -43,7 +45,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                   color: Colors.grey.withOpacity(0.2),
                   spreadRadius: 3,
                   blurRadius: 3,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -60,7 +62,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                   child: Container(
                       width: double.infinity,
                       height: Dimensions.screenHeight(context) / 13,
-                      margin: EdgeInsets.only(left: 10, right: 10),
+                      margin: const EdgeInsets.only(left: 10, right: 10),
                       decoration: BoxDecoration(
                         color: isarabic
                             ? Colors.blue[700]
@@ -68,7 +70,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Container(
-                        margin: EdgeInsets.only(left: 10, right: 10),
+                        margin: const EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -76,7 +78,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                               "arabic".tr,
                               style: TextStyles.bold18,
                             ),
-                            Container(
+                            SizedBox(
                                 width: 40,
                                 height: Dimensions.screenHeight(context) / 14,
                                 child: Image.asset(AppImages.arabicimage))
@@ -84,7 +86,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                         ),
                       )),
                 ),
-                Padding(padding: EdgeInsets.only(top: 10)),
+                const Padding(padding: EdgeInsets.only(top: 10)),
                 GestureDetector(
                   onTap: () {
                     isarabic = false;
@@ -96,7 +98,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                   child: Container(
                       width: double.infinity,
                       height: Dimensions.screenHeight(context) / 13,
-                      margin: EdgeInsets.only(left: 10, right: 10),
+                      margin: const EdgeInsets.only(left: 10, right: 10),
                       decoration: BoxDecoration(
                         color: isenglish
                             ? Colors.blue[700]
@@ -104,7 +106,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Container(
-                        margin: EdgeInsets.only(left: 10, right: 10),
+                        margin: const EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -112,7 +114,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                               "english".tr,
                               style: TextStyles.bold18,
                             ),
-                            Container(
+                            SizedBox(
                                 width: 40,
                                 height: Dimensions.screenHeight(context) / 14,
                                 child: Image.asset(AppImages.englishimage))
@@ -123,8 +125,8 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
               ],
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 40)),
-          InkWell(
+          const Padding(padding: EdgeInsets.only(top: 40)),
+          GestureDetector(
             onTap: () {
               if (isarabic || isenglish) Get.offNamed("OnBoarding");
             },

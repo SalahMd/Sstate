@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/auth/login_controller.dart';
-import 'package:sestate/core/constants/colors.dart';
+import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
@@ -87,9 +87,7 @@ class Login extends StatelessWidget {
                       height: 40.h,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: lightAppColors.primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
+                      decoration: AppButtons.decorationButton,
                       child: SingleChildScrollView(
                         child: Text(
                           "login".tr,

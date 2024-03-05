@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/item_info_controller.dart';
 import 'package:sestate/core/constants/animations.dart';
+import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/textstyles.dart';
@@ -234,10 +235,7 @@ class ItemInfo extends StatelessWidget {
                                 margin: EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 20),
                                 alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: lightAppColors.primaryColor,
-                                ),
+                                decoration: AppButtons.decorationButton,
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Text(

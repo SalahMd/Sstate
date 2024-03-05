@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/widgets/item_design.dart';
 
 class Favorite extends StatelessWidget {

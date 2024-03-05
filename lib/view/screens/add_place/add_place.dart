@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
+import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/customtextformfiled.dart';
 import 'package:sestate/core/constants/images.dart';
@@ -11,6 +12,7 @@ import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/add_place/add_images.dart';
 import 'package:sestate/view/screens/add_place/additional_info.dart';
 import 'package:sestate/view/screens/add_place/drop_down_widget.dart';
+import 'package:sestate/view/screens/add_place/main_info.dart';
 import 'package:sestate/view/screens/add_place/rent_or_sale.dart';
 import 'package:sestate/view/screens/add_place/room_widgets.dart';
 import 'package:sestate/view/widgets/divider.dart';
@@ -49,127 +51,7 @@ class AddPlace extends StatelessWidget {
             controller: controller,
           ).animate().fade(duration: 1000.ms).saturate(),
           SizedBox(height: 20.h),
-          DropDownWidget(
-            title: "location",
-            choices: controller.streetsList,
-            elementValue: controller.streetValue,
-            controller: controller,
-          ),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          DropDownWidget(
-            title: "placetype",
-            choices: controller.placeTypesList,
-            elementValue: controller.typeValue,
-            controller: controller,
-          ),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          RoomWidgets(
-              title: "rooms",
-              numOfRooms: controller.numOfRooms,
-              icon: Icons.bed_rounded,
-              controller: controller),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          RoomWidgets(
-              title: "kitchens",
-              numOfRooms: controller.numOfKitchens,
-              icon: Icons.kitchen_outlined,
-              controller: controller),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          RoomWidgets(
-              title: "bathrooms",
-              numOfRooms: controller.numOfBathRooms,
-              icon: Icons.bathroom_outlined,
-              controller: controller),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          Visibility(
-            visible: !controller.sale,
-            child: RoomWidgets(
-                title: "rentalterm",
-                numOfRooms: controller.rentalTerm,
-                icon: Icons.calendar_month_outlined,
-                controller: controller),
-          ),
-          Visibility(
-              visible: !controller.sale,
-              child: MyDivider()
-                  .animate()
-                  .fade(duration: (600.ms))
-                  .slideY(begin: -0.5)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
-                      child: Text(
-                        "space".tr + "  (" + "m".tr + ")".tr,
-                        style: TextStyles.bold14,
-                      ))),
-              Expanded(
-                  child: Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                      ),
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Customtextformfiled(
-                        hinttext: "",
-                        labelText: "",
-                        icondata: Icons.space_bar_outlined,
-                        controller: null,
-                        min: 3,
-                        max: 5,
-                        letters: 4,
-                        isnumber: true,
-                        ispassword: false,
-                        isBorder: false,
-                      ))),
-            ],
-          ).animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: Padding(
-                      padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
-                      child: controller.sale
-                          ? Text(
-                              "price".tr,
-                              style: TextStyles.bold14,
-                            )
-                          : Text(
-                              "monthlyrent".tr,
-                              style: TextStyles.bold14,
-                            ))),
-              Expanded(
-                  child: Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                      ),
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Customtextformfiled(
-                        hinttext: "",
-                        labelText: "",
-                        icondata: Icons.attach_money_outlined,
-                        controller: null,
-                        min: 3,
-                        letters: 6,
-                        max: 5,
-                        isnumber: true,
-                        ispassword: false,
-                        isBorder: false,
-                      ))),
-            ],
-          ).animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
+          MainInfo(controller: controller,),
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
             child: Align(
@@ -181,7 +63,7 @@ class AddPlace extends StatelessWidget {
                     "addimages".tr,
                     style: TextStyles.bold14,
                   ),
-                  Text(controller.images.length.toString() + "/" + "10",
+                  Text("${controller.images.length}/10",
                       style: TextStyles.w40013grey)
                 ],
               ),
@@ -193,11 +75,11 @@ class AddPlace extends StatelessWidget {
           Align(
               alignment: AlignmentDirectional.centerStart,
               child: AddImages(
-                images: [AppImages.img1, AppImages.img2, AppImages.img3],
+                images: const [],
                 controller: controller,
               )).animate().fade(duration: (600.ms)).slideY(begin: -0.5),
           MyDivider().animate().fade(duration: (600.ms)).slideY(begin: -0.5),
-          AdditionalInfo()
+          const AdditionalInfo()
               .animate()
               .fade(duration: (600.ms))
               .slideY(begin: -0.5),
@@ -208,9 +90,7 @@ class AddPlace extends StatelessWidget {
               height: 40.h,
               margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: lightAppColors.primaryColor,
-                  borderRadius: BorderRadius.circular(20)),
+              decoration: AppButtons.decorationButton,
               child: Text(
                 "confirm".tr,
                 style: TextStyles.w50015White,

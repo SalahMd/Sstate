@@ -101,6 +101,7 @@ class ShimmerHomePage extends StatelessWidget {
           const ShimmerItemDesign(),
           SizedBox(height: 30.h),
           const ShimmerItemDesign(),
+          SizedBox(height: 30.h),
         ]),
       ],
     ));

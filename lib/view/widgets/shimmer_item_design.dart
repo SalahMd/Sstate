@@ -11,19 +11,28 @@ class ShimmerItemDesign extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ShimmerItem(
-          width: Dimensions.screenwidth(context),
-          height: 300,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: ShimmerItem(
+            width: Dimensions.screenwidth(context),
+            height: 300,
+          ),
         ),
         SizedBox(height: 10.h),
-        ShimmerItem(
-          width: 150,
-          height: 20,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: ShimmerItem(
+            width: 150,
+            height: 20,
+          ),
         ),
         SizedBox(height: 10.h),
-        ShimmerItem(
-          width: 80,
-          height: 20,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: ShimmerItem(
+            width: 80,
+            height: 20,
+          ),
         ),
         SizedBox(height: 20.h),
         Row(
@@ -46,7 +55,8 @@ class ShimmerItemDesign extends StatelessWidget {
               height: 20,
             ),
           ],
-        )
+        ),
+        
       ],
     );
   }

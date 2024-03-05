@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/profile_controller.dart';
 import 'package:sestate/core/constants/textstyles.dart';
 import 'package:sestate/view/screens/dark_mode.dart';
-import 'package:sestate/view/screens/google_map.dart';
 import 'package:sestate/view/widgets/divider.dart';
 import 'package:sestate/view/screens/change_language.dart';
 import 'package:sestate/view/screens/my_account.dart';
@@ -90,7 +88,7 @@ class Profile extends StatelessWidget {
               ).animate().fade(delay: 550.ms).slideY(begin: -0.3),
               GestureDetector(
                 onTap: () {
-                  Get.to(Google_Map());
+                 // Get.to(Google_Map());
                 },
                 child: ListTiles(
                         leadingIcon: Icons.favorite_outline,
@@ -120,7 +118,7 @@ class Profile extends StatelessWidget {
               ).animate().fade(delay: 750.ms).slideY(begin: -0.3),
               InkWell(
                 onTap: () {
-                  Get.to(DarkMode());
+                  Get.to(const DarkMode());
                 },
                 child: ListTiles(
                         leadingIcon: Icons.dark_mode_outlined,
