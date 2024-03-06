@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/search/filters.dart';
 
@@ -20,7 +19,6 @@ class Search extends StatelessWidget {
                 width: Dimensions.screenwidth(context),
                 height: 60,
                 child: TextFormField(
-                  //controller: controller.searchController,
                   textInputAction: TextInputAction.search,
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(),
@@ -28,7 +26,7 @@ class Search extends StatelessWidget {
                       onTap: () {
                         // controller.displayData();
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.search,
                         size: 25,
                        
@@ -38,7 +36,7 @@ class Search extends StatelessWidget {
                       onTap: () {
                         Get.back();
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back,
                         size: 25,
                         
@@ -53,7 +51,7 @@ class Search extends StatelessWidget {
                   ),
                 )),
           ),
-          Filters()
+          const Filters()
         ]));
   }
 }

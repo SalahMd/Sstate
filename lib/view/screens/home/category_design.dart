@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 
 class CategoryDesign extends StatelessWidget {
   final String title;
   final String image;
   final void Function() onTap;
-  CategoryDesign(
+  const CategoryDesign(
       {super.key,
       required this.title,
       required this.image,
@@ -31,7 +30,7 @@ class CategoryDesign extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 22.w,
                   height: 22.h,
                   child: Image.asset(

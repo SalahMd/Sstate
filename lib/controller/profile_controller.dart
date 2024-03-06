@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:sestate/core/class/crud.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/functions/handelingdata.dart';
+import 'package:sestate/core/functions/handeling_data.dart';
 import 'package:sestate/core/services/services.dart';
-import 'package:sestate/data/remote/logoutdata.dart';
+import 'package:sestate/data/remote/logout_back.dart';
 
 abstract class ProfileController extends GetxController {
   logOut();

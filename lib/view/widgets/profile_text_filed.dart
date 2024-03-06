@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 
 class ProfileTextFiled extends StatelessWidget {
   final String hinttext;

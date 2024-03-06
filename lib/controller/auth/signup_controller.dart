@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/class/crud.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/functions/handelingdata.dart';
+import 'package:sestate/core/functions/handeling_data.dart';
 import 'package:sestate/data/remote/auth/signup_back.dart';
 
 abstract class SignUpController extends GetxController{

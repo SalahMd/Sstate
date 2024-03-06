@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/class/crud.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/functions/handelingdata.dart';
+import 'package:sestate/core/functions/handeling_data.dart';
 import 'package:sestate/core/services/services.dart';
 import 'package:sestate/data/remote/auth/login_back.dart';
 import 'package:sestate/view/screens/navigation_bar/nav_bar.dart';

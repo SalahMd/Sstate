@@ -22,7 +22,7 @@ class ShimmerHomePage extends StatelessWidget {
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 22,
-            width: 100,
+            width: 90,
           ),
         )),
         SizedBox(
@@ -32,7 +32,7 @@ class ShimmerHomePage extends StatelessWidget {
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
           child: ShimmerItem(
             height: 22,
-            width: 80,
+            width: 140,
           ),
         ),
         SizedBox(

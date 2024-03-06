@@ -86,7 +86,10 @@ class Translation extends Translations {
           "forsale":"للبيع",
           "forrent":"للإيجار",
           "rentalterm":"فترة الإيجار",
-          "monthlyrent":"الإيجار الشهري"
+          "monthlyrent":"الإيجار الشهري",
+          "warningbody": "هل تريد الخروج من التطبيق؟",
+          "yes": "نعم",
+          "no": "لا",
 
         },
         "en": {
@@ -173,6 +176,9 @@ class Translation extends Translations {
           "forrent":"For rent",
           "rentalterm":"Rental term",
           "monthlyrent":"Monthly rent",
+          "warningbody": "Are you sure you want to exit?",
+          "yes": "Yes",
+          "no": "No",
           
         }
       };

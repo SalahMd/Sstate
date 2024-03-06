@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/widgets/chips_choice.dart';
 
@@ -13,18 +12,18 @@ Future<bool> exitAlert() {
   Get.defaultDialog(
       title: "",
       middleText: "warningbody".tr,
-      middleTextStyle: TextStyles.w50012,
+      middleTextStyle: TextStyles.w50013,
       actions: [
         TextButton(
             onPressed: () {
               exit(0);
             },
-            child: Text("yes".tr)),
+            child: Text("yes".tr,style: TextStyle(color: Colors.blue),),),
         TextButton(
             onPressed: () {
               Get.back();
             },
-            child: Text("no".tr))
+            child: Text("no".tr,style: TextStyle(color: Colors.blue),))
       ]);
   return Future.value(true);
 }
@@ -62,7 +61,7 @@ alert(String title) {
   Get.defaultDialog(
     title: title,
     titleStyle: TextStyles.bold16,
-    titlePadding: EdgeInsets.symmetric(vertical: 40, horizontal: 10),
+    titlePadding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
   );
 }
 
@@ -72,12 +71,12 @@ Future<bool> popUp(
   Get.bottomSheet(Container(
     width: Dimensions.screenwidth(context),
     height: 600.h,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(25),
-        topRight: Radius.circular(25),
-      ),
-    ),
+    decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        ),
+        color: Theme.of(context).colorScheme.primaryContainer),
     child: SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         GestureDetector(
@@ -99,7 +98,7 @@ Future<bool> popUp(
           padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
           child: Text(
             "filter".tr,
-            style: TextStyles.bold18,
+            style: TextStyles.bold17,
           ),
         ),
         SizedBox(height: 20.h),
@@ -162,12 +161,10 @@ Future<bool> popUp(
             height: 40.h,
             margin: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
             alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: lightAppColors.primaryColor,
-                borderRadius: BorderRadius.circular(20)),
+            decoration:AppButtons.decorationButton,
             child: Text(
               "confirm".tr,
-              style: TextStyles.w50016White,
+              style: TextStyles.w50015White,
             ),
           ),
         ),

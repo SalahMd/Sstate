@@ -2,7 +2,6 @@ import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/search_controller.dart';
-import 'package:sestate/core/constants/colors.dart';
 
 class ChipsChoices extends StatelessWidget {
   List<String> tags = [];
@@ -15,10 +14,13 @@ class ChipsChoices extends StatelessWidget {
     Get.put(SearchControllerImpl());
     return GetBuilder<SearchControllerImpl>(
       builder: (controller) => ChipsChoice<String>.multiple(
-        
         value: tags,
+        choiceStyle: C2ChipStyle(
+          foregroundStyle: TextStyle(color: Colors.blue[700]),
+        ),
         onChanged: (List<String> value) {
           tags = value;
+          print(value);
           controller.update();
         },
         choiceItems: C2Choice.listFrom(

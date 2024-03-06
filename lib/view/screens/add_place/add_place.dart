@@ -4,17 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
 import 'package:sestate/core/constants/buttons.dart';
-import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/customtextformfiled.dart';
-import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/add_place/add_images.dart';
 import 'package:sestate/view/screens/add_place/additional_info.dart';
-import 'package:sestate/view/screens/add_place/drop_down_widget.dart';
 import 'package:sestate/view/screens/add_place/main_info.dart';
 import 'package:sestate/view/screens/add_place/rent_or_sale.dart';
-import 'package:sestate/view/screens/add_place/room_widgets.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class AddPlace extends StatelessWidget {

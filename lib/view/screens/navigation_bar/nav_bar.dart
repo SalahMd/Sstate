@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:sestate/controller/buttombarcontroller.dart';
+import 'package:sestate/controller/buttom_bar_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
 
 class ButtomBar extends StatelessWidget {

@@ -1,7 +1,4 @@
-import 'package:avatar_glow/avatar_glow.dart';
-import 'package:date_picker_plus/date_picker_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/item_info_controller.dart';
@@ -9,8 +6,7 @@ import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/buttons.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
-import 'package:sestate/core/functions/alerts.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/date_time.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/item_info/additional_info.dart';
@@ -33,7 +29,11 @@ class ItemInfo extends StatelessWidget {
                 Stack(
                   children: [
                     ImageView(
-                      images: [AppImages.img1, AppImages.img3, AppImages.img2],
+                      images: const [
+                        AppImages.img1,
+                        AppImages.img3,
+                        AppImages.img2
+                      ],
                       currentPage: controller.currentPage,
                       controller: controller.imageController,
                       pageController: controller,
@@ -49,7 +49,7 @@ class ItemInfo extends StatelessWidget {
                                 Theme.of(context).colorScheme.primaryContainer,
                             borderRadius: BorderRadius.circular(35),
                           ),
-                          child: Icon(Icons.favorite_border_outlined),
+                          child: const Icon(Icons.favorite_border_outlined),
                         )),
                     SizedBox(
                       width: 5.w,
@@ -59,7 +59,7 @@ class ItemInfo extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "Apartment".tr,
-                          style: TextStyles.bold18,
+                          style: TextStyles.bold17,
                         ),
                       ),
                     ),
@@ -116,7 +116,8 @@ class ItemInfo extends StatelessWidget {
                   height: 15.h,
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 10),
+                  padding:
+                      const EdgeInsetsDirectional.symmetric(horizontal: 10),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -125,7 +126,7 @@ class ItemInfo extends StatelessWidget {
                             Expanded(
                                 child: Row(children: [
                               SizedBox(width: 5.w),
-                              Icon(
+                              const Icon(
                                 Icons.location_on,
                                 size: 25,
                               ),
@@ -142,7 +143,7 @@ class ItemInfo extends StatelessWidget {
                                 alignment: AlignmentDirectional.centerEnd,
                                 child: Text(
                                   "4000\$",
-                                  style: TextStyles.bold18,
+                                  style: TextStyles.bold17,
                                 ),
                               ),
                             )
@@ -232,7 +233,7 @@ class ItemInfo extends StatelessWidget {
                             child: Container(
                                 width: Dimensions.screenwidth(context),
                                 height: 45.h,
-                                margin: EdgeInsets.symmetric(
+                                margin: const EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 20),
                                 alignment: Alignment.center,
                                 decoration: AppButtons.decorationButton,

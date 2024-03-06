@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 
 // ignore: must_be_immutable
 class DropDownWidget extends StatelessWidget {

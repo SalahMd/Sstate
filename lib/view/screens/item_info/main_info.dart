@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 
 class MainInfo extends StatelessWidget {
   final String title;
@@ -17,7 +16,7 @@ class MainInfo extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         height: 60.h,
-        margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Theme.of(context).colorScheme.primaryContainer,

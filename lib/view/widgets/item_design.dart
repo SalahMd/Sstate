@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/item_info/item_info.dart';
 
@@ -38,7 +37,9 @@ class ItemDesign extends StatelessWidget {
           color: Theme.of(context).colorScheme.primaryContainer,
           boxShadow: [],
         ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
           Stack(
             children: [
               Container(

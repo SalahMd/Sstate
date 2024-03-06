@@ -6,7 +6,7 @@ import 'package:lottie/lottie.dart';
 import 'package:sestate/controller/dark_mode.dart';
 import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class DarkMode extends StatelessWidget {
@@ -39,7 +39,7 @@ class DarkMode extends StatelessWidget {
                     children: [
                       Text(
                         "darkmode".tr,
-                        style: TextStyles.bold18,
+                        style: TextStyles.bold17,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.only(end: 7.w),
@@ -65,7 +65,7 @@ class DarkMode extends StatelessWidget {
                 children: [
                   Text(
                     "lightmode".tr,
-                    style: TextStyles.bold18,
+                    style: TextStyles.bold17,
                   ),
                   SizedBox(
                     width: 50.w,

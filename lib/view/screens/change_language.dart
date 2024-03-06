@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/home_page_controller.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
-import 'package:sestate/core/localization/changelanguage.dart';
+import 'package:sestate/core/constants/text_styles.dart';
+import 'package:sestate/core/localization/change_language.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class ChangeTheLanguage extends GetView<ChangeLanguage> {
@@ -37,7 +37,7 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
                       children: [
                         Text(
                           "arabic".tr,
-                          style: TextStyles.bold18,
+                          style: TextStyles.bold17,
                         ),
                         Container(
                             width: 35.w,
@@ -60,7 +60,7 @@ class ChangeTheLanguage extends GetView<ChangeLanguage> {
                   children: [
                     Text(
                       "english".tr,
-                      style: TextStyles.bold18,
+                      style: TextStyles.bold17,
                     ),
                     Container(
                         width: 35.w,

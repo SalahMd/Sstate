@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 
 class AdditionalInfo extends StatelessWidget {
   final String info;
@@ -22,7 +22,7 @@ class AdditionalInfo extends StatelessWidget {
             SizedBox(width: 5.w),
             Text(
               "additional".tr,
-              style: TextStyles.bold18,
+              style: TextStyles.bold17,
             ),
           ],
         ),

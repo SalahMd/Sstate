@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sestate/controller/onboardingcontroller.dart';
+import 'package:sestate/controller/on_boarding_controller.dart';
 import 'package:sestate/core/constants/buttons.dart';
-import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/data/statics/static.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class onbording extends GetView<OnBoardingControllerImpl> {
+class OnBording extends GetView<OnBoardingControllerImpl> {
+  const OnBording({super.key});
   @override
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImpl());
@@ -65,7 +64,7 @@ class onbording extends GetView<OnBoardingControllerImpl> {
                             .slideY(begin: 0.5),
                         Container(
                                 width: double.infinity,
-                                margin: EdgeInsetsDirectional.symmetric(
+                                margin: const EdgeInsetsDirectional.symmetric(
                                     horizontal: 15, vertical: 10),
                                 // alignment: Alignment.center,
                                 child: Text(

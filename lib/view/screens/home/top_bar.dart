@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 
 class TopBar extends StatelessWidget {
   final void Function() onTapIcon;
   final String? city;
   final String? street;
-  TopBar({super.key, required this.onTapIcon, required this.city, this.street});
+  const TopBar({super.key, required this.onTapIcon, required this.city, this.street});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class TopBar extends StatelessWidget {
                   SizedBox(width: 5.w),
                   Text(
                     "location".tr,
-                    style: TextStyles.bold18,
+                    style: TextStyles.bold17,
                   ),
                 ],
               ),
@@ -38,7 +36,7 @@ class TopBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.location_on,
                     size: 25,
                   ),
@@ -47,7 +45,7 @@ class TopBar extends StatelessWidget {
                     style: TextStyles.w50017,
                   ),
                   Text(
-                    ", " + street!,
+                    ", ${street!}",
                     style: TextStyles.w40016grey,
                   )
                 ],
@@ -70,12 +68,12 @@ class TopBar extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.2),
                           spreadRadius: 1.5,
                           blurRadius: 1.5,
-                          offset: Offset(0, 1),
+                          offset: const Offset(0, 1),
                         ),
                       ]),
                   child: Row(children: [
                     SizedBox(width: 10.w),
-                    Icon(
+                    const Icon(
                       Icons.search,
                       size: 25,
                     ),
@@ -101,7 +99,7 @@ class TopBar extends StatelessWidget {
                       color: Theme.of(context).colorScheme.primaryContainer,
                       boxShadow: const [BoxShadow(color: Colors.black)],
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
+                  child: const Icon(
                     Icons.add,
                     size: 30,
                   )),

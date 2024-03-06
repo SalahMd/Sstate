@@ -3,8 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/add_place_controller.dart';
-import 'package:sestate/core/constants/customtextformfiled.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/custom_text_form_filed.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/view/screens/add_place/room_widgets.dart';
 import 'package:sestate/view/widgets/divider.dart';
 

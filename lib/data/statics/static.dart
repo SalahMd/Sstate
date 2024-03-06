@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/data/model/onboardingmodel.dart';
+import 'package:sestate/data/model/on_boarding_model.dart';
 
 List <onBoardingModel> Onbordingmodel = [
   onBoardingModel(title: "title1".tr,animation:AppImages.img1,body: "body1".tr),

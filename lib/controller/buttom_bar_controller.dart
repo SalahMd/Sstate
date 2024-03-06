@@ -6,12 +6,12 @@ import 'package:sestate/view/screens/navigation_bar/profile.dart';
 
 
 abstract class ButtomBarController extends GetxController {
-  changePage(int currentPage);
+  changePage(int index);
 }
 
 class ButtomBarControllerImp extends ButtomBarController {
   int currentPage = 1;
-  List<Widget> listPage = [Profile(), HomePage(), Favorite(),];
+  List<Widget> listPage = [const Profile(), const HomePage(), const Favorite(),];
   @override
   changePage(int index) {
     currentPage = index;

@@ -6,10 +6,10 @@ import 'package:sestate/core/constants/colors.dart';
 class AppTheme {
   static var darkTheme = ColorScheme.dark(
     primary: darkAppColors.primaryColor,
-    onSecondary: Colors.amber,
+    onSecondary: Colors.indigo,
     //for numbers after picking in date picker
-    onPrimary: Colors.amber,
-
+    onPrimary: Colors.indigo,
+    //surfaceTint: Colors.blue,
     primaryContainer: darkAppColors.whiteColor,
     onPrimaryContainer: Color.fromARGB(255, 250, 248, 248),
     onErrorContainer: Color(0xFFF9DEDC),
@@ -20,18 +20,18 @@ class AppTheme {
     onSurface: Color(0xFFF3F3F3),
     surfaceVariant: Color.fromARGB(255, 222, 52, 30),
     //for chips after picking
-    inversePrimary: Colors.indigo,
+ //   inversePrimary: Colors.amber,
     inverseSurface: Colors.white,
     onInverseSurface: Colors.white,
-    onSecondaryContainer: Colors.amber,
-    onTertiaryContainer: Colors.amber,
-    onTertiary: Colors.amber,
-    tertiary: Colors.amber,
-    scrim: Colors.amber,
-    secondary: Colors.amber,
+    // onSecondaryContainer: Colors.amber,
+    // onTertiaryContainer: Colors.amber,
+    // onTertiary: Colors.amber,
+    // tertiary: Colors.amber,
+    // scrim: Colors.amber,
+    // secondary: Colors.amber,
     //for dividers
     outlineVariant: Colors.grey[600],
-    secondaryContainer: Colors.amber,
+ //   secondaryContainer: Colors.amber,
     //for textfileds
     onSurfaceVariant: Color.fromARGB(255, 254, 254, 254),
   );
@@ -41,13 +41,23 @@ class AppTheme {
     primaryContainer: lightAppColors.whiteColor,
     onPrimaryContainer: lightAppColors.blackColor,
     background: lightAppColors.backGround,
+    onPrimary: Colors.indigo,
+    onSecondary: Colors.indigo,
     //for date picker
     surface: lightAppColors.whiteColor,
     surfaceVariant: lightAppColors.blackColor,
     onSurface: lightAppColors.blackColor,
     onSurfaceVariant: lightAppColors.blackColor,
-        outlineVariant: Colors.grey[600],
+    outlineVariant: Colors.grey[600],
+    secondaryContainer: Colors.amber,
 
+    onSecondaryContainer: Colors.amber,
+    onTertiaryContainer: Colors.amber,
+    onTertiary: Colors.amber,
+    tertiary: Colors.amber,
+    scrim: Colors.amber,
+    secondary: Colors.amber,
+    //for dividers
   );
   static final light = ThemeData(
       useMaterial3: true,

@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/colors.dart';
 import 'package:sestate/core/constants/images.dart';
-import 'package:sestate/core/constants/textstyles.dart';
+import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
-import 'package:sestate/core/localization/changelanguage.dart';
+import 'package:sestate/core/localization/change_language.dart';
 
 bool isarabic = false;
 bool isenglish = false;
@@ -76,7 +76,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                           children: [
                             Text(
                               "arabic".tr,
-                              style: TextStyles.bold18,
+                              style: TextStyles.bold17,
                             ),
                             SizedBox(
                                 width: 40,
@@ -112,7 +112,7 @@ class ChooseLanguage extends GetView<ChangeLanguage> {
                           children: [
                             Text(
                               "english".tr,
-                              style: TextStyles.bold18,
+                              style: TextStyles.bold17,
                             ),
                             SizedBox(
                                 width: 40,

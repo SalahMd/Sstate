@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sestate/core/constants/colors.dart';
-
-import '../functions/validinput.dart';
+import '../functions/valid_input.dart';
 
 class Customtextformfiled extends StatelessWidget {
   final String hinttext;
