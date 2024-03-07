@@ -19,14 +19,16 @@ class TextStyles {
       fontWeight: FontWeight.w500);
   static TextStyle w50012 =
       TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500);
-       static TextStyle w50013 =
+  static TextStyle w50013 =
       TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500);
   static TextStyle w40013grey = TextStyle(
       color: lightAppColors.greyColor,
       fontSize: 13.sp,
       fontWeight: FontWeight.w400);
-  static TextStyle w40010White =
-      TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400);
+  static TextStyle w40010White = TextStyle(
+      color: Colors.white, fontSize: 10.sp, fontWeight: FontWeight.w400);
+  static TextStyle w40012White = TextStyle(
+      color: Colors.white, fontSize: 12.sp, fontWeight: FontWeight.w400);
   static TextStyle w50016White =
       TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500);
   static TextStyle w50015White = TextStyle(

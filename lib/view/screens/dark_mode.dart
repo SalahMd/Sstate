@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:sestate/controller/dark_mode.dart';
 import 'package:sestate/core/constants/animations.dart';
-import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/view/widgets/divider.dart';
 
 class DarkMode extends StatelessWidget {
   const DarkMode({super.key});
-
   @override
   Widget build(BuildContext context) {
     Get.put(DarkModeImpl());
@@ -33,7 +29,7 @@ class DarkMode extends StatelessWidget {
             },
             child: Container(
                 height: 60.h,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -59,7 +55,7 @@ class DarkMode extends StatelessWidget {
             },
             child: Container(
               height: 60.h,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

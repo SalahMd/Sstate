@@ -31,15 +31,16 @@ class ItemDesign extends StatelessWidget {
       child: Container(
         height: 350.h,
         width: Dimensions.screenwidth(context),
-        margin: EdgeInsets.only(bottom: 30.h, left: 10.w, right: 10.w),
+        margin: EdgeInsets.only(top: 20.h, left: 10.w, right: 10.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+          ),
           color: Theme.of(context).colorScheme.primaryContainer,
           boxShadow: [],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-           children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(
             children: [
               Container(
@@ -47,8 +48,8 @@ class ItemDesign extends StatelessWidget {
                 height: 200.h,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)),
                   child: Image.asset(
                     image,
                     fit: BoxFit.fill,
@@ -56,9 +57,8 @@ class ItemDesign extends StatelessWidget {
                 ),
               ),
               Container(
-                //padding: EdgeInsets.symmetric(horizontal: 5),
                 alignment: AlignmentDirectional.centerStart,
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 width: 95.w,
                 height: 30.h,
                 decoration: BoxDecoration(

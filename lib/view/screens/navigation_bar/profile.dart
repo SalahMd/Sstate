@@ -6,6 +6,7 @@ import 'package:sestate/controller/profile_controller.dart';
 import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/view/screens/dark_mode.dart';
+import 'package:sestate/view/screens/my_appointments.dart';
 import 'package:sestate/view/widgets/divider.dart';
 import 'package:sestate/view/screens/change_language.dart';
 import 'package:sestate/view/screens/my_account.dart';
@@ -18,7 +19,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ProfileControllerImpl());
     return WillPopScope(
-    onWillPop:exitAlert,
+      onWillPop: exitAlert,
       child: Scaffold(
         body: GetBuilder<ProfileControllerImpl>(
           builder: (controller) => SingleChildScrollView(
@@ -91,12 +92,12 @@ class Profile extends StatelessWidget {
                 ).animate().fade(delay: 550.ms).slideY(begin: -0.3),
                 GestureDetector(
                   onTap: () {
-                   // Get.to(Google_Map());
+                    Get.to(const MyAppointements());
                   },
                   child: ListTiles(
-                          leadingIcon: Icons.favorite_outline,
+                          leadingIcon: Icons.calendar_month_outlined,
                           trailingIcon: Icons.arrow_forward_ios_outlined,
-                          listText: "favorite".tr)
+                          listText: "myappointments".tr)
                       .animate()
                       .fade(delay: 600.ms)
                       .slideY(begin: -0.3),

@@ -90,6 +90,8 @@ class Translation extends Translations {
           "warningbody": "هل تريد الخروج من التطبيق؟",
           "yes": "نعم",
           "no": "لا",
+          "myappointments":"المواعيد المحجوزة",
+          "myfavorite":"المفضلة"
 
         },
         "en": {
@@ -179,6 +181,8 @@ class Translation extends Translations {
           "warningbody": "Are you sure you want to exit?",
           "yes": "Yes",
           "no": "No",
+          "myappointments":"My Appointments",
+          "myfavorite":"My Favorite",
           
         }
       };

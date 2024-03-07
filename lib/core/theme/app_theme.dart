@@ -6,9 +6,9 @@ import 'package:sestate/core/constants/colors.dart';
 class AppTheme {
   static var darkTheme = ColorScheme.dark(
     primary: darkAppColors.primaryColor,
-    onSecondary: Colors.indigo,
+   // onSecondary: Colors.indigo,
     //for numbers after picking in date picker
-    onPrimary: Colors.indigo,
+    //onPrimary: Colors.indigo,
     //surfaceTint: Colors.blue,
     primaryContainer: darkAppColors.whiteColor,
     onPrimaryContainer: Color.fromARGB(255, 250, 248, 248),
@@ -41,22 +41,32 @@ class AppTheme {
     primaryContainer: lightAppColors.whiteColor,
     onPrimaryContainer: lightAppColors.blackColor,
     background: lightAppColors.backGround,
-    onPrimary: Colors.indigo,
-    onSecondary: Colors.indigo,
+    //onPrimary: Colors.indigo,
+    //onSecondary: Colors.indigo,
     //for date picker
     surface: lightAppColors.whiteColor,
     surfaceVariant: lightAppColors.blackColor,
     onSurface: lightAppColors.blackColor,
     onSurfaceVariant: lightAppColors.blackColor,
     outlineVariant: Colors.grey[600],
-    secondaryContainer: Colors.amber,
 
-    onSecondaryContainer: Colors.amber,
-    onTertiaryContainer: Colors.amber,
-    onTertiary: Colors.amber,
-    tertiary: Colors.amber,
-    scrim: Colors.amber,
-    secondary: Colors.amber,
+// onBackground: Colors.indigo,
+// onInverseSurface: Colors.indigo,
+// surfaceTint: Colors.indigo,
+// inverseSurface: Colors.indigo,
+// tertiaryContainer: Colors.indigo,
+// inversePrimary: Colors.indigo,
+// outline: Colors.indigo,
+
+//    secondaryContainer: Colors.amber,
+//   onPrimary: Colors.indigo,
+//     onSecondary: Colors.indigo,
+//     onSecondaryContainer: Colors.amber,
+//     onTertiaryContainer: Colors.amber,
+//     onTertiary: Colors.amber,
+//     tertiary: Colors.amber,
+//     scrim: Colors.amber,
+//     secondary: Colors.amber,
     //for dividers
   );
   static final light = ThemeData(

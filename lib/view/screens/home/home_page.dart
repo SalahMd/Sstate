@@ -103,6 +103,7 @@ class HomePage extends StatelessWidget {
                     Column(
                       children: [
                         ListView.builder(
+                            padding: EdgeInsets.only(bottom: 30.h),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: 5,

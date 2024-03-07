@@ -27,7 +27,7 @@ class LogInControllerImpl extends LogiInController {
   hideButton() {
     containerWidth = 0;
     update();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       logIn();
     });
 

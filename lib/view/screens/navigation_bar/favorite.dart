@@ -11,10 +11,11 @@ class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-    onWillPop:exitAlert,
+      onWillPop: exitAlert,
       child: Scaffold(
         body: SingleChildScrollView(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             SizedBox(
               height: 20.h,
             ),
@@ -27,11 +28,11 @@ class Favorite extends StatelessWidget {
               ),
             )),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.w),
               child: ListView.builder(
+                  padding: EdgeInsets.only(bottom: 30.h),
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: 2,

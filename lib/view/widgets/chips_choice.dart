@@ -8,7 +8,6 @@ class ChipsChoices extends StatelessWidget {
   final List<String> options;
 
   ChipsChoices({super.key, required this.options});
-
   @override
   Widget build(BuildContext context) {
     Get.put(SearchControllerImpl());
@@ -23,6 +22,7 @@ class ChipsChoices extends StatelessWidget {
           print(value);
           controller.update();
         },
+        
         choiceItems: C2Choice.listFrom(
             source: options, value: (i, v) => v, label: (i, v) => v),
       ),
