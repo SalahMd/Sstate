@@ -91,7 +91,9 @@ class Translation extends Translations {
           "yes": "نعم",
           "no": "لا",
           "myappointments":"المواعيد المحجوزة",
-          "myfavorite":"المفضلة"
+          "myfavorite":"المفضلة",
+          "appointmentisdeleted":"تم إلغاء الموعد",
+          "deletingapointment":"هل تريد إلغاء هذا الموعد"
 
         },
         "en": {
@@ -183,6 +185,8 @@ class Translation extends Translations {
           "no": "No",
           "myappointments":"My Appointments",
           "myfavorite":"My Favorite",
+          "deletingapointment":"Do you want to cancel this appointment?",
+          "appointmentisdeleted":"Appointment is canceled",
           
         }
       };

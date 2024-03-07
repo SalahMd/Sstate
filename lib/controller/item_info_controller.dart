@@ -14,10 +14,10 @@ class ItemInfoControllerImpl extends ItemInfoController {
   int currentPage = 0;
   var date;
   late PageController imageController;
-  
+
   @override
   dispData() {}
- 
+
   @override
   nextImage() {
     currentPage++;
@@ -38,7 +38,7 @@ class ItemInfoControllerImpl extends ItemInfoController {
 
   @override
   dialogConfirming(animation, String title) async {
-    await animationedAlert(null, title, makeDate);
+    await animationedAlertWithActions(null, title, makeDate);
   }
 
   @override

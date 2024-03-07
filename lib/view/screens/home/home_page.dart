@@ -106,15 +106,17 @@ class HomePage extends StatelessWidget {
                             padding: EdgeInsets.only(bottom: 30.h),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            itemCount: 5,
+                            itemCount:controller.items.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return const ItemDesign(
-                                image: AppImages.img2,
-                                bedRooms: 4,
-                                bathRooms: 2,
-                                livingRoom: 2,
-                                space: 320,
-                                price: 4000,
+                              return ItemDesign(
+                                image: controller.items[index].image,
+                                bedRooms: controller.items[index].numOfRooms,
+                                bathRooms:
+                                    controller.items[index].numOfBathrooms,
+                                livingRoom:
+                                    controller.items[index].numOfKitchens,
+                                space: controller.items[index].space,
+                                price: controller.items[index].price,
                               );
                             }),
                       ],

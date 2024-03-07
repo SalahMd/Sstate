@@ -15,20 +15,27 @@ Future<bool> exitAlert() {
       middleTextStyle: TextStyles.w50013,
       actions: [
         TextButton(
-            onPressed: () {
-              exit(0);
-            },
-            child: Text("yes".tr,style: TextStyle(color: Colors.blue),),),
+          onPressed: () {
+            exit(0);
+          },
+          child: Text(
+            "yes".tr,
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
         TextButton(
             onPressed: () {
               Get.back();
             },
-            child: Text("no".tr,style: TextStyle(color: Colors.blue),))
+            child: Text(
+              "no".tr,
+              style: TextStyle(color: Colors.blue),
+            ))
       ]);
   return Future.value(true);
 }
 
-Future<bool> animationedAlert(
+Future<bool> animationedAlertWithActions(
     var animation, String title, void Function() onYesTap) {
   Get.defaultDialog(
       title: title,
@@ -57,12 +64,53 @@ Future<bool> animationedAlert(
   return Future.value(true);
 }
 
+Future<bool> animationedAlert(var animation, String title) {
+  Get.defaultDialog(
+    title: title,
+    titleStyle: TextStyles.w50017,
+    titlePadding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+    content: animation != null
+        ? Container(
+            alignment: Alignment.center, height: 200.h, child: animation)
+        : null,
+    barrierDismissible: true,
+  );
+  return Future.value(true);
+}
+
 alert(String title) {
   Get.defaultDialog(
     title: title,
     titleStyle: TextStyles.bold16,
     titlePadding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
   );
+}
+
+Future<bool> alertWithActions(String title, void Function() onYesTap) {
+  Get.defaultDialog(
+      title: "",
+      middleText: title,
+      middleTextStyle: TextStyles.bold16,
+      actions: [
+        TextButton(
+          onPressed: () {
+            onYesTap();
+          },
+          child: Text(
+            "yes".tr,
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+        TextButton(
+            onPressed: () {
+              Get.back();
+            },
+            child: Text(
+              "no".tr,
+              style: TextStyle(color: Colors.blue),
+            ))
+      ]);
+  return Future.value(true);
 }
 
 Future<bool> popUp(
@@ -161,7 +209,7 @@ Future<bool> popUp(
             height: 40.h,
             margin: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
             alignment: Alignment.center,
-            decoration:AppButtons.decorationButton,
+            decoration: AppButtons.decorationButton,
             child: Text(
               "confirm".tr,
               style: TextStyles.w50015White,
