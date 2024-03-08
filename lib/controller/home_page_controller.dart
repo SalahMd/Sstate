@@ -14,7 +14,7 @@ abstract class HomePageController extends GetxController {
 
 class HomePageControllerImpl extends HomePageController {
   StatusRequest? statusRequest;
-  late List<Placemark> placemarks;
+ List<Placemark> placemarks=[];
   List<ItemModel> items = [
     ItemModel(2, 2, 310,
         image: AppImages.img1,
@@ -47,9 +47,14 @@ class HomePageControllerImpl extends HomePageController {
   void onInit() async {
     statusRequest = StatusRequest.loading;
     update();
+    try{
     await getLocation(await determinePosition());
-
+    }catch(_){
+     statusRequest = StatusRequest.locationError;
+      update();
+    }
     Future.delayed(Duration(seconds: 2), () {
+      if(statusRequest !=StatusRequest.locationError) 
       statusRequest = StatusRequest.success;
       update();
     });
@@ -58,14 +63,8 @@ class HomePageControllerImpl extends HomePageController {
 
   @override
   getLocation(var position) async {
-    try {
       placemarks =
           await placemarkFromCoordinates(position.latitude, position.longitude);
-    } catch (_) {
-      statusRequest = StatusRequest.failure;
-      update();
-    }
-
     print("Your city is :" + "${placemarks[0].locality}");
     print("\nYour street is :" + "${placemarks[0].street}");
   }

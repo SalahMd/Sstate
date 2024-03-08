@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/home_page_controller.dart';
 import 'package:sestate/core/class/statusrequest.dart';
-import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
@@ -30,8 +29,8 @@ class HomePage extends StatelessWidget {
                       onTapIcon: () {
                         Get.toNamed("AddPlace");
                       },
-                      city: controller.placemarks[0].locality,
-                      street: controller.placemarks[0].street,
+                      city:controller.placemarks[0].locality,
+                      street:controller.placemarks[0].street,
                     ).animate().fade(duration: 500.ms).slideY(begin: 0.2),
                     SizedBox(
                       height: 15.h,
@@ -134,7 +133,7 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.location_off_outlined,
+                            const Icon(Icons.location_off_outlined,
                                 color: Colors.red, size: 120),
                             SizedBox(height: 20.h),
                             Text(
