@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/favorite_controller.dart';
-import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/view/widgets/item_design.dart';
 
@@ -25,9 +24,17 @@ class Favorite extends StatelessWidget {
               SafeArea(
                   child: Padding(
                 padding: const EdgeInsetsDirectional.only(start: 15),
-                child: Text(
-                  "myfavorite".tr,
-                  style: Theme.of(context).textTheme.headline1,
+                child: Row(
+                  children: [
+                    const Icon(Icons.favorite_outline),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    Text(
+                      "myfavorite".tr,
+                      style: Theme.of(context).textTheme.headline1,
+                    ),
+                  ],
                 ),
               )),
               SizedBox(
@@ -41,13 +48,13 @@ class Favorite extends StatelessWidget {
                     itemCount: controller.items.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ItemDesign(
-                          image: controller.items[index].image,
-                          bedRooms: controller.items[index].numOfRooms,
-                          bathRooms: controller.items[index].numOfBathrooms,
-                          livingRoom: controller.items[index].numOfKitchens,
-                          space: controller.items[index].space,
-                          price: controller.items[index].price,
-                        );
+                        image: controller.items[index].image,
+                        bedRooms: controller.items[index].numOfRooms,
+                        bathRooms: controller.items[index].numOfBathrooms,
+                        livingRoom: controller.items[index].numOfKitchens,
+                        space: controller.items[index].space,
+                        price: controller.items[index].price,
+                      );
                     }),
               )
             ]),

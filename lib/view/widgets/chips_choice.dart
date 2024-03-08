@@ -22,7 +22,6 @@ class ChipsChoices extends StatelessWidget {
           print(value);
           controller.update();
         },
-        
         choiceItems: C2Choice.listFrom(
             source: options, value: (i, v) => v, label: (i, v) => v),
       ),

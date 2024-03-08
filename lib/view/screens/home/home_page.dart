@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/home_page_controller.dart';
 import 'package:sestate/core/class/statusrequest.dart';
+import 'package:sestate/core/constants/animations.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/functions/alerts.dart';
+import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/screens/home/category_design.dart';
 import 'package:sestate/view/screens/home/shimmer_home_page.dart';
 import 'package:sestate/view/screens/home/top_bar.dart';
@@ -106,7 +108,7 @@ class HomePage extends StatelessWidget {
                             padding: EdgeInsets.only(bottom: 30.h),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            itemCount:controller.items.length,
+                            itemCount: controller.items.length,
                             itemBuilder: (BuildContext context, int index) {
                               return ItemDesign(
                                 image: controller.items[index].image,
@@ -122,7 +124,25 @@ class HomePage extends StatelessWidget {
                       ],
                     ).animate().fade(duration: 500.ms).slideY(begin: 0.3),
                   ])
-                : const ShimmerHomePage(),
+                : controller.statusRequest == StatusRequest.loading
+                    ? const ShimmerHomePage()
+                    : Container(
+                        width: Dimensions.screenwidth(context),
+                        height: Dimensions.screenHeight(context),
+                        alignment: Alignment.center,
+                        color: Theme.of(context).colorScheme.background,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.location_off_outlined,
+                                color: Colors.red, size: 120),
+                            SizedBox(height: 20.h),
+                            Text(
+                              "nolocationaccess".tr,
+                            )
+                          ],
+                        ),
+                      ),
           ),
         ),
       ),

@@ -93,7 +93,9 @@ class Translation extends Translations {
           "myappointments":"المواعيد المحجوزة",
           "myfavorite":"المفضلة",
           "appointmentisdeleted":"تم إلغاء الموعد",
-          "deletingapointment":"هل تريد إلغاء هذا الموعد"
+          "deletingapointment":"هل تريد إلغاء هذا الموعد",
+          "yourappointmentison":"الموعد المحجوز في ",
+          "nolocationaccess":"تعذر الوصول إلى الموقع"
 
         },
         "en": {
@@ -187,6 +189,8 @@ class Translation extends Translations {
           "myfavorite":"My Favorite",
           "deletingapointment":"Do you want to cancel this appointment?",
           "appointmentisdeleted":"Appointment is canceled",
+          "yourappointmentison":"Your appointment is on",
+          "nolocationaccess":"No Location Access"
           
         }
       };

@@ -13,20 +13,23 @@ class ItemDesign extends StatelessWidget {
   final int livingRoom;
   final double space;
   final double price;
-  const ItemDesign(
-      {super.key,
-      required this.image,
-      required this.bedRooms,
-      required this.bathRooms,
-      required this.livingRoom,
-      required this.space,
-      required this.price});
+  bool isAppointed;
+  ItemDesign({
+    super.key,
+    required this.image,
+    required this.bedRooms,
+    required this.bathRooms,
+    required this.livingRoom,
+    required this.space,
+    required this.price,
+    this.isAppointed=false
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(ItemInfo());
+        Get.to(ItemInfo(isAppointed: isAppointed,));
       },
       child: Container(
         height: 350.h,

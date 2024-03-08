@@ -14,12 +14,13 @@ import 'package:sestate/view/screens/item_info/image_view.dart';
 import 'package:sestate/view/screens/item_info/main_info.dart';
 
 class ItemInfo extends StatelessWidget {
-  ItemInfo({super.key});
+  bool isAppointed;
+
+  ItemInfo({super.key, this.isAppointed = false});
   @override
   Widget build(BuildContext context) {
     Get.put(ItemInfoControllerImpl());
     return Scaffold(
-      //backgroundColor: Get.theme.backgroundColor,
       body: GetBuilder<ItemInfoControllerImpl>(
         builder: (controller) => SingleChildScrollView(
           child: Column(
@@ -79,7 +80,7 @@ class ItemInfo extends StatelessWidget {
                                   .primaryContainer,
                               borderRadius: BorderRadius.circular(35),
                             ),
-                            child: Icon(Icons.arrow_back_ios_new_outlined),
+                            child: const Icon(Icons.arrow_back_ios_new_outlined),
                           ),
                         )),
                     Positioned(
@@ -189,7 +190,7 @@ class ItemInfo extends StatelessWidget {
                         ),
                         SizedBox(height: 10.h),
                         const AdditionalInfo(
-                          info: "Simple home with modern architecture and up to-date" +
+                          info: "Simple home with modern architecture and up to-date" 
                               " interior located in the ciy center makes it easy for you to access whole city.",
                         )
                       ]),
@@ -223,49 +224,65 @@ class ItemInfo extends StatelessWidget {
                         ],
                       )
                     : SizedBox(height: 10.h),
-                controller.date == null
-                    ? GestureDetector(
-                        onTap: () async {
-                          controller.date = await selectDate(context);
-                          controller.update();
-                        },
-                        child: Center(
-                            child: Container(
-                                width: Dimensions.screenwidth(context),
-                                height: 45.h,
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 40, vertical: 20),
+                !isAppointed
+                    ? controller.date == null
+                        ? GestureDetector(
+                            onTap: () async {
+                              controller.date = await selectDate(context);
+                              controller.update();
+                            },
+                            child: Center(
+                                child: Container(
+                                    width: Dimensions.screenwidth(context),
+                                    height: 45.h,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 40, vertical: 20),
+                                    alignment: Alignment.center,
+                                    decoration: AppButtons.decorationButton,
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Text(
+                                        "makeappointment".tr,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyles.w50015White,
+                                      ),
+                                    ))),
+                          )
+                        : Center(
+                            child: GestureDetector(
+                              onTap: () async {
+                                controller.dialogConfirming(
+                                    AppAnimations.question, "confirmorder".tr);
+                              },
+                              child: Container(
                                 alignment: Alignment.center,
-                                decoration: AppButtons.decorationButton,
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Text(
-                                    "makeappointment".tr,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyles.w50015White,
-                                  ),
-                                ))),
-                      )
-                    : Center(
-                        child: GestureDetector(
-                          onTap: () async {
-                            controller.dialogConfirming(
-                                AppAnimations.question, "confirmorder".tr);
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: 150.w,
-                            height: 40.h,
-                            margin: EdgeInsets.symmetric(vertical: 30.h),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: lightAppColors.greenColor,
+                                width: 150.w,
+                                height: 40.h,
+                                margin: EdgeInsets.symmetric(vertical: 30.h),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: lightAppColors.greenColor,
+                                ),
+                                child: Text(
+                                  'confirm'.tr,
+                                  style: TextStyles.w50015White,
+                                ),
+                              ),
                             ),
-                            child: Text(
-                              'confirm'.tr,
-                              style: TextStyles.w50015White,
-                            ),
-                          ),
+                          )
+                    : Container(
+                        width: Dimensions.screenwidth(context),
+                        height: 50,
+                        alignment: AlignmentDirectional.center,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.w, vertical: 20.h),
+                        decoration: BoxDecoration(
+                          color: lightAppColors.greenColor,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text(
+                          "${"yourappointmentison".tr} 13-5-2024",
+                          style: TextStyles.w50012White,
                         ),
                       ),
               ]),

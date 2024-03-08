@@ -20,7 +20,7 @@ Future<bool> exitAlert() {
           },
           child: Text(
             "yes".tr,
-            style: TextStyle(color: Colors.blue),
+            style: const TextStyle(color: Colors.blue),
           ),
         ),
         TextButton(
@@ -29,7 +29,7 @@ Future<bool> exitAlert() {
             },
             child: Text(
               "no".tr,
-              style: TextStyle(color: Colors.blue),
+              style: const TextStyle(color: Colors.blue),
             ))
       ]);
   return Future.value(true);
@@ -40,7 +40,7 @@ Future<bool> animationedAlertWithActions(
   Get.defaultDialog(
       title: title,
       titleStyle: TextStyles.w50017,
-      titlePadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      titlePadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       content: animation != null
           ? Container(
               alignment: Alignment.topCenter, height: 100.h, child: animation)
@@ -86,19 +86,17 @@ alert(String title) {
   );
 }
 
-Future<bool> alertWithActions(String title, void Function() onYesTap) {
+Future<bool> alertWithActions(String title,void Function ()onYesTap) {
   Get.defaultDialog(
       title: "",
       middleText: title,
       middleTextStyle: TextStyles.bold16,
       actions: [
         TextButton(
-          onPressed: () {
-            onYesTap();
-          },
+          onPressed:onYesTap,
           child: Text(
             "yes".tr,
-            style: TextStyle(color: Colors.blue),
+            style: const TextStyle(color: Colors.blue),
           ),
         ),
         TextButton(
@@ -107,10 +105,10 @@ Future<bool> alertWithActions(String title, void Function() onYesTap) {
             },
             child: Text(
               "no".tr,
-              style: TextStyle(color: Colors.blue),
+              style: const TextStyle(color: Colors.blue),
             ))
       ]);
-  return Future.value(true);
+  return Future.value(false);
 }
 
 Future<bool> popUp(
@@ -136,7 +134,7 @@ Future<bool> popUp(
               child: Container(
                 width: 60.w,
                 height: 8.h,
-                margin: EdgeInsets.symmetric(vertical: 20),
+                margin: const EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
                     color: lightAppColors.greyColor,
                     borderRadius: BorderRadius.circular(50)),

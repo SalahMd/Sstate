@@ -27,8 +27,8 @@ class TextStyles {
       fontWeight: FontWeight.w400);
   static TextStyle w40010White = TextStyle(
       color: Colors.white, fontSize: 10.sp, fontWeight: FontWeight.w400);
-  static TextStyle w40012White = TextStyle(
-      color: Colors.white, fontSize: 12.sp, fontWeight: FontWeight.w400);
+  static TextStyle w50012White = TextStyle(
+      color: Colors.white, fontSize: 12.sp, fontWeight: FontWeight.w500);
   static TextStyle w50016White =
       TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500);
   static TextStyle w50015White = TextStyle(

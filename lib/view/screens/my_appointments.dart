@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sestate/controller/my_appointments_controller.dart';
 import 'package:sestate/core/constants/colors.dart';
-import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/constants/text_styles.dart';
 import 'package:sestate/core/functions/dimenesions.dart';
 import 'package:sestate/view/widgets/item_design.dart';
@@ -26,9 +25,17 @@ class MyAppointements extends StatelessWidget {
                     vertical: 20.h,
                     horizontal: 15.w,
                   ),
-                  child: Text(
-                    "myappointments".tr,
-                    style: Theme.of(context).textTheme.headline1,
+                  child: Row(
+                    children: [
+                      Icon(Icons.calendar_month_outlined),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Text(
+                        "myappointments".tr,
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -47,6 +54,7 @@ class MyAppointements extends StatelessWidget {
                           livingRoom: controller.items[index].numOfKitchens,
                           space: controller.items[index].space,
                           price: controller.items[index].price,
+                          isAppointed: true,
                         ),
                         Container(
                           width: Dimensions.screenwidth(context),
@@ -64,12 +72,12 @@ class MyAppointements extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Your appointment is on 13-5-2024",
-                                style: TextStyles.w40012White,
+                                "${"yourappointmentison".tr} 13-5-2024",
+                                style: TextStyles.w50012White,
                               ),
                               GestureDetector(
                                   onTap: () {
-                                    controller.deleteAppointment();
+                                    controller.deleteAppointment(index);
                                   },
                                   child: Icon(
                                     Icons.delete_outline,

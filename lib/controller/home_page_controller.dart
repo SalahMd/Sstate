@@ -4,7 +4,6 @@ import 'package:sestate/core/class/statusrequest.dart';
 import 'package:sestate/core/constants/images.dart';
 import 'package:sestate/core/functions/geo_locator.dart';
 import 'package:sestate/data/model/item_model.dart';
-
 import '../view/screens/category.dart';
 
 abstract class HomePageController extends GetxController {
@@ -46,9 +45,10 @@ class HomePageControllerImpl extends HomePageController {
   }
 
   void onInit() async {
-    await getLocation(await determinePosition());
     statusRequest = StatusRequest.loading;
     update();
+    await getLocation(await determinePosition());
+
     Future.delayed(Duration(seconds: 2), () {
       statusRequest = StatusRequest.success;
       update();
@@ -58,8 +58,14 @@ class HomePageControllerImpl extends HomePageController {
 
   @override
   getLocation(var position) async {
-    placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
+    try {
+      placemarks =
+          await placemarkFromCoordinates(position.latitude, position.longitude);
+    } catch (_) {
+      statusRequest = StatusRequest.failure;
+      update();
+    }
+
     print("Your city is :" + "${placemarks[0].locality}");
     print("\nYour street is :" + "${placemarks[0].street}");
   }

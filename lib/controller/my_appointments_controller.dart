@@ -6,9 +6,9 @@ import 'package:sestate/core/functions/alerts.dart';
 import 'package:sestate/data/model/item_model.dart';
 
 abstract class MyAppointmentsController extends GetxController {
-  deleteAppointment();
+  deleteAppointment(int index);
   displayData();
-  confirmDeleting();
+  confirmDeleting(int index);
 }
 
 class MyAppointmentsControllerImpl extends MyAppointmentsController {
@@ -29,12 +29,18 @@ class MyAppointmentsControllerImpl extends MyAppointmentsController {
   ];
   StatusRequest? statusRequest;
   @override
-  deleteAppointment() {
-    alertWithActions("deletingapointment".tr, confirmDeleting);
+  @override
+  deleteAppointment(int index) async {
+    await alertWithActions(
+        "deletingapointment".tr, () => confirmDeleting(index));
+    update();
   }
 
   @override
-  confirmDeleting() {
+  confirmDeleting(int index) {
+    //print("/////////////////");
+    items.removeAt(index);
+    update();
     Get.back();
     animationedAlert(AppAnimations.deleting, "appointmentisdeleted".tr);
     update();

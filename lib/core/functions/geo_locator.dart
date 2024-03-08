@@ -7,7 +7,7 @@ Future<Position> determinePosition() async {
   // Test if location services are enabled.
   serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
-    return Future.error('Location services are disabled.');
+    //return Future.error('Location services are disabled.');
   }
   permission = await Geolocator.checkPermission();
   if (permission == LocationPermission.denied) {
@@ -26,6 +26,6 @@ Future<Position> determinePosition() async {
   // continue accessing the position of the device.
 
   Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.low);
   return position;
 }
